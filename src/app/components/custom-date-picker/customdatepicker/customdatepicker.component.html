@@ -1,0 +1,21 @@
+<div class="form-group has-feedback">
+  <div class="row p_l_20">
+    <div class="col-xs-3">
+      <select class="form-control" (change)="selectedyearval($event.target.value)" required>
+        <option *ngFor="let y of years" [selected]="yy === y ">{{y}}</option>
+      </select>
+    </div>
+    <div class="col-xs-3">
+      <select class="form-control" (change)="selectedmonthval($event.target.value)" required>
+        <option *ngFor="let p of months" [selected]="mm === p.val">{{p.name}}</option>
+      </select>
+    </div>
+    <div class="col-xs-3">
+      <select class="form-control" (change)="selecteddayval($event.target.value)" required>
+        <option *ngFor="let d of days" [selected]="dd === d ">{{d}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="errorMessageContainer" class="alert alert-danger m_y_10">{{errorMessage}}</div>
+</div>

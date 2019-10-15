@@ -1,0 +1,136 @@
+<!-- Add Board start-->
+<ng-container *ngIf="boardAction=='addBoard'">
+  <form [formGroup]="addBoardForm">
+    <div class="bg_white border_r_n m_d_w_555">
+      <div class="modal-header text-center c_262626 f_s_20 f_w_b">
+        <span i18n="@@addBoard"> Add board </span>
+        <span class="close" data-dismiss="modal" (click)="activeModal.close('Close click')">
+          <i class="material-icons">&#xE5CD;</i>
+        </span>
+      </div>
+      <div class="modal-body p_0 bg_white p_t_25">
+        <div class="media p_x_20 b_b_1_solid_e5e5e5">
+          <img class="pull-left" src="assets/images/boardName.png" alt="" title="">
+          <div class="media-body p_b_30">
+            <p class="c_5a5c68" i18n="@@boardName">Name your board the way you want others to see it.</p>
+            <input dir="{{siteDirection}}" type="text" class="form-control" placeholder="Board name" maxlength="40" formControlName="boardName" i18n-placeholder>
+            <app-validation-message-component [control]="addBoardForm.controls['boardName']"></app-validation-message-component>
+          </div>
+        </div>
+        <div class="media p_x_20 b_b_1_solid_e5e5e5">
+          <i class="material-icons pull-left text-muted">&#xE899;</i>
+          <div class="media-body p_b_10">
+            <p class="c_5a5c68" i18n="@@privateBoardApprove">When your board is private, only people you approve can join.</p>
+            <div class="form-group">
+              <label class="customCheckbox">
+                <strong i18n="@@privateBoard">Private board</strong>
+                <input dir="{{siteDirection}}" type="checkbox" formControlName="isPrivate">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <p>&nbsp;</p>
+        <p class="text-danger text-center">{{errorMessage}}</p>
+        <p class="text-center">
+          <a  href="javascript:void(0)"   [attr.disabled]="buttonStatus == false ? true: null" class="btn btn-info p_x_80 bg_93e0f4 border_none c_00a7c8 f_w_b p_y_8" (click)="buttonStatus && saveBoard('createBoard')"
+            i18n="@@saveBoard">Add</a>
+        </p>
+        <p>&nbsp;</p>
+
+      </div>
+    </div>
+  </form>
+</ng-container>
+<!-- Add Board end-->
+
+<!-- Edit Board start-->
+<ng-container *ngIf="boardAction=='editBoard'">
+  <form [formGroup]="editBoardForm">
+    <div class="bg_white border_r_n m_d_w_555">
+      <div class="modal-header text-center c_262626 f_s_20 f_w_b">
+        <span i18n="@@editBoard">Edit board</span>
+        <span class="close" data-dismiss="modal" (click)="activeModal.close('Close click')">
+          <i class="material-icons">&#xE5CD;</i>
+        </span>
+      </div>
+      <div class="modal-body p_0 bg_white p_t_25">
+        <div class="media p_x_20 b_b_1_solid_e5e5e5">
+          <img class="pull-left" src="assets/images/boardName.png" alt="" title="">
+          <div class="media-body p_b_30">
+            <p class="c_5a5c68" i18n="@@boardName">Name your board the way you want others to see it.</p>
+            <input dir="{{siteDirection}}" type="text" class="form-control" placeholder="Board name" maxlength="40" formControlName="boardName">
+            <app-validation-message-component [control]="editBoardForm.controls['boardName']"></app-validation-message-component>
+          </div>
+        </div>
+        <div class="media p_x_20 b_b_1_solid_e5e5e5">
+          <i class="material-icons pull-left text-muted">&#xE899;</i>
+          <div class="media-body p_b_30">
+            <p class="c_5a5c68" i18n="@@privateBoardApprove">When your board is private, only people you approve can join.</p>
+            <div class="form-group">
+              <label class="customCheckbox">
+                <strong i18n="@@privateBoard">Private board</strong>
+                <input dir="{{siteDirection}}" type="checkbox" formControlName="isPrivate">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="media p_x_20 p_y_15 b_b_1_solid_e5e5e5">
+          <i class="material-icons c_f6a623 pull-left">&#xE7FF;</i>
+          <div class="media-body p_b_15">
+            <p class="m_t_2">
+              <a href="javascript:void(0)" class="c_5a5c68 c_f6a623 tdn" (click)="moveToArchiveConfirmation(boardDataToEdit.id)" i18n="@@moveAchive"
+                *ngIf="moveTo">Move to archive</a>
+              <a href="javascript:void(0)" class="c_5a5c68 c_f6a623 tdn" (click)="moveToProfileConfirmation(boardDataToEdit.id)" i18n="@@moveProfile"
+                *ngIf="!moveTo">Move to Profile</a>
+            </p>
+          </div>
+        </div>
+        <div class="media p_x_20 p_y_15 b_b_1_solid_e5e5e5">
+          <i class="fas fa-trash-alt pull-left c_d0011b m_r_10"></i>
+          <div class="media-body p_b_15">
+            <p>
+              <a href="javascript:void(0)" class="c_d0011b tdn" (click)="activeModal.close('Close click');openDeleteDialog()" i18n="@@deleteBoard">Delete Board</a>
+            </p>
+          </div>
+        </div>
+        <p>&nbsp;</p>
+        <p class="text-danger text-center">{{errorMessage}}</p>
+        <input dir="{{siteDirection}}" type="hidden" formControlName="boardId">
+        <p class="text-center">
+          <a href="javascript:void(0)" class="btn btn-info p_x_80 bg_93e0f4 border_none c_00a7c8 f_w_b p_y_8" (click)="saveBoard('editBoard')"
+            i18n="@@saveBoard">Save</a>
+        </p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </form>
+</ng-container>
+<!-- Edit Board end-->
+
+<!-- Delete Board start-->
+<ng-container *ngIf="boardAction=='deleteBoard'">
+  <div class="bg_white border_r_n m_d_w_555">
+    <div class="modal-header text-center c_262626 f_s_20 f_w_b">
+      <span i18n="@@deleteBoard">Delete board </span>
+      <span class="close" data-dismiss="modal" (click)="activeModal.close('Close click')">
+        <i class="material-icons">&#xE5CD;</i>
+      </span>
+    </div>
+    <div class="modal-body p_0 bg_white p_t_25">
+      <div class="media-body p_b_20 p_x_80 f_s_18 c_000 text-center" i18n="@@deleteBoardChoice">Are you sure you want to delete this board?
+        <br> This action can`t be undone.</div>
+    </div>
+    <p>&nbsp;</p>
+    <p class="text-danger text-center">{{errorMessage}}</p>
+    <p class="text-center">
+      <a href="javascript:void(0)" class="btn btn-info m_b_10 p_x_80 c_93e0f4 f_w_b bg_none delboard" (click)="activeModal.close('Close click')"
+        i18n="@@boardCancel">Cancel</a>
+      <a href="javascript:void(0)" class="btn btn-info m_b_10 p_x_80 bg_93e0f4 c_00a7c8 f_w_b p_y_8" style="border:2px solid #93e0f4;"
+        (click)="deleteBoard()" i18n="@@deleteBoard">Delete</a>
+    </p>
+    <p>&nbsp;</p>
+  </div>
+</ng-container>
+<!-- Delete Board end-->

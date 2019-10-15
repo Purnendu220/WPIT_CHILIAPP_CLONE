@@ -1,0 +1,29 @@
+<!--<div class="customAlert">
+  <div class="alert alert-danger m_b_0">
+  <p class="text-center p_y_10"><strong *ngIf="title">{{title}}</strong></p>
+    <p class="close_icon text-right c_p" (click)="closePopup()">&times;</p>
+    <p class="text-center d_flex jusfify_content_center p_t_25"> <i class="material-icons p_r_5 f_s_20">&#xE8B2;</i> <span [innerHtml]="message"></span></p>
+    <div class="text-center btndiv m_t_10">
+      <button class="btn btn-success btn-sm btncancel" type="button" *ngIf="showCancel" (click)="cancelAction()">{{cancelText}}</button>
+      <button class="btn btn-danger btn-sm btnconfirm" type="button" *ngIf="showConfirm" (click)="confirmAction()">{{confirmText}}
+      </button>
+    </div>
+  </div>
+
+</div>-->
+
+<div class="bg_white border_r_n m_d_w_555">
+  <div  class="modal-header text-center c_262626 f_s_20 f_w_b">
+    <span class="text-center p_y_10" *ngIf="title"><strong> <span [innerHtml]="title"></span></strong></span>
+    <span class="close" data-dismiss="modal" (click)="activeModal.close('Close click')"><i class="material-icons">&#xE5CD;</i></span>
+  </div>
+
+  <div class="modal-body p_0 bg_white p_10 p_t_25">
+    <p class="text-center d_flex jusfify_content_center"> <!--<i class="material-icons p_r_5 f_s_20">&#xE8B2;</i>--> <span [innerHtml]="message"></span></p>
+    <p class="text-center m_t_20">
+      <a href="javascript:void(0)" class="btn btn-info m_b_10 p_x_80 c_93e0f4 f_w_b bg_none delboard" *ngIf="showCancel" (click)="cancelAction()">{{cancelText}}</a>
+      <a href="javascript:void(0)" class="btn btn-info m_b_10 p_x_80 bg_93e0f4 c_00a7c8 f_w_b p_y_8" style="border:2px solid #93e0f4;" *ngIf="showConfirm" (click)="confirmAction()">{{confirmText}}</a>
+    </p>
+  </div>
+
+</div>

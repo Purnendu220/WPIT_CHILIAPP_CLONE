@@ -1,0 +1,150 @@
+<!-- join board request list -->
+<div id="notification_popup_1" class="followingYou">
+
+    <app-loader></app-loader>
+    <div id="notification_popup_2" *ngIf="activeTab=='joinRequest'">
+        <div id="notification_popup_14" class="search-results scroll_joinRequest" data-infinite-scroll [infiniteScrollDistance]="scrollDistance"
+            [infiniteScrollUpDistance]="scrollUpDistance" [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown($event,'joinRequest')"
+            [scrollWindow]="false">
+            <div id="notification_popup_3" class="p_t_10 p_l_25">
+                <a (click)="onSelectChange('you')">
+                    <i class="material-icons c_abb7cd f_w_b c_p" title="Go to back">&#xE5C4;</i>
+                </a>
+            </div>
+            <h4 id="notification_popup_5" class="text-center f_w_b b_b_1_solid_e5e5e5 p_b_10" style="margin-top:-27px;">Pending Board Join Request</h4>
+            <div id="notification_popup_6" class="media m_t_5" *ngFor="let joinrequest of joinRequestData">
+                <a (click)="routeUser('user',joinrequest.user.id)" class="pull-left m_r_15 p_r c_p">
+                    <img class="img-circle" src="{{ joinrequest.user.profileImageThumbnail|defaultImage: 'userProfile'}}" alt="" title="" width="60"
+                        height="60">
+                    <span class="notificationType bg_theam_light p_t_5">
+                        <i class="fas fa-comment f_s_12"></i>
+
+                    </span>
+                </a>
+
+                <div class="media-body">
+                    <p class="c_000 l_h_24 m_b_0 f_w_b c_000">{{joinrequest.user.name}}</p>
+                    <p class="f_s_14 m_b_0 c_768692 l_h_24 m_b_0">
+                        <span (click)="routeUser('user',notification.userWhoFiredEvent.id)" class="f_s_16 c_p">requested to join your board&nbsp;</span>
+                        <span class="c_p c_000" (click)="routeUser('user',notification.followUserId)">{{ joinrequest.board.name}}</span>
+                        <span class="c_abb7cd">{{ joinrequest.createdAt | timestampToday}}</span>
+                    </p>
+                    <div class="m_t_10 postffJoined" id="notification_popup_170">
+                        <button (click)="approveOrreject(joinrequest, 'accept')" id="notification_popup_70" class="btn btn-info bg_info_fill c_00a7c8 f_s_15 f_w_b" style="padding: 3px;" type="button">Accept</button>
+                        <button (click)="approveOrreject(joinrequest, 'reject')" id="notification_popup_80" class="btn btn-info btn_info_outline bg_none c_00a7c8 border_2_gray p_y_4 f_s_15 f_w_b" style="padding:3px;" type="button">Reject</button>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center c_d0011b" *ngIf="joinRequestData.length<=0">{{noJoinRequestMsg}}</p>
+        </div>
+      <div *ngIf="joinRequestData?.length == 0" class="stub_notification" style="top:43px; height: 92%;">
+        <p>&nbsp;</p><p class="hidden-xs">&nbsp;</p><p class="hidden-xs">&nbsp;</p>
+        <p class="c_737578 f_s_24 text-center" i18n="@@haventNotification"> You have no new notifications</p>
+        <p class="hidden-xs">&nbsp;</p>
+        <p class="text-center"><img class="sm_device" src="assets/images/notification.png" alt="" title=""></p>
+      </div>
+    </div>
+
+
+    <!-- you and following -->
+    <div *ngIf="activeTab!='joinRequest'">
+        <ul class="nav nav-tabs nav-justified">
+            <li id="notification_popup_12" (click)="onSelectChange('following')" style="border:0;">
+                <a href="#Following" data-toggle="tab" i18n="@@following">Following</a>
+            </li>
+            <li id="notification_popup_13" (click)="onSelectChange('you')" class="active">
+                <a href="#You" class="c_p" data-toggle="tab" i18n="@@you">You</a>
+            </li>
+        </ul>
+
+        <div id="notification_popup_9" class="tab-content p_t_15" style="height:auto;">
+            <div id="notification_popup_10" class="tab-pane fade" id="Following">
+                <div id="notification_popup_14" class="search-results scroll_following" data-infinite-scroll [infiniteScrollDistance]="scrollDistance"
+                    [infiniteScrollUpDistance]="scrollUpDistance" [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown($event,'following')"
+                    [scrollWindow]="false">
+                    <div *ngFor="let notification of followData">
+                        <div  class="media">
+                            <a (click)="routeUser('user',notification.userWhoFiredEvent.id)" class="pull-left m_r_15 p_r c_p">
+                                <img class="img-circle" src="{{ notification.userWhoFiredEvent.profileImageThumbnail|defaultImage: 'userProfile'}}" alt=""
+                                    title="" width="60" height="60">
+                                    <div [innerHTML]="notification.notificationType | notifcationLogoChange"></div>
+                                <!-- <span class="notificationType bg_theam_light p_t_5">
+                                    <i class="{{ notification.notificationType | notifcationLogoChange }}"></i>
+
+                                </span> -->
+                            </a>
+                            <div class="media-body">
+                                <p class="f_s_14 c_000 l_h_24 m_b_0">
+                                    <strong (click)="routeUser('user',notification.userWhoFiredEvent.id)" class="f_s_16 c_p">{{notification.userWhoFiredEvent.name}}&nbsp;</strong>
+                                    <span class="c_p" (click)="routeUser('user',notification.userWhoFiredEvent.id)">{{ notification.message | notificationmsgprepare: 'activityMsg'}}</span>
+                                    <strong class="f_s_16">&nbsp;{{ notification.message | notificationmsgprepare: 'boardName' }}</strong>
+                                    <span class="c_abb7cd">{{ notification.createdAt | timestampToday}}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <div *ngIf="followData?.length==0" class="stub_notification">
+                <p>&nbsp;</p><p class="hidden-xs">&nbsp;</p><p class="hidden-xs">&nbsp;</p>
+                <p class="c_737578 f_s_24 text-center" i18n="@@haventNotification">You have no new notifications</p>
+                <p class="hidden-xs">&nbsp;</p>
+                <p class="text-center"><img class="sm_device" src="assets/images/notification.png" alt="" title=""></p>
+              </div>
+
+            </div>
+
+            <div id="notification_popup_11" class="tab-pane fade in active" id="You">
+                <div id="notification_popup_22" class="clearfix" *ngIf="joinBoardRequestInitData?.joinBoardRequestCount > 0">
+                    <div id="notification_popup_19" class="media p_l_20 c_p" style="margin-left:0; border:0; padding-bottom:0;" (click)="onSelectChange('joinRequest')">
+                        <a id="notification_popup_18" href="javascript:void(0);" class="pull-left m_r_15 p_r">
+                            <img class="img-circle" src="{{joinBoardRequestInitData.userWhoFiredEvent?.profileImageThumbnail | defaultImage: 'userProfile'}}"
+                                alt="" title="" width="60" height="60">
+                            <span class="notificationType bg_red p_t_3 f_s_12">{{joinBoardRequestInitData.joinBoardRequestCount}}</span>
+                        </a>
+
+                        <div class="media-body">
+                            <p class="c_000 l_h_24 m_b_0" i18n="@@joinBoardRequest">
+                                <strong>Board join requests</strong>
+                            </p>
+                            <p class="f_s_14 m_b_0 l_h_24 c_76 c_768692" i18n="@@approveIgnoreRequest">Approve or ignore requests</p>
+                        </div>
+                    </div>
+                    <p class="c_262626 f_s_14 f_w_b p_l_25 m_t_15 p_b_10" style="border-bottom:1px solid #ccc;" i18n="@@new">NEW</p>
+                </div>
+
+                <div id="notification_popup_13" class="search-results scroll_you" data-infinite-scroll [infiniteScrollDistance]="scrollDistance"
+                    [infiniteScrollUpDistance]="scrollUpDistance" [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown($event,'you')"
+                    [scrollWindow]="false">
+
+                    <div *ngFor="let notification of youData">
+                        <div class="media">
+                            <a (click)="routeUser('user',notification.userWhoFiredEvent.id)" class="pull-left m_r_15 p_r c_p">
+                                <img class="img-circle" src="{{ notification.userWhoFiredEvent.profileImageThumbnail|defaultImage: 'userProfile'}}" alt=""
+                                    title="" width="60" height="60">
+                                    <div [innerHTML]="notification.notificationType | notifcationLogoChange"></div>
+                                <!-- <span class="notificationType bg_theam_light p_t_5">
+                                    <i class="fas fa-comment f_s_12"></i>
+
+                                </span> -->
+                            </a>
+                            <div class="media-body">
+                                <p class="f_s_14 c_000 l_h_24 m_b_0">
+                                    <strong (click)="routeUser('user',notification.userWhoFiredEvent.id)" class="f_s_16 c_p">{{notification.userWhoFiredEvent.name}}&nbsp;</strong>
+                                    <span class="c_p" (click)="routeUser('user',notification.userWhoFiredEvent.id)">{{ notification.message | notificationmsgprepare: 'activityMsg'}}</span>
+                                    <strong class="f_s_16">&nbsp;{{ notification.message | notificationmsgprepare: 'boardName' }}</strong>
+                                    <span class="c_abb7cd">{{ notification.createdAt | timestampToday}}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <div *ngIf="youData?.length == 0" class="stub_notification">
+                <p>&nbsp;</p><p class="hidden-xs">&nbsp;</p><p class="hidden-xs">&nbsp;</p>
+                <p class="c_737578 f_s_24 text-center" i18n="@@haventNotification"> You have no new notifications</p>
+                <p class="hidden-xs">&nbsp;</p>
+                <p class="text-center"><img class="sm_device" src="assets/images/notification.png" alt="" title=""></p>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

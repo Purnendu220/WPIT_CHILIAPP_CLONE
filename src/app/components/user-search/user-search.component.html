@@ -1,0 +1,22 @@
+<div  class="my_setting exploreSearch" >
+  <ul class="list-group">
+    <!--ONE START-->
+    <li class="list-group-item c_p" *ngFor="let user of userSearchList" (click)="slideUpList(user.id)" routerLinkActive="active-link">
+      <div class="media d_flex align_item_center">
+        <a class="pull-left"><img class="img-circle" src="{{user.profileImageThumbnail | defaultImage: 'userProfile'}}" alt="image" title="image" width="40" height="40"></a>
+        <div class="media-body f_s_14">
+          <p class="m_b_5 f_w_b">{{user.name}}</p>
+          <p class="f_s_12 c_88909d m_b_0">@{{user.username}}, <strong>{{user.userTypeId | usertypeIdToUserType}}</strong></p>
+        </div>
+      </div>
+    </li>
+    <li class="list-group-item c_p text-center" *ngIf="userSearchList?.length == 0">
+    <span class="f_s_14 c_d0011b" i18n="@@norecordfound"> Nothing here.</span>
+    </li> 
+   
+
+
+  </ul>
+
+
+</div>

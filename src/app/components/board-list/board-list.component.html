@@ -1,0 +1,48 @@
+<div class="profile_r">
+
+  <!--ONE BORARD-->
+  <div class="panel panel-info" *ngIf="otherUserProfileFlag==false && userData.userTypeId!=5 && userData.userTypeId!=4 && userData?.board?.length < allowedBoard">
+    <div class="panel-body p_y_10">
+      <a href="javascript:void(0)" class="c_037aff f_s_20 d_flex f_w_500 jusfify_content_center align_item_center tdn" style="height:115px;"
+        (click)="openDialog('addBoard', null)">
+        <i class="material-icons f_s_34 m_r_15">&#xE148;</i>
+        <span i18n="@@addBoard">Add board</span>
+      </a>
+    </div>
+  </div>
+  <!--ONE BORARD-->
+
+  <!--ONE START-->
+  <div class="panel panel-info" *ngFor="let board of userData?.board">
+    <div class="panel-body c_p" (click)="openBoardDetail(board, board?.isJoined)">
+      <p class="m_b_0 text-left m_h_22">
+        <i *ngIf="board?.isPrivate==true" class="material-icons f_s_16 c_a1aec8">&#xE899;</i>
+      </p>
+      <p class="text-center c_393939">{{board?.name}}</p>
+      <p class="counting">
+        <span>
+          <img class="p_r_5" src="assets/images/boardListEdit.png" alt="" title=""> {{board?.newsPostCount.toLocaleString(lacaleId)}}</span>
+        <span class="p_x_10"></span>
+        <span>
+          <img class="p_r_5" src="assets/images/boardListUser.png" alt="" title=""> {{board?.joinBoardCount.toLocaleString(lacaleId)}}</span>
+      </p>
+
+    </div>
+    <div class="panel-footer bg_edf1f2 border_none" *ngIf="otherUserProfileFlag==false">
+      <a href="javascript:void(0)" class="btn btn-link f_s_16 f_s_16 c_037aff" (click)="openDialog('editBoard', board)">
+        <span i18n="@@edit" class="p_r_5">Edit</span>&nbsp;
+        <img src="assets/images/EditBeardSetting.png" alt="" title="">
+      </a>
+    </div>
+    <div class="panel-footer border_none" *ngIf="otherUserProfileFlag==true">
+      <a class="btn btn-link f_s_16 c_00a7c8" *ngIf="board?.isJoined==0" (click)="joinToggle(board)" i18n="@@joinBoard">Join</a>
+      <a class="btn btn-link f_s_16 c_00a7c8" *ngIf="board?.isJoined==1" (click)="confirmLeaveBoard(board)" i18n="@@requestBoard">Requested</a>
+
+    </div>
+    <div class="panel-footer bg_f6f7fb border_none" *ngIf="otherUserProfileFlag==true">
+      <a class="btn btn-link c_788692 f_s_16 border_none" *ngIf="board?.isJoined==2" (click)="confirmLeaveBoard(board)" i18n="@@joinedBoard">Joined</a>
+    </div>
+  </div>
+  <!--ONE END-->
+
+</div>

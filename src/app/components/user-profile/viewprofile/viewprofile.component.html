@@ -1,0 +1,129 @@
+<!--COVER IMG START-->
+<section class="coverImg">
+  <figure *ngIf="userData?.backgroundImage?.mediaPath">
+    <a href="{{userData?.backgroundImage?.mediaPath|defaultImage: 'coverImage'}}" data-fancybox="">
+      <img [src]="userData?.backgroundImage?.mediaPath|defaultImage: 'coverImage'">
+    </a>
+  </figure>
+</section>
+<!--COVER IMG END-->
+
+<!--POST START-->
+<section class="postffJoined">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 p_x col-md-offset-3">
+        <ul class="list-inline m_b_0">
+          <li class="active" *ngIf="userData?.userTypeId!=5">
+            <a class="c_p">
+              <div i18n="@@post">posts</div>
+              <span>{{userData?.newsCount.toLocaleString(lacaleId)}}</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" (click)="openUserListPopup('following', userData?.followingCount)">
+              <div i18n="@@following">following</div>
+              <span>{{userData?.followingCount.toLocaleString(lacaleId)}}</span>
+            </a>
+          </li>
+          <li *ngIf="userData?.userTypeId!=5">
+            <a href="javascript:void(0)" (click)="openUserListPopup('follower', userData?.followerCount)">
+              <div i18n="@@followers">followers</div>
+              <span>{{userData?.followerCount.toLocaleString(lacaleId)}}</span>
+            </a>
+          </li>
+          <li class="content_none">
+            <a href="javascript:void(0)" (click)="openUserListPopup('joinedBoard',userData?.joinedBoardCount)">
+              <div i18n="@@joinedBoards">joined boards</div>
+              <span>{{userData?.joinedBoardCount.toLocaleString(lacaleId)}}</span>
+            </a>
+          </li>
+
+          <li class="settings" *ngIf="otherUserProfileFlag==false">
+            <a href="javascript:void(0)" title="Edit Profile" (click)="navigateToEditProfile()">
+              <img src="assets/images/editProfile.png" alt="" title="">
+            </a>
+            <span class="p_x_10"></span>
+            <a href="javascript:void(0)" title="Setting" (click)="navigateToSettings()">
+              <img src="assets/images/usersetting.png" alt="" title="">
+            </a>
+          </li>
+
+
+          <div *ngIf="otherUserProfileFlag==true">
+            <button type="button" class="btn btn-info bg_info_fill" *ngIf="userData?.isfollow==false && userData?.userTypeId!=5" (click)="followToggle()"
+              i18n="@@follow">Follow</button>
+            <button type="button" class="btn btn-info bg_none f_s_12 c_c8cfd4 border_2_gray" style="width: 126px;" *ngIf="userData?.isfollow==true"
+              (click)="unFollowConfirmation()" i18n="@@following">Following</button>
+          </div>
+          <button type="button" class="btn btn-info btn_info_outline bg_color_none" (click)="sendMessageInProgressAlertInfo()" *ngIf="otherUserProfileFlag==true"
+            i18n="@@sendMessage">Send Message</button>
+          <div class="dropdown newD" *ngIf="otherUserProfileFlag == true">
+            <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+              <i class="material-icons c_037aff">&#xE5D4;</i>
+            </button>
+            <div class="dropdown-menu customDropdownMenu">
+              <a *ngIf="this.blockedUserData?.isBlocked== false" href="javascript:void(0)" (click)="blockUnblockConfirmation()" i18n="@@block">Block</a>
+              <a *ngIf="this.blockedUserData?.isBlocked  == true" href="javascript:void(0)" (click)="blockUnblockConfirmation()" i18n="@@unBlock">UnBlock</a>
+            </div>
+          </div>
+        </ul>
+
+
+        <div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!--POST END-->
+
+<!--WORKAREA START-->
+<section class="container p_y_30">
+  <div class="row">
+    <div class="col-md-3 autoSideBarLeft profile_l p_r text-center">
+      <div class="theiaStickySidebar">
+        <p class="hidden-sm hidden-xs">&nbsp;</p>
+        <p class="hidden-sm hidden-xs">&nbsp;</p>
+        <figure>
+          <a *ngIf="userData?.profileImage?.mediaPath" data-fancybox="" href="{{userData?.profileImage?.mediaPath |defaultImage: 'userProfile'}}">
+            <img class="img-circle" src="{{userData?.profileImage?.thumbnailPath |defaultImage: 'userProfile'}}" alt="Profile Pic" title="Profile Pic">
+          </a>
+          <a *ngIf="!userData?.profileImage?.mediaPath" >
+            <img class="img-circle" src="{{userData?.profileImage?.thumbnailPath |defaultImage: 'userProfile'}}" alt="Profile Pic" title="Profile Pic">
+          </a>
+        </figure>
+        <h1 class="f_s_24 c_262626">{{userData?.name}}</h1>
+        <h2 class="f_s_18 c_788692 f_w_n">@{{userData?.username}}</h2>
+        <h3 class="f_s_18 c_788692 f_w_b">{{userType}}</h3>
+        <p class="fadeLine"></p>
+        <p class="text-left">{{userData?.bio}}</p>
+        <p class="text-center c_037aff m_t_15">{{userData?.university?.name}}<br>
+          <span *ngIf="userData?.department!= undefined"> {{userData.department?.name}}</span>
+          <span *ngIf="userData?.department!= undefined && userData?.graduationYear!= undefined && userData.graduationYear>0"></span>
+          <span *ngIf="userData?.graduationYear!= undefined && userData.graduationYear>0"><br>
+            <span i18n="@@classOf">Class of</span> {{userData.graduationYear}}</span></p>
+      </div>
+    </div>
+
+    <div class="col-md-6 profile_c">
+
+      <div *ngIf="otherUserProfileFlag==false && userData?.userTypeId!=5">
+        <appcreatepost *ngIf="userData!=undefined" [userData]="userData"></appcreatepost>
+      </div>
+
+      <app-news-list #newsList [userId]="userId" [type]="type" *ngIf="userData && !userData?.isBlocked"></app-news-list>
+
+
+    </div>
+    <div class="col-md-3 autoSideBarRight">
+      <div class="theiaStickySidebar" >
+        <app-board-list #boardList [otherUserProfileFlag]="otherUserProfileFlag" *ngIf="userData!=undefined && userData?.userTypeId!=5 && !userData?.isBlocked"
+          [userData]="userData"></app-board-list>
+      </div>
+    </div>
+  </div>
+</section>

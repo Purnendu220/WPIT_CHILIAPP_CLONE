@@ -1,0 +1,733 @@
+<div *ngIf="!isLoggedin" class="navbar_wrapper bg_color navbar_fixed_top">
+  <div class="container">
+    <nav class="navbar" id="myScrollspy">
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <img class="" src="assets/images/logo_myu.png" alt="myU">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li style="width: auto;"><a href="#aboutapp" class="fontfamlilyHelvitaca"><span i18n="@@aboutApp">ABOUT MYU</span></a></li>
+          <li style="width: auto;" (click)="routeUser('forteacher')"  ><a  class="fontfamlilyHelvitaca c_p"><span i18n="@@forTech">FOR TEACHERS</span></a></li>
+          <li style="width: auto;" (click)="routeUser('forschool')"><a  class="fontfamlilyHelvitaca c_p"><span i18n="@@forSch">FOR SCHOOLS</span></a></li>
+          <!--<li style="width: auto;"><a href="#contactus" class="fontfamlilyHelvitaca" i18n="@@contactUs">CONTACT US</a></li>-->
+        </ul>
+
+        <!--<span class="lang_link"> <a href="http://qa-cms.myu.co/myu/ar/">العربية</a></span>-->
+
+        <ul class="nav navbar-nav navbar-right">
+          <li style="width: auto;" *ngIf="language=='ar'" (click)="handleLanguageChange('en')"><a class="c_p" style="font-size: 18px!important;">English</a></li>
+          <li style="width: auto;" *ngIf="language=='en'" (click)="handleLanguageChange('ar')"><a class="c_p" class="fontfamlilyHelvitaca" style="font-size: 18px!important;">العربية</a></li>
+
+          <li style="width: auto; margin-top: 10px;">
+            <a class="c_p loginBtn" style="font-size: 13px!important; margin: auto;" (click)="openLogin()" i18n="@@login">Login</a>
+          </li>
+          <!-- <li><a href="/" style="font-size:18px !important;">العربية</a></li> -->
+        </ul>
+
+
+      </div>
+    </nav>
+  </div>
+</div>
+
+<!--
+<div *ngIf="!isLoggedin"  class="navbar_wrapper bg_color navbar_fixed_top">
+  <div id="forScroll" class="container">
+    <nav class="navbar">
+      <div class="container-fluid">
+        &lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <a class="navbar-brand c_p" (click)="routeUser('')"><img class="" src="../assets/images/logo_myu.png" alt="myU"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a class="c_p" (click)="routeUser('')" i18n="@@aboutApp">ABOUT APP<span class="sr-only">(current)</span></a></li>
+            <li><a class="c_p" (click)="routeUser('')" i18n="@@testimonials">TESTIMONIALS</a></li>
+            <li><a class="c_p" (click)="routeUser('')" i18n="@@contactUs">CONTACT US</a></li>
+          </ul>
+
+          &lt;!&ndash;<span class="lang_link"> <a href="http://qa-cms.myu.co/myu/ar/">العربية</a></span>&ndash;&gt;
+
+          <ul class="nav navbar-nav navbar-right">
+              <li style="width: auto;" *ngIf="language=='ar'" (click)="handleLanguageChange('en')"><a class="c_p" style="font-size: 18px!important;">English</a></li>
+              <li style="width: auto;" *ngIf="language=='en'" (click)="handleLanguageChange('')"><a class="c_p" style="font-size: 18px!important;">العربية</a></li>
+
+            <li><a class="c_p"  style="font-size:18px !important;" (click)="openLogin()" i18n="@@login">Login</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>-->
+
+<div class="inner_page_banner">
+  <div class="container">
+    <div class="row">
+    <!--  <h1>ABOUT US</h1>-->
+    </div>
+  </div>
+</div>
+<div class="container">
+
+    <div *ngIf="activeUrl=='/UserLicenseAgreement'">
+      <h2>End-User License Agreement </h2>
+      <h5>Last updated: July 30, 2017</h5>
+
+
+<p>Please read this End-User License Agreement ("Agreement") carefully before clicking the "I Agree" button, downloading or using myU ("Application").<br>
+
+By clicking the "I Agree" button, downloading or using the Application, you are agreeing to be bound by the terms and conditions of this Agreement.<br>
+
+This Agreement is a legal agreement between you (either an individual or a single entity) and Fikra Ltd. and it governs your use of the Application made available to you by Fikra Ltd. <br>
+
+If you do not agree to the terms of this Agreement, do not click on the "I Agree" button and do not download or use the Application.<br>
+
+The Application is licensed, not sold, to you by Fikra Ltd. for use strictly in accordance with the terms of this Agreement.</p>
+
+
+<h5>License</h5>
+
+
+<p>Fikra Ltd. grants you a revocable, non-exclusive, non-transferable, limited license to download, install and use the Application solely for your personal, non-commercial purposes strictly in accordance with the terms of this Agreement.</p>
+
+
+<h5>Restrictions</h5>
+
+
+<p>You agree not to, and you will not permit others to:
+
+license, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose or otherwise commercially exploit the Application or make the Application available to any third party.<br>
+
+copy or use the Application for any purpose other than as permitted under the above section 'License'.<br>
+
+modify, make derivative works of, disassemble, decrypt, reverse compile or reverse engineer any part of the Application.<br>
+
+remove, alter or obscure any proprietary notice (including any notice of copyright or trademark) of Fikra Ltd. or its affiliates, partners, suppliers or the licensors of the Application.</p>
+
+
+
+<h5>Intellectual Property</h5>
+
+
+<p>The Application, including without limitation all copyrights, patents, trademarks, trade secrets and other intellectual property rights are, and shall remain, the sole and exclusive property of Fikra Ltd.</p>
+
+
+<h5>Objectionable Content Policy</h5>
+
+
+<p>The Application serves to ease school-related communication. By using this Application, you agree to abide by the intended use of the service.<br>
+
+Fikra Ltd. maintains a zero-tolerance policy regarding objectionable content or abusive users. Objectionable content may not be uploaded or displayed to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content<br>
+
+Objectionable Content includes, but is not limited to: (i) sexually explicit materials; (ii) obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; (iii) content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; (iv) content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and (v) gambling, including without limitation, any online casino, sports books, bingo or poker.<br>
+
+Any user can report content they deem objectionable for review. Content will be moderated by Fikra Ltd. to ensure the timely removal of all objectionable content. User accounts which have been confirmed responsible for posting objectionable content will be restricted from access to the Application.</p>
+
+
+<h5>Your Suggestions</h5>
+
+
+<p>Any feedback, comments, ideas, improvements or suggestions (collectively, "Suggestions") provided by you to Fikra Ltd. with respect to the Application shall remain the sole and exclusive property of Fikra Ltd.<br><br>
+
+
+Fikra Ltd. shall be free to use, copy, modify, publish, or redistribute the Suggestions for any purpose and in any way without any credit or any compensation to you.</p>
+
+
+<h5>Modifications to Application</h5>
+
+
+<p>Fikra Ltd. reserves the right to modify, suspend or discontinue, temporarily or permanently, the Application or any service to which it connects, with or without notice and without liability to you.</p>
+
+
+<h5>Updates to Application</h5>
+
+
+<p>Fikra Ltd. may from time to time provide enhancements or improvements to the features/functionality of the Application, which may include patches, bug fixes, updates, upgrades and other modifications ("Updates").<br>
+
+Updates may modify or delete certain features and/or functionalities of the Application. You agree that Fikra Ltd. has no obligation to (i) provide any Updates, or (ii) continue to provide or enable any particular features and/or functionalities of the Application to you.<br>
+
+You further agree that all Updates will be (i) deemed to constitute an integral part of the Application, and (ii) subject to the terms and conditions of this Agreement.</p>
+
+
+<h5>Third-Party Services</h5>
+
+
+<p>The Application may display, include or make available third-party content (including data, information, applications and other products services) or provide links to third-party websites or services ("Third-Party Services").<br>
+
+You acknowledge and agree that Fikra Ltd. shall not be responsible for any Third-Party Services, including their accuracy, completeness, timeliness, validity, copyright compliance, legality, decency, quality or any other aspect thereof. Fikra Ltd. does not assume and shall not have any liability or responsibility to you or any other person or entity for any Third-Party Services.<br>
+
+Third-Party Services and links thereto are provided solely as a convenience to you and you access and use them entirely at your own risk and subject to such third parties' terms and conditions.</p>
+
+
+<h5>Privacy Policy</h5>
+
+
+<p>Fikra Ltd. collects, stores, maintains, and shares information about you in accordance with its Privacy Policy, which is available at <a href="https://myu.co/en/privacypolicy" target="_blank">http://myu.co/en/privacypolicy.html.</a> By accepting this Agreement, you acknowledge that you hereby agree and consent to the terms and conditions of our Privacy Policy.</p>
+
+
+<h5>Term and Termination</h5>
+
+
+<p>
+This Agreement shall remain in effect until terminated by you or Fikra Ltd. <br>
+
+Fikra Ltd. may, in its sole discretion, at any time and for any or no reason, suspend or terminate this Agreement with or without prior notice.<br>
+
+This Agreement will terminate immediately, without prior notice from Fikra Ltd. , in the event that you fail to comply with any provision of this Agreement. You may also terminate this Agreement by deleting the Application and all copies thereof from your mobile device or from your computer.<br>
+
+Upon termination of this Agreement, you shall cease all use of the Application and delete all copies of the Application from your mobile device or from your computer.<br>
+
+Termination of this Agreement will not limit any of Fikra Ltd. 's rights or remedies at law or in equity in case of breach by you (during the term of this Agreement) of any of your obligations under the present Agreement.<br>
+</p>
+
+<h5>Indemnification</h5>
+
+<p>
+You agree to indemnify and hold Fikra Ltd. and its parents, subsidiaries, affiliates, officers, employees, agents, partners and licensors (if any) harmless from any claim or demand, including reasonable attorneys' fees, due to or arising out of your: (a) use of the Application; (b) violation of this Agreement or any law or regulation; or (c) violation of any right of a third party.
+</p>
+
+<h5>No Warranties</h5>
+
+
+<p>The Application is provided to you "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, Fikra Ltd. , on its own behalf and on behalf of its affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Application, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, Fikra Ltd. provides no warranty or undertaking, and makes no representation of any kind that the Application will meet your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.<br>
+
+Without limiting the foregoing, neither Fikra Ltd. nor any Fikra Ltd. 's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Application, or the information, content, and materials or products included thereon; (ii) that the Application will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Application; or (iv) that the Application, its servers, the content, or e-mails sent from or on behalf of Fikra Ltd. are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.<br>
+
+Some jurisdictions do not allow the exclusion of or limitations on implied warranties or the limitations on the applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to you.</p>
+
+
+<h5>Limitation of Liability</h5>
+
+
+<p>Notwithstanding any damages that you might incur, the entire liability of Fikra Ltd. and any of its suppliers under any provision of this Agreement and your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by you for the Application.<br>
+
+To the maximum extent permitted by applicable law, in no event shall Fikra Ltd. or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, for loss of data or other information, for business interruption, for personal injury, for loss of privacy arising out of or in any way related to the use of or inability to use the Application, third-party software and/or third-party hardware used with the Application, or otherwise in connection with any provision of this Agreement), even if Fikra Ltd. or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.<br>
+
+Some states/jurisdictions do not allow the exclusion or limitation of incidental or consequential damages, so the above limitation or exclusion may not apply to you.</p>
+
+
+<h5>Severability</h5>
+
+
+<p>If any provision of this Agreement is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.<br>
+Waiver Except as provided herein, the failure to exercise a right or to require performance of an obligation under this Agreement shall not affect a party's ability to exercise such right or require such performance at any time thereafter nor shall be the waiver of a breach constitute waiver of any subsequent breach.
+</p>
+
+<h5>Amendments to this Agreement</h5>
+
+
+<p>Fikra Ltd. reserves the right, at its sole discretion, to modify or replace this Agreement at any time. If a revision is a material we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.<br>
+
+By continuing to access or use our Application after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use the Application.</p>
+
+
+<h5>Governing Law</h5>
+
+
+<p>The laws of Virgin Islands, British, excluding its conflicts of law rules, shall govern this Agreement and your use of the Application. Your use of the Application may also be subject to other local, state, national, or international laws.</p>
+
+
+<h5>Contact Information</h5>
+
+
+<p>If you have any questions about this Agreement, please contact us.</p>
+
+
+<h5>Entire Agreement</h5>
+
+
+<p>The Agreement constitutes the entire agreement between you and Fikra Ltd. regarding your use of the Application and supersedes all prior and contemporaneous written or oral agreements between you and Fikra Ltd.<br>
+
+You may be subject to additional terms and conditions that apply when you use or purchase other Fikra Ltd. 's services, which Fikra Ltd. will provide to you at the time of such use or purchase.
+</p>
+      
+  
+    </div>
+
+  <div *ngIf="activeUrl=='/privacypolicy'">
+    <h2>Privacy Policy</h2>
+    <h5 >This privacy policy governs your use of the software application myU ("Application") for mobile
+      devices that was created by Fikra Design and Management. The Application is a social network for college
+      students.</h5>
+
+    <h5>What information does the Application obtain and how is it used?</h5>
+    <p>User Provided Information. The Application obtains the information you provide when you download and register the
+      Application. Registration with us is optional. However, please keep in mind that you may not be able to use some
+      of the features offered by the Application unless you register with us.</p>
+    <br>
+    <p>When you register with us and use the Application, you generally provide:</p>
+
+    <ul>
+      <li>your name, email address, age, user name, password and other registration information;</li>
+      <li>transaction-related information, such as when you make purchases, respond to any offers, or download or use
+        applications from us;
+      </li>
+      <li>information you provide us when you contact us for help;</li>
+      <li>credit card information for purchase and use of the Application, and;</li>
+      <li>information you enter into our system when using the Application, such as contact information and project
+        management information.
+      </li>
+    </ul>
+    <p>We may also use the information you provided us to contact your from time to time to provide you with important
+      information, required notices and marketing promotions.</p>
+
+    <h5>Automatically Collected Information</h5>
+    <p>In addition, the Application may collect certain information automatically, including, but not limited to, the
+      type of mobile device you use, your mobile devices unique device ID, the IP address of your mobile device, your
+      mobile operating system, the type of mobile Internet browsers you use, and information about the way you use the
+      Application.</p>
+
+    <h5>Does the Application collect precise real time location information of the device?</h5>
+    <p>This Application does not collect precise information about the location of your mobile device.</p>
+
+    <h5>Do third parties see and/or have access to information obtained by the Application?</h5>
+    <p>Only aggregated, anonymized data is periodically transmitted to external services to help us improve the
+      Application and our service. We will share your information with third parties only in the ways that are described
+      in this privacy statement.</p>
+    <p>We may disclose User Provided and Automatically Collected Information:</p>
+
+    <ul>
+      <li>as required by law, such as to comply with a subpoena, or similar legal process;</li>
+      <li>when we believe in good faith that disclosure is necessary to protect our rights, protect your safety or the
+        safety of others, investigate fraud, or respond to a government request;
+      </li>
+      <li>with our trusted services providers who work on our behalf, do not have an independent use of the information
+        we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement.
+      </li>
+      <li>with the institution administration, when the database and network ownership is transferred to them</li>
+      <li>if Fikra Design and Management is involved in a merger, acquisition, or sale of all or a portion of its
+        assets, you will be notified via email and/or a prominent notice on our Web site of any change in ownership or
+        uses of this information, as well as any choices you may have regarding this information.
+      </li>
+    </ul>
+
+
+    <h5>What are my opt-out rights?</h5>
+    <p>You can stop all collection of information by the Application easily by uninstalling the Application. You may use
+      the standard uninstall processes as may be available as part of your mobile device or via the mobile application
+      marketplace or network. You can also request to opt-out via email, at <a href="mailto:info@myu.co">info@myu.co</a>
+    </p>
+
+    <h5>Data Retention Policy, Managing Your Information</h5>
+    <p>We will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. We
+      will retain Automatically Collected information for up to 1 year and thereafter may store it in aggregate. If
+      you’d like us to delete User Provided Data that you have provided via the Application, please contact us at
+      <a href="mailto:info@myu.co">info@myu.co</a> and we will respond in a reasonable time. Please note that some or
+      all of the User Provided Data may
+      be required in order for the Application to function properly.</p>
+
+    <h5>Children</h5>
+    <p>We do not use the Application to knowingly solicit data from or market to children under the age of 13. If a
+      parent or guardian becomes aware that his or her child has provided us with information without their consent, he
+      or she should contact us at <a href="mailto:info@myu.co">info@myu.co</a> We will delete such information from our
+      files within a reasonable
+      time.</p>
+
+    <h5>Security</h5>
+    <p>We are concerned about safeguarding the confidentiality of your information. We provide physical, electronic, and
+      procedural safeguards to protect information we process and maintain. For example, we limit access to this
+      information to authorized employees and contractors who need to know that information in order to operate, develop
+      or improve our Application. Please be aware that, although we endeavor provide reasonable security for information
+      we process and maintain, no security system can prevent all potential security breaches.</p>
+
+    <h5>Changes</h5>
+    <p>This Privacy Policy may be updated from time to time for any reason. We will notify you of any changes to our
+      Privacy Policy. You are advised to consult this Privacy Policy regularly for any changes, as continued use is
+      deemed approval of all changes.</p>
+
+    <h5>Your Consent</h5>
+    <p>By using the Application, you are consenting to our processing of your information as set forth in this Privacy
+      Policy now and as amended by us. "Processing" means using cookies on a computer/hand held device or using or
+      touching information in any way, including, but not limited to, collecting, storing, deleting, using, combining
+      and disclosing information, all of which activities will take place in the Kuwait. If you reside outside the
+      Kuwait your information will be transferred, processed and stored there under Kuwait privacy standards.</p>
+
+    <h5>Contact us</h5>
+    <p>If you have any questions regarding privacy while using the Application, or have questions about our practices,
+      please contact us via email at <a href="mailto:info@myu.co">info@myu.co</a></p>
+
+
+  </div>
+
+  <div *ngIf="activeUrl=='/temsofservice'">
+    <h2>Terms and Conditions of Use of myU app</h2>
+    <h5>Acceptance The Use Of myU app Terms and Conditions</h5>
+    <p> Your access to and use of myU app is subject exclusively to these Terms and Conditions. You will
+      not use the app for any purpose that is unlawful or prohibited by these Terms and Conditions. By using the app you
+      are fully accepting the terms, conditions and disclaimers contained in this notice. If you do not accept these
+      Terms and Conditions you must immediately stop using the app.</p>
+
+    <h5>Credit card details</h5>
+    <p>myU app will never ask for Credit Card details and request that you do not enter it on any of the
+      forms on myU app.</p>
+
+    <h5>Advice</h5>
+    <p>The contents of myU app do not constitute advice and should not be relied upon in making or
+      refraining from making, any decision.</p>
+
+    <h5>Change of Use</h5>
+    <p>myU app reserves the right to</p>
+    <ul>
+      <li> change or remove (temporarily or permanently) the app or any part of it without notice and you confirm that
+        myU app shall not be liable to you for any such change or removal and
+      </li>
+      <li>change these Terms and Conditions at any time, and your continued use of the app following any changes shall
+        be deemed to be your acceptance of such change
+      </li>
+    </ul>
+
+    <h5>Links to Third Party Websites</h5>
+    <p>myU app may include links to third party websites that are controlled and maintained by others.
+      Any link to other websites is not an endorsement of such websites and you acknowledge and agree that we are not
+      responsible for the content or availability of any such sites.</p>
+
+
+    <h5>Copyright</h5>
+    <ul>
+      <li>All copyright, trade marks and all other intellectual property rights in the app and its content (including
+        without limitation the app design, text, graphics and all software and source codes connected with the app) are
+        owned by or licensed to myU app or otherwise used by myU app as permitted by law.
+      </li>
+      <li>In accessing the app you agree that you will access the content solely for your personal, non-commercial use.
+        None of the content may be downloaded, copied, reproduced, transmitted, stored, sold or distributed without the
+        prior written consent of the copyright holder. This excludes the downloading, copying and/or printing of pages
+        of the app for personal, non-commercial home use only.
+      </li>
+    </ul>
+
+
+    <h5>Paid Accounts</h5>
+    <ul>
+      <li>Billing. You can increase your storage space and add other paid features to your account (which will turn your
+        account into a "Paid Account"). We'll automatically bill you from the date you convert to a Paid Account and on
+        each periodic renewal until cancellation. If you're on an annual plan, we'll send you a notice email reminding
+        you that your plan is about to renew within a reasonable period of time prior to the renewal date. You're
+        responsible for all applicable taxes, and we'll charge tax when required to do so. Some countries have mandatory
+        local laws regarding your cancellation rights, and this paragraph doesn't override these laws.
+      </li>
+      <li>No Refunds. You may cancel your myU Paid Account at any time. Canceling your Paid Account will not be subject
+        to any Refunds unless required by law in the country you reside in.
+      </li>
+      <li>Downgrades. Your Paid Account will remain in effect until it's cancelled or terminated under these Terms. If
+        you don't pay for your Paid Account on time, we reserve the right to suspend it or reduce your storage to free
+        space levels, and stop providing the other paid features.
+      </li>
+      <li>Changes. We may change the fees in effect but will give you notice of these changes via a message to the email
+        address associated with your account.
+      </li>
+    </ul>
+
+
+    <h5>Disclaimers and Limitation of Liability</h5>
+    <ul>
+      <li>The app is provided on an AS IS and AS AVAILABLE basis without any representation or endorsement made and
+        without warranty of any kind whether express or implied, including but not limited to the implied warranties of
+        satisfactory quality, fitness for a particular purpose, non-infringement, compatibility, security and accuracy.
+      </li>
+      <li>To the extent permitted by law, myU app will not be liable for any indirect or consequential loss or damage
+        whatever (including without limitation loss of business, opportunity, data, profits) arising out of or in
+        connection with the use of the app.
+      </li>
+      <li>myU app makes no warranty that the functionality of the app will be uninterrupted or error free, that defects
+        will be corrected or that the app or the server that makes it available are free of viruses or anything else
+        which may be harmful or destructive.
+      </li>
+      <li>Nothing in these Terms and Conditions shall be construed so as to exclude or limit the liability of myU app
+        for death or personal injury as a result of the negligence of myU app or that of its employees or agents.
+      </li>
+    </ul>
+
+
+    <h5>Indemnity</h5>
+    <p>You agree to indemnify and hold myU app and its employees and agents harmless from and against all liabilities,
+      legal fees, damages, losses, costs and other expenses in relation to any claims or actions brought against myU app
+      arising out of any breach by you of these Terms and Conditions or other liabilities arising out of your use of
+      this app.</p>
+
+    <h5>Severance</h5>
+    <p>If any of these Terms and Conditions should be determined to be invalid, illegal or unenforceable for any reason
+      by any court of competent jurisdiction then such Term or Condition shall be severed and the remaining Terms and
+      Conditions shall survive and remain in full force and effect and continue to be binding and enforceable.</p>
+
+
+  </div>
+
+  <div *ngIf="activeUrl=='/faqs'">
+
+
+    <div class="row">
+      <h2 class="">Frequently Asked Questions</h2>
+      <h5>This is a brief list of our most frequently asked questions. For further details or support please visit <a
+        href="http://www.myu.co" target="_blank">www.myu.co</a></h5><br>
+
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading" id="headingOne">
+            <h4 class="panel-title collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+              What is myU?
+
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse"
+          >
+            <div class="panel-body">
+              <strong>myU</strong> is a mobile app that allows students and educators to connect via sending reminders,
+              creating discussions, all in social network-like experience that is safe, instant and private. The app
+              makes it easy
+              to connect with anyone in the school community, makes classes more interactive, and sharing fun. We
+              envision a better empowered education through technology.
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" id="headingTwo">
+            <h4 class="panel-title collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+            >
+            How much does it cost?
+
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse"
+          >
+            <div class="panel-body">
+              $0.00 - available for free in the Apple App Store and Google Play store.
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" id="headingThree">
+            <h4 class="panel-title collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+            >
+            How did the idea come about?
+
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse"
+          >
+            <div class="panel-body">
+              We’ve all faced trouble with communications at school or as students at some point in our life, we thought
+              it’s about time we do something about it. Technology is changing the world and enhancing our experiences,
+              we thought of creating a tool that adds
+              to education and makes it interesting through:
+              <ul class="p_l_40">
+                <li>Instant Communication</li>
+                <li>Engagement</li>
+                <li>Interactivity</li>
+                <li>And the main ingredient FUN!</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" id="headingFour">
+            <h4 class="panel-title collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"
+           >
+            What other services are you compatible with?
+
+            </h4>
+          </div>
+          <div id="collapseFour" class="panel-collapse collapse"
+          >
+            <div class="panel-body">
+              Our app is currently Twitter, Facebook friendly you can share your profile with colleagues or students and
+              much more!
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" id="headingFive">
+            <h4 class="panel-title collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive"
+            >
+            How can we partner with you?
+
+            </h4>
+          </div>
+          <div id="collapseFive" class="panel-collapse collapse"
+          >
+            <div class="panel-body">
+              If you’re an organization looking to push to partner with us all you have to do is visit <a
+              href="http://www.myU.co" target="_blank">www.myU.co</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" id="headingSix">
+            <h4 class="panel-title collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix"
+            >
+            I have a technical problem or support issue I need resolved, who do I email?
+
+            </h4>
+          </div>
+          <div id="collapseSix" class="panel-collapse collapse" aria-labelledby="headingSix"
+          >
+            <div class="panel-body">
+              It’s best to visit <a href="http://www.myU.co" target="_blank">www.myU.co</a> for any technical problem.
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" id="headingSeven">
+            <h4 class="panel-title collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven"
+            >
+            How does privacy work?
+
+            </h4>
+          </div>
+          <div id="collapseSeven" class="panel-collapse collapse">
+            <div class="panel-body">
+              Your engagement on my is completely safe and private.
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" id="headingEight">
+            <h4 class="panel-title collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight"
+            >
+            Who can see my profile?
+
+            </h4>
+          </div>
+          <div id="collapseEight" class="panel-collapse collapse"
+          >
+            <div class="panel-body">
+              Only students and professors within your school community are able to see your profile.
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" id="headingNine">
+            <h4 class="panel-title collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine"
+            >
+              Can I share files?
+
+            </h4>
+          </div>
+          <div id="collapseNine" class="panel-collapse collapse" aria-labelledby="headingNine"
+          >
+            <div class="panel-body">
+              Currently you can share images and voice notes, sharing files will be available on a later stage of
+              development.
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" id="headingTen">
+            <h4 class="panel-title collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen"
+            >
+              Is myU App available on the web?
+
+            </h4>
+          </div>
+          <div id="collapseTen" class="panel-collapse collapse" aria-labelledby="headingTen"
+          >
+            <div class="panel-body">
+              Good news! We are currently working on a new design for the app, it provides you with a better feel and
+              more functionality through access via web.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <div *ngIf="activeUrl=='/aboutus'">
+
+    <h2>About Us</h2>
+    <p>
+      myU is a school communication and announcement tool. It acts as an internal social network for each school
+      composed
+      of students, faculty members, clubs and organizations. The app makes it easy to connect with anyone in the school
+      community, and makes communications real-time and sharing fun.<br><br>
+
+      myU is ideal for a faculty member wanting to send a class announcement to students, an organization looking to
+      promote its events and activities, or a student looking to ask about a missing homework, an exam date or to speak
+      their mind to their peers at school.<br><br>
+
+      myU is a smartphone app that runs on iOS device, and acts as a third party cloud based service. The technology
+      requires no integration with the school’s systems.
+    </p>
+  </div>
+</div>
+<p>&nbsp;</p>
+
+<footer *ngIf="!isLoggedin" class="myu_footer">
+  <div class="container">
+    <div class="footer_top">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <a href="https://twitter.com/MyU_app" target="_blank" class="margin_l30">
+            <img src="../../../../assets/images/twitter-logo-silhouette.svg" alt="Twitter">
+          </a>
+          <a href="https://www.facebook.com/myuappsocial" target="_blank" class="margin_l30">
+            <img src="../../../../assets/images/facebook.svg" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/myu_app/" target="_blank" class="margin_l30">
+            <img src="../../../../assets/images/insta.svg" alt="Instagram">
+          </a>
+          <a href="https://www.youtube.com/channel/UCUMNBJ4b1FotxjLHEbAUnLA" target="_blank" class="margin_l30">
+            <img src="../../../../assets/images/youtube.svg" alt="Youtube">
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <div class="footer_links">
+            <!--<a class="c_p" (click)="routeUser('aboutus')" i18n="@@aboutUs">ABOUT US</a> |-->
+            <a class="c_p" (click)="routeUser('faqs')" i18n="@@faqs">FAQS</a> <span class="spaceforline">|</span>
+            <a class="c_p" (click)="routeUser('UserLicenseAgreement')" i18n="@@UserLicenseAgreement">User License Agreement</a><span class="spaceforline">|</span>
+            <a class="c_p" (click)="routeUser('temsofservice')" i18n="@@tos">TERMS OF SERVICE</a>  <span class="spaceforline">|</span>            
+            <a class="c_p" (click)="routeUser('privacypolicy')" i18n="@@pp">PRIVACY POLICY</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="copy_text" i18n="@@myuCopyright" style="color: #666; font-weight:400;">MyU &copy; Copyright 2019 | All Rights Reserved</div>
+  </div>
+</footer>
+
+<!--<footer *ngIf="!isLoggedin" class="myu_footer">
+  <div class="container">
+    <div class="footer_top">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <a href="https://twitter.com/MyU_app" target="_blank" class="margin_l30"><img src="../assets/images/twitter-logo-silhouette.svg" alt="Twitter"></a>
+          <a href="https://www.facebook.com/myuappsocial" target="_blank" class="margin_l30"><img src="../assets/images/facebook.svg" alt="Facebook"></a>
+          <a href="https://www.instagram.com/myu_app/" target="_blank" class="margin_l30"><img src="../assets/images/insta.svg" alt="Instagram"></a>
+          <a href="https://www.youtube.com/channel/UCUMNBJ4b1FotxjLHEbAUnLA" target="_blank" class="margin_l30"><img src="../assets/images/youtube.svg" alt="Youtube"></a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <div class="footer_links">
+            <a class="c_p" (click)="routeUser('aboutus')" i18n="@@aboutUs">ABOUT US</a> |
+            <a class="c_p" (click)="routeUser('faqs')" i18n="@@faqs">FAQS</a> |
+            <a class="c_p" (click)="routeUser('temsofservice')" i18n="@@tos">TERMS OF SERVICE</a> |
+            <a class="c_p" (click)="routeUser('privacypolicy')" i18n="@@pp">PRIVACY POLICY</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="copy_text" i18n="@@myuCopyright">MyU © Copyright 2016 | All Rights</div>
+  </div>
+</footer>-->

@@ -1,0 +1,201 @@
+<!--HEADE START-->
+<div class="navbar_wrapper bg_color navbar_fixed_top">
+    <div class="container">
+        <nav class="navbar" id="myScrollspy">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle edits collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+                <a class="navbar-brand" href="#">
+                    <img class="" src="assets/images/logo_myu.png" alt="myU">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav">
+                    <li style="width: auto;" (click)="routeUser('aboutmyu')"><a class="fontfamlilyHelvitaca c_p"><span i18n="@@aboutApp">ABOUT MYU</span></a></li>
+                    <li style="width: auto;" (click)="routeUser('forteacher')"><a style="font-weight : bold; color : #E53481 !important" class="fontfamlilyHelvitaca c_p"><span i18n="@@forTech">FOR TEACHERS</span></a></li>
+                    <li style="width: auto;" (click)="routeUser('forschool')"><a class="fontfamlilyHelvitaca c_p"><span i18n="@@forSch">FOR SCHOOLS</span></a></li>
+                    <!--<li style="width: auto;"><a href="#testimonial" class="fontfamlilyHelvitaca" i18n="@@testimonials">TESTIMONIALS</a></li>-->
+                    <!--<li style="width: auto;" (click)="routeUser('/')"><a class="fontfamlilyHelvitaca" i18n="@@contactUs">CONTACT US</a></li>-->
+                </ul>
+
+                <!--<span class="lang_link"> <a href="http://qa-cms.myu.co/myu/ar/">العربية</a></span>-->
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li style="width: auto;" *ngIf="language=='ar'" (click)="handleLanguageChange('')"><a class="c_p" style="font-size: 16px!important;">English</a></li>
+                    <li style="width: auto;" *ngIf="language=='en'" (click)="handleLanguageChange('ar')"><a class="c_p" style="font-size: 18px!important;">العربية</a></li>
+
+                    <li style="width: auto; margin-top: 10px;">
+                        <a class="c_p loginBtn" style="font-size: 13px!important; font-family: inherit;" (click)="openLogin()" i18n="@@login">Login</a>
+                    </li>
+                    <!-- <li><a href="/" style="font-size:18px !important;">العربية</a></li> -->
+                </ul>
+
+
+            </div>
+        </nav>
+    </div>
+</div>
+<!--HEADE END-->
+
+<!--WORKAREA START-->
+<section class="p_r" style="margin-top: 57px;">
+    <img src="assets/images/circle_1.svg" alt="" style="position:absolute; z-index:1; bottom:-130px; left:0;">
+    <figure class="forSchool p_r"><img src="assets/images/forTeacher.jpg" alt="" title="">
+        <figcaption><br><br><br><br>
+            <div class="container text-center c_fff">
+                <h2 class="text-uppercase p_b_10 f_s_32" i18n="@@forteachers_1">CONNECT EASILY WITH STUDENTS AND PARENTS</h2>
+                <p class="f_s_18" i18n="@@forteachers_2">Without sharing your phone number or personal information</p>
+                <br><br><br><br>
+                <button type="button" class="btn btn-theam btn-lg f_s_12 text-uppercase" style="padding: 11px 0; width:200px;" (click)="openRegister()" i18n="@@forschool_16">sign up for free</button>
+                <!--<h3>Used in 2000+ Schools</h3>-->
+            </div>
+        </figcaption>
+    </figure>
+</section>
+
+<section class="p_y_20 container">
+    <br>
+    <h1 class="text-center c_000"><img src="assets/images/pft.png" alt="" title=""> &nbsp;<span i18n="@@forteachers_3">Plans for teachers</span></h1><br>
+    <p class="c_000 f_s_18" style="max-width:900px; margin:auto" i18n="@@fortteacher_6">Keep your students engaged, increase your class productivity, enrich the teaching experience and suppliment it with videos and articles from the web. Send parents picture of their children and answer their questions on important matters instantly.
+        All that and more, when you use MyU!</p>
+
+
+    <div class="plans">
+
+        <ul class="list-group" style="border-top:6px solid #f86833; border-radius:10px;">
+            <li class="list-group-item" i18n="@@forschool_7">Free</li>
+            <li class="list-group-item bg_f5f6f9" i18n="@@forschool_7">Free</li>
+            <li class="list-group-item" i18n="@@forschool_8">Web/mobile app</li>
+            <li class="list-group-item" i18n="@@forteachers_4">No phone number sharing</li>
+            <li class="list-group-item" i18n="@@forteachers_5">Unlimited posts</li>
+            <li class="list-group-item" i18n="@@forschool_10">Unlimited private messages</li>
+            <li class="list-group-item" i18n="@@forschool_11">Unlimited attendance sessions</li>
+            <li class="list-group-item" i18n="@@forteachers_6">Exportable attendance report</li>
+            <li class="list-group-item" i18n="@@forteachers_7">No student limit</li>
+            <li class="list-group-item" i18n="@@forteachers_8">Upto 8 active classes</li>
+            <li class="list-group-item" i18n="@@forteachers_9">Unlimited archived classes</li>
+            <li class="list-group-item" i18n="@@forschool_13">Upto 4 images on each post</li>
+            <li class="list-group-item" i18n="@@forschool_14">Upto 3 minutes video </li>
+            <li class="list-group-item" i18n="@@forschool_15">100 MB document storage space</li>
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item">&nbsp;</li>
+            <button type="button" class="btn btn-theam text-uppercase" (click)="openRegister()" i18n="@@forschool_16"> sign up for free</button>
+
+        </ul>
+
+        <ul class="list-group" style="border-top:6px solid #E53481; border-radius:10px;">
+            <li class="list-group-item" i18n="@@forschool_23">prime</li>
+            <li class="list-group-item" i18n="@@forteachers_10">$99.99/year</li>
+            <li class="list-group-item" i18n="@@forschool_8">Web/mobile app</li>
+            <li class="list-group-item" i18n="@@forteachers_4">No phone number sharing</li>
+            <li class="list-group-item" i18n="@@forteachers_5">Unlimited posts</li>
+            <li class="list-group-item" i18n="@@forschool_10">Unlimited private messages</li>
+            <li class="list-group-item" i18n="@@forschool_11">Unlimited attendance sessions</li>
+            <li class="list-group-item" i18n="@@forteachers_6">Exportable attendance report</li>
+            <li class="list-group-item" i18n="@@forteachers_7">No student limit</li>
+            <li class="list-group-item" i18n="@@forteachers_11"><strong>Upto 12</strong> active classes</li>
+            <li class="list-group-item" i18n="@@forteachers_9">Unlimited archived classes</li>
+            <li class="list-group-item" i18n="@@forschool_26"><strong>Upto 8</strong> images on each post</li>
+            <li class="list-group-item" i18n="@@forschool_27"><strong>Upto 10 minutes</strong> video </li>
+            <li class="list-group-item" i18n="@@forschool_28"><strong>100 GB</strong> document storage space</li>
+            <li class="list-group-item" i18n="@@forteachers_12">Higher rank on lists</li>
+            <li class="list-group-item" i18n="@@forschool_31">Priority technical support</li>
+            <li class="list-group-item">&nbsp;</li>
+            <button type="button" class="btn btn-theam text-uppercase" data-backdrop="static" (click)="openRegister()" i18n="@@signup_for_teachers">SIGN UP</button>
+        </ul>
+
+    </div>
+
+</section>
+
+<section class="hiw">
+    <h1 class="f_w_b m_t_20 text-center"><img src="assets/images/howItWorkicons.png"> &nbsp; <span i18n="@@forteachers_14">How it works?</span></h1><br><br>
+    <figure class="lleft" *ngIf="language=='en'"><img src="assets/images/howItWorkLeft.jpg" alt="" title="" width="549" height="516"></figure>
+    <figure class="lleft" *ngIf="language=='ar'"><img src="assets/images/howItWorkLeft_ar.jpg" alt="" title="" width="549" height="516"></figure>
+    <figure class="lright" *ngIf="language=='en'"><img src="assets/images/howItWorkRight.jpg" alt="" title="" width="549" height="516"></figure>
+    <figure class="lright" *ngIf="language=='ar'"><img src="assets/images/howItWorkRight_ar.jpg" alt="" title="" width="549" height="516"></figure>
+
+</section>
+
+<div class="clearfix"></div>
+
+<section class="container">
+    <br><br><br>
+    <h1 class="f_w_b m_t_20 text-center"><img src="assets/images/powering.png"> &nbsp; <span i18n="@@forteachers_15">Empowering schools and families</span></h1>
+    <br>
+    <p class="c_000 f_s_18 text-center p_l_30 m_b_20" i18n="@@forteachers_16">Watch this short report about MyU</p>
+
+    <p style="max-width:800px; margin:auto;">
+        <iframe width="100%" height="480" src="https://www.youtube.com/embed/OOmfnJFVu0U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </p>
+
+    <div class="text-center">
+        <br><br>
+        <p class="text-muted text-center f_s_18 p_b_10" i18n="@@forteachers_17">Download from here:</p>
+
+        <span><a href="https://itunes.apple.com/app/myu-app/id740372863?mt=8" target="_blank"><img src="assets/images/appIOS.png" alt="" title=""></a></span>&nbsp; &nbsp;
+        <span><a href="https://play.google.com/store/apps/details?id=com.myu.android" target="_blank"><img src="assets/images/appGOOGLE.png" alt="" title=""></a></span>
+    </div>
+</section>
+
+<section>
+    <br><br><br>
+    <div style="background-image:linear-gradient(to left, #f6f7fb, rgba(0,0,0,0.2), #f6f7fb); height:2px;"></div>
+    <div class="container">
+        <br><br><br>
+        <h1 class="f_w_b m_t_20 text-center m_b_25"><img src="assets/images/comm.png" alt="" title=""> &nbsp; <span i18n="@@forteachers_18">Are you a school administrator?</span></h1>
+
+        <p class="c_000 f_s_18 text-center" i18n="@@forteachers_19">Learn about MyU for Schools</p>
+        <p class="text-center m_t_15">
+            <br>
+            <button type="button" class="btn btn-theam btn-lg f_s_12 text-uppercase m_r_15 m_b_10" style="padding: 11px 0; width:200px;" i18n="@@forteachers_20" (click)="routeUser('forschool')">for schools</button>
+        </p>
+    </div>
+</section>
+<br>
+<br>
+<br>
+<!--WORKAREA END-->
+<!--FOOTER START-->
+<footer class="myu_footer">
+    <div class="container">
+        <div class="footer_top">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <a href="https://twitter.com/MyU_app" target="_blank" class="margin_l30">
+                        <img src="../../../../assets/images/twitter-logo-silhouette.svg" alt="Twitter">
+                    </a>
+                    <a href="https://www.facebook.com/myuappsocial" target="_blank" class="margin_l30">
+                        <img src="../../../../assets/images/facebook.svg" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/myu_app/" target="_blank" class="margin_l30">
+                        <img src="../../../../assets/images/insta.svg" alt="Instagram">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCUMNBJ4b1FotxjLHEbAUnLA" target="_blank" class="margin_l30">
+                        <img src="../../../../assets/images/youtube.svg" alt="Youtube">
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="footer_links">
+                        <!--<a class="c_p" (click)="routeUser('aboutus')" i18n="@@aboutUs">ABOUT US</a> |-->
+                        <a class="c_p" (click)="routeUser('faqs')" i18n="@@faqs">FAQS</a> <span class="spaceforline">|</span>
+                        <a class="c_p" (click)="routeUser('UserLicenseAgreement')" i18n="@@UserLicenseAgreement">User License Agreement</a><span class="spaceforline">|</span>
+                        <a class="c_p" (click)="routeUser('temsofservice')" i18n="@@tos">TERMS OF SERVICE</a> <span class="spaceforline">|</span>
+                        <a class="c_p" (click)="routeUser('privacypolicy')" i18n="@@pp">PRIVACY POLICY</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="copy_text" i18n="@@myuCopyright" style="color: #666; font-weight:400;">MyU &copy; Copyright 2019 | All Rights Reserved</div>
+    </div>
+</footer>
+<!--FOOTER END-->

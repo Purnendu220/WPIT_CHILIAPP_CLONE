@@ -1,0 +1,236 @@
+<!--HEADE START-->
+<div class="navbar_wrapper bg_color navbar_fixed_top">
+    <div class="container">
+        <nav class="navbar" id="myScrollspy">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle edits collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+                <a class="navbar-brand" href="#">
+                    <img class="" src="assets/images/logo_myu.png" alt="myU">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li style="width: auto;" (click)="routeUser('aboutmyu')"><a class="fontfamlilyHelvitaca c_p"><span i18n="@@aboutApp">ABOUT MYU</span></a></li>
+                    <li style="width: auto;" (click)="routeUser('forteacher')"><a class="fontfamlilyHelvitaca c_p"><span i18n="@@forTech">FOR TEACHERS</span></a></li>
+                    <li style="width: auto;" (click)="routeUser('forschool')"><a style="font-weight : bold; color : #E53481 !important" class="fontfamlilyHelvitaca c_p"><span i18n="@@forSch">FOR SCHOOLS</span></a></li>
+                    <!--<li style="width: auto;"><a href="#testimonial" class="fontfamlilyHelvitaca" i18n="@@testimonials">TESTIMONIALS</a></li>-->
+                    <!--<li style="width: auto;" (click)="routeUser('/')"><a class="fontfamlilyHelvitaca" i18n="@@contactUs">CONTACT US</a></li>-->
+                </ul>
+
+                <!--<span class="lang_link"> <a href="http://qa-cms.myu.co/myu/ar/">العربية</a></span>-->
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li style="width: auto;" *ngIf="language=='ar'" (click)="handleLanguageChange('')"><a class="c_p" style="font-size: 16px!important;">English</a></li>
+                    <li style="width: auto;" *ngIf="language=='en'" (click)="handleLanguageChange('ar')"><a class="c_p" style="font-size: 18px!important;">العربية</a></li>
+                    <li style="width: auto; margin-top: 10px;">
+                        <a class="c_p loginBtn" style="font-size: 13px!important; font-family: inherit;" (click)="openLogin()" i18n="@@login">Login</a>
+                    </li>
+                    <!-- <li><a href="/" style="font-size:18px !important;">العربية</a></li> -->
+                </ul>
+
+
+            </div>
+        </nav>
+    </div>
+</div>
+<!--HEADE END-->
+
+<!--WORKAREA START-->
+<section class="p_r" style="margin-top: 57px;">
+    <img src="assets/images/circle_1.svg" alt="" style="position:absolute; z-index:1; bottom:-130px; left:0;">
+    <figure class="forSchool p_r"><img src="assets/images/forSchool.jpg" alt="" title="">
+        <figcaption><br><br><br><br>
+            <div class="container text-center c_fff">
+                <h2 class="p_b_10 f_s_32" i18n="@@forschool_1">MyU FOR SCHOOLS</h2>
+                <p class="f_s_18" i18n="@@forschool_2">Engage your school community in an easy, safe and fun <br> communication experience!</p>
+                <br><br><br><br>
+                <button type="button" class="btn btn-theam btn-lg f_s_12 expooo" style="padding: 11px 0; width:200px;" i18n="@@forschool_3">EXPLORE OPTIONS</button>
+                <h3 class="f_s_21" i18n="@@forschool_4">Used in 1000+ Schools</h3>
+            </div>
+        </figcaption>
+    </figure>
+</section>
+
+
+<section class="p_y_20 container second">
+    <br>
+    <h1 class="text-center c_000 "><img src="assets/images/ingage.png"> &nbsp;<span i18n="@@forschool_5">Engage your communy safely!</span></h1><br>
+    <p class="c_000 f_s_18" style="max-width:900px; margin:auto;" i18n="@@forschool_6">Keep your students engaged and their parents satisfied. Ensure that your communication is safe, and under the school supervision. Enrich your school experience, while maintaining the privacy of everyone’s personal information. Use the admin panel
+        to view stats, share push notifications and more...!</p>
+
+    <div class="plans">
+
+        <ul class="list-group" style="border-top:6px solid #f86833; border-radius:10px;">
+            <li class="list-group-item" i18n="@@forschool_7">Free</li>
+            <li class="list-group-item bg_f5f6f9" i18n="@@forschool_7">Free</li>
+            <li class="list-group-item" i18n="@@forschool_8">Web/mobile app</li>
+            <li class="list-group-item" i18n="@@forschool_9">Unlimited accounts</li>
+            <li class="list-group-item" i18n="@@forschool_10">Unlimited private messages</li>
+            <li class="list-group-item" i18n="@@forschool_11">Unlimited attendance sessions</li>
+            <li class="list-group-item" i18n="@@forschool_12">Upto 8 active classes per teacher</li>
+            <li class="list-group-item" i18n="@@forschool_13">Upto 4 images on each post</li>
+            <li class="list-group-item" i18n="@@forschool_14">Upto 3 minutes video </li>
+            <li class="list-group-item" i18n="@@forschool_15">100 MB document storage space</li>
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item">&nbsp;</li>
+            <button type="button" class="btn btn-theam text-uppercase" (click)="openRegister()" i18n="@@forschool_16">sign up for free</button>
+
+        </ul>
+
+        <ul class="list-group" style="border-top:6px solid #fcc846; border-radius:10px;">
+            <li class="list-group-item" i18n="@@forschool_17">basic</li>
+            <li class="list-group-item" i18n="@@forschool_18">From $1,499/year</li>
+            <li class="list-group-item" i18n="@@forschool_8">Web/mobile app</li>
+            <li class="list-group-item" i18n="@@forschool_9">Unlimited accounts</li>
+            <li class="list-group-item" i18n="@@forschool_10">Unlimited private messages</li>
+            <li class="list-group-item" i18n="@@forschool_11">Unlimited attendance sessions</li>
+            <li class="list-group-item" i18n="@@forschool_12">Upto 8 active classes per teacher</li>
+            <li class="list-group-item" i18n="@@forschool_13">Upto 4 images on each post</li>
+            <li class="list-group-item" i18n="@@forschool_14">Upto 3 minutes video </li>
+            <li class="list-group-item" i18n="@@forschool_15">100 MB document storage space</li>
+            <li class="list-group-item" i18n="@@forschool_19">Analytics dashboard</li>
+            <li class="list-group-item" i18n="@@forschool_20">User database dashboard</li>
+            <li class="list-group-item" i18n="@@forschool_21">Monitoring of communication</li>
+            <li class="list-group-item" i18n="@@forschool_22">Bulk push notifications</li>
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item">&nbsp;</li>
+            <button type="button" class="btn btn-theam text-uppercase" i18n="@@forschool_30" data-toggle="modal" data-target="#reqQuote">request a quote</button>
+
+        </ul>
+
+        <ul class="list-group" style="border-top:6px solid #E53481; border-radius:10px;">
+            <li class="list-group-item" i18n="@@forschool_23">prime</li>
+            <li class="list-group-item" i18n="@@forschool_24">From $2,499/year</li>
+            <li class="list-group-item" i18n="@@forschool_8">Web/mobile app</li>
+            <li class="list-group-item" i18n="@@forschool_9">Unlimited accounts</li>
+            <li class="list-group-item" i18n="@@forschool_10">Unlimited private messages</li>
+            <li class="list-group-item" i18n="@@forschool_11">Unlimited attendance sessions</li>
+            <li class="list-group-item" i18n="@@forschool_25"><strong>Upto 12</strong> active classes per teacher</li>
+            <li class="list-group-item" i18n="@@forschool_26"><strong>Upto 8</strong> images on each post</li>
+            <li class="list-group-item" i18n="@@forschool_27"><strong>Upto 10 minutes</strong> video</li>
+            <li class="list-group-item" i18n="@@forschool_28"><strong>100 GB</strong> document storage space</li>
+            <li class="list-group-item" i18n="@@forschool_19">Analytics dashboard</li>
+            <li class="list-group-item" i18n="@@forschool_20">User database dashboard</li>
+            <li class="list-group-item" i18n="@@forschool_21">Monitoring of communication</li>
+            <li class="list-group-item" i18n="@@forschool_22">Bulk push notifications</li>
+            <li class="list-group-item" i18n="@@forschool_29">Feature customisation</li>
+            <li class="list-group-item" i18n="@@forschool_31">Priority support</li>
+            <li class="list-group-item">&nbsp;</li>
+            <button type="button" class="btn btn-theam text-uppercase" i18n="@@forschool_30" data-toggle="modal" data-target="#reqQuote">request a quote</button>
+        </ul>
+
+    </div>
+
+</section>
+<div class="modal fade" id="reqQuote">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content bg_white border_r_n">
+            <div class="modal-header">
+                <h3 class="f_s_22 c_262626 text-center" style="margin-top: 0;">Prime School <i class="material-icons c_333 pull-right c_p" data-dismiss="modal">close</i></h3>
+            </div>
+            <div class="modal-body">
+                <form id="leadForFaculty">
+                    <div class="form-group">
+                        <!--<label>Email</label>-->
+                        <input type="text" id="school_data" class="form-control" placeholder="school/university name">
+                    </div>
+                    <div class="form-group">
+                        <!--<label>Email</label>-->
+                        <input type="text" id="emailData" class="form-control" #email placeholder="Email">
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="summernote" class="form-control" placeholder="add here"></textarea>
+                    </div>
+
+
+                    <p class="text-center">
+                        <br><br>
+                        <button class="btn bg_color_none btn-lg f_s_12 text-uppercase theam_text m_r_15 m_b_10" style="width:200px; border:1px solid #E53481;" type="button" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-theam btn-lg f_s_12 text-uppercase m_r_15 m_b_10" style="width:200px;" type="button" (click)="leadForSchoolFromWebapp(email.value)">Submit</button>
+                    </p>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="testimonials p_r">
+    <figure><img src="assets/images/circle_2.svg" alt="" title="" style="position:absolute; right:0; top:-127px;"></figure>
+    <div class="media container" style="padding:0 120px;">
+        <figure class="pull-left m_r_10"><img class="b_r_full" src="assets/images/testimonialss.png" alt="" title="" style="width:95px; height:95px;"></figure>
+        <div class="media-body f_s_24 p_t_15" i18n="@@forschool_32">As a school principal, MyU helps as an effective channel to communicate with different segments. I connect with students to answer their questions, and with parents to address their requests. This helps save parents' time and bridge the gap between
+            them and the school. From a technical view point, it was hard for me as a principal to visit the large number of classes happening every day in the school. But, MyU enabled me to part of these classes digitally, and understand the teaching
+            methods teachers are using and the nature of communication within them.</div>
+        <div class="clearfix"></div>
+        <h4 class="f_w_b m_t_20" i18n="@@forschool_33">Nawal Aldakheel</h4>
+        <p class="f_s_12 c_000" i18n="@@forschool_34">Principal, Mama Anisa School, Kuwait</p>
+    </div>
+</section>
+
+
+<section class="container">
+    <br><br><br>
+    <h1 class="m_t_20 text-center f_s_38"><img src="assets/images/comm.png"> &nbsp; <span i18n="@@forschool_35">Are you a school chain or a district?</span></h1>
+    <p class="text-center">
+        <br><br>
+        <!--<button type="button" class="btn bg_color_none btn-lg f_s_12 text-uppercase theam_text m_r_15 m_b_10" style="padding: 11px 0; width:200px; border:1px solid #E53481;" i18n="@@forschool_36">learn more</button>-->
+        <button type="button" class="btn btn-theam btn-lg f_s_12 text-uppercase m_r_15 m_b_10" style="padding: 11px 0; width:200px;" i18n="@@forschool_37" data-toggle="modal" data-target="#reqQuote">request a quote</button>
+    </p>
+</section>
+
+<br>
+<br>
+<br>
+<!--WORKAREA END-->
+
+<!--FOOTER START-->
+<footer class="myu_footer">
+    <div class="container">
+        <div class="footer_top">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <a href="https://twitter.com/MyU_app" target="_blank" class="margin_l30">
+                        <img src="../../../../assets/images/twitter-logo-silhouette.svg" alt="Twitter">
+                    </a>
+                    <a href="https://www.facebook.com/myuappsocial" target="_blank" class="margin_l30">
+                        <img src="../../../../assets/images/facebook.svg" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/myu_app/" target="_blank" class="margin_l30">
+                        <img src="../../../../assets/images/insta.svg" alt="Instagram">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCUMNBJ4b1FotxjLHEbAUnLA" target="_blank" class="margin_l30">
+                        <img src="../../../../assets/images/youtube.svg" alt="Youtube">
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="footer_links">
+                        <!--<a class="c_p" (click)="routeUser('aboutus')" i18n="@@aboutUs">ABOUT US</a> |-->
+                        <a class="c_p" (click)="routeUser('faqs')" i18n="@@faqs">FAQS</a> <span class="spaceforline">|</span>
+                        <a class="c_p" (click)="routeUser('UserLicenseAgreement')" i18n="@@UserLicenseAgreement">User License Agreement</a><span class="spaceforline">|</span>
+                        <a class="c_p" (click)="routeUser('temsofservice')" i18n="@@tos">TERMS OF SERVICE</a> <span class="spaceforline">|</span>
+                        <a class="c_p" (click)="routeUser('privacypolicy')" i18n="@@pp">PRIVACY POLICY</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="copy_text" i18n="@@myuCopyright" style="color: #666; font-weight:400;">MyU &copy; Copyright 2019 | All Rights Reserved</div>
+    </div>
+</footer>
+<!--FOOTER END-->

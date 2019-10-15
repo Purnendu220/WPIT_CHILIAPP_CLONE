@@ -1,0 +1,206 @@
+<section class="container p_y_30">
+  <div class="row edit_profile">
+
+    <div class="col-md-3">
+      <ul class="nav nav-tabs nav-stacked">
+        <li class="active">
+          <a href="#info" data-toggle="tab" i18n="@@personalInfo">Personal Info</a>
+        </li>
+        <li>
+          <a href="#password" data-toggle="tab" i18n="@@changePassword">Change Password</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-9 profile_details">
+      <div class="tab-content">
+
+        <div class="tab-pane fade in active" id="info">
+          <figure class="coverPic">
+            <img [src]="userData?.backgroundImage?.mediaPath | defaultImage: 'coverImage'" alt="" title="">
+            <div class="chooseCoverPic">
+              <input dir="{{siteDirection}}" accept=" image/* " type="file" class="chooseFile" (change)="afterFileChageToUpload($event.target.files, 'background')" #coverInput>
+              <img src="/assets/images/chooseCoverPic.png" alt="Choose Cover Pic" title="Choose Cover Pic" style="width:75px; height:75px;">
+
+              <p class="m_t_15" i18n="@@changeCover">Change your cover photo</p>
+
+
+
+              <div *ngIf="uploadBackgroundProgess" class="spin_pos_thumb">
+                <div class="loaderProfileUpload">
+                  <div class="loaderIcons"></div>
+                </div>
+              </div>
+              <div *ngIf="userData?.backgroundImage" class="deletebtn"><!--<span class="p_r_10"><a href="#" class="c_000 tdn">Change Pic</a></span>--> <span class="c_p" (click)="deleteMedia(userData?.backgroundImage?.id,'back')"><a class="c_fff tdn c_p">Remove Photo</a></span></div>
+            </div>
+          </figure>
+
+
+          <form [formGroup]="editProfileForm">
+            <div class="text-danger">{{successMessage}}</div>
+
+
+            <div class="bg_white row p_x_40" style="box-shadow: 0 1px 3px 0 #d4d4d4;">
+              <figure class="edit_profileDetailsPic p_r">
+                <img class="img-circle" [src]="userData?.profileImage?.thumbnailPath |defaultImage: 'userProfile'" alt="Profile Pic" title="Profile Pic">
+                <input dir="{{siteDirection}}" accept=" image/* " type="file" class="chooseFile" (change)="afterFileChageToUpload($event.target.files, 'profile')" #fileInput>
+                <div *ngIf="uploadProfileProgess" class="spin_pos_thumb">
+                  <div class="loaderProfileUpload">
+                    <div class="loaderIcons"></div>
+                  </div>
+                </div>
+                <img src="/assets/images/cam.png" class="pic" alt="" title="">
+                <div *ngIf="userData?.profileImage" class="deletebtn"><!--<span class="p_r_10"><a href="#" class="c_000 tdn">Change Pic</a></span>--> <span class="c_p" (click)="deleteMedia(userData?.profileImage?.id,'prof')"><a  class="c_c8cfd4 tdn">Remove Photo</a></span></div>
+              </figure>
+
+
+
+              <div class="form-group has-feedback">
+                <input dir="{{siteDirection}}" type="text" class="form-control" placeholder="Name" formControlName="name" i18n-placeholder/>
+                <app-validation-message-component [control]="editProfileForm.controls['name']"></app-validation-message-component>
+                <span class="form-control-feedback">
+                  <i class="material-icons">&#xE7FD;</i>
+                </span>
+              </div>
+
+              <div class="form-group has-feedback">
+                <input dir="{{siteDirection}}" type="text" class="form-control" placeholder="Username" formControlName="username" i18n-placeholder/>
+                <app-validation-message-component [control]="editProfileForm.controls['username']"></app-validation-message-component>
+                <span class="form-control-feedback">
+                  <i class="material-icons">&#xE815;</i>
+                </span>
+              </div>
+
+              <div class="form-group has-feedback">
+                <input dir="{{siteDirection}}" type="text" class="form-control" formControlName="universityName" disabled="disabled">
+                <span class="form-control-feedback">
+                  <i class="material-icons">&#xE84F;</i>
+                </span>
+              </div>
+
+
+
+              <div class="form-group has-feedback">
+              <ngx-select-dropdown class="customDiv widthCtn" [multiple]="false" [(value)]="selectedDepartment" [config]="configDepartment" [options]="departmentList"></ngx-select-dropdown>
+                <span class="form-control-feedback">
+                  <i class="material-icons">&#xE80C;</i>
+                </span>
+              </div>
+
+              <div class="form-group has-feedback">
+                <ngx-select-dropdown class="customDiv" [multiple]="false" [(value)]="selectedGraduationYear" [config]="configGraduationYear" [options]="graduationYearList"></ngx-select-dropdown>
+                  <span class="form-control-feedback">
+                    <i class="material-icons">settings</i>
+                  </span>
+                </div>
+
+
+              <div class="form-group has-feedback">
+                <textarea dir="{{siteDirection}}"   type="text" class="form-control" rows="3" placeholder="Bio" maxlength="150" formControlName="bio" [(ngModel)]="bioModel" i18n-placeholder></textarea>
+                <app-validation-message-component [control]="editProfileForm.controls['bio']"></app-validation-message-component>
+                <span class="form-control-feedback">
+                  <i class="material-icons">&#xE000;</i>
+                </span>
+                <p class="c_abb7cd text-right f_s_12 m_t_10">{{bioModel.length}}/150</p>
+              </div>
+            </div>
+
+
+            <div class="bg_white row p_x_40 m_t_30 p_t_25" style="box-shadow: 0 1px 3px 0 #d4d4d4;">
+              <div class="form-group has-feedback">
+                <input dir="{{siteDirection}}" type="text" class="form-control" placeholder="Email" formControlName="email" i18n-placeholder>
+                <app-validation-message-component [control]="editProfileForm.controls['email']"></app-validation-message-component>
+                <span class="form-control-feedback">
+                  <i class="material-icons">&#xE554;</i>
+                </span>
+              </div>
+              <div class="form-group has-feedback">
+                <input dir="{{siteDirection}}" type="text" class="form-control" placeholder="Please enter your phone number" maxlength="16" formControlName="mobileNumber" i18n-placeholder/>
+                <app-validation-message-component [control]="editProfileForm.controls['mobileNumber']"></app-validation-message-component>
+                <span class="form-control-feedback">
+                  <i class="material-icons">&#xE325;</i>
+                </span>
+              </div>
+
+              <div class="form-group has-feedback">
+                <select dir="{{siteDirection}}" type="text" class="form-control" formControlName="gender">
+                  <option i18n="@@male" value="Male">Male</option>
+                  <option i18n="@@female" value="Female">Female</option>
+                  <option i18n="@@notSpecified" value="null">Not Specified</option>
+                </select>
+                <span class="form-control-feedback">
+                  <i class="material-icons">&#xE63D;</i>
+                </span>
+              </div>
+              <div class="form-group has-feedback">
+                <!-- <select type="text" class="form-control" formControlName="dob">
+                  <option>11-12-187</option>
+                </select> -->
+                <app-customdatepicker *ngIf="userData" [datetimestamp]="userData.dob" (userdob)="gettinguserdob($event)" formControlName="dob" ngDefaultControl></app-customdatepicker>
+
+                <span class="form-control-feedback">
+                  <i class="material-icons">&#xE7E9;</i>
+                </span>
+              </div>
+            </div>
+            <p class="changePassword">
+              <input dir="{{siteDirection}}" *ngIf="!showDisabledButton" type="button" value="{{placeholderSave}}" (click)="updateProfile()" class="btn bg_93e0f4 c_00a7c8 p_x_80 m_y_10">
+              <input dir="{{siteDirection}}" *ngIf="showDisabledButton" type="button" value="{{placeholderSave}}" (click)="updateProfile()" class="btn m_y_15 c_fff bg_c9cfd4">
+            </p>
+
+          </form>
+        </div>
+
+        <div class="tab-pane fade changePassword" id="password">
+          <form [formGroup]="changePasswordForm" (ngSubmit)="changePassword()">
+            <div class="text-success">{{successMessage}}</div>
+          <div class="bg_white row p_x_40 p_t_25" style="box-shadow: 0 1px 3px 0 #d4d4d4;">
+            <div class="form-group has-feedback">
+              <span class="p_key">
+                <i class="material-icons c_88909d">&#xE897;</i>
+              </span>
+              <input dir="{{siteDirection}}" type="{{currentPass}}" formControlName="password" class="form-control" placeholder="Current Password" required i18n-placeholder/>
+              <app-validation-message-component [control]="changePasswordForm.controls['password']"></app-validation-message-component>
+              <span *ngIf="changePasswordForm.value.password.length>0" class="form-control-feedback pointer_events_auto c_p">
+                <i *ngIf="currentPass=='text'" class="material-icons c_c8cfd4 c_p md-light" (click)="showHidePassword('pass')">&#xE417;</i>
+                <i *ngIf="currentPass=='password'" class="material-icons c_p" (click)="showHidePassword('pass')">visibility_off</i>              </span>
+            </div>
+            <div class="form-group has-feedback">
+              <span class="p_key">
+                <i class="material-icons c_88909d">&#xE897;</i>
+              </span>
+              <input dir="{{siteDirection}}" type="{{newPass}}" formControlName="newPassword"  class="form-control" placeholder="New Password" required i18n-placeholder/>
+              <app-validation-message-component [control]="changePasswordForm.controls['newPassword']"></app-validation-message-component>
+              <span *ngIf="changePasswordForm.value.newPassword.length>0" class="form-control-feedback pointer_events_auto c_p">
+                <i *ngIf="newPass=='text'" class="material-icons c_c8cfd4 c_p md-light" (click)="showHidePassword('newpass')">&#xE417;</i>
+                <i *ngIf="newPass=='password'" class="material-icons c_p" (click)="showHidePassword('newpass')">visibility_off</i>
+              </span>
+            </div>
+
+            <div class="form-group has-feedback">
+              <span class="p_key">
+                <i class="material-icons c_88909d">&#xE897;</i>
+              </span>
+              <input dir="{{siteDirection}}" type="{{confirmPass}}" formControlName="confirmPassword" class="form-control" placeholder="Confirm Password" required i18n-placeholder/>
+              <app-validation-message-component [control]="changePasswordForm.controls['confirmPassword']"></app-validation-message-component>
+              <span *ngIf="changePasswordForm.value.confirmPassword.length>0" class="form-control-feedback pointer_events_auto c_p">
+                <i *ngIf="confirmPass=='text'" class="material-icons c_c8cfd4 c_p md-light" (click)="showHidePassword('confirmpass')">&#xE417;</i>
+          <i *ngIf="confirmPass=='password'" class="material-icons c_p" (click)="showHidePassword('confirmpass')">visibility_off</i>
+              </span>
+            </div>
+            <p>
+              <button *ngIf="changePasswordForm.valid" type="submit" class="btn m_y_15 c_00a7c8 bg_93e0f4" i18n="@@changePassword">Change Password</button>
+              <button *ngIf="!changePasswordForm.valid" type="submit" class="btn m_y_15 c_fff bg_c9cfd4" i18n="@@changePassword">Change Password</button>
+            </p>
+
+          </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+</section>

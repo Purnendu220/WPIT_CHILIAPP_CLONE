@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="25px" viewBox="0 0 12 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="6 25 3.46944695e-18 25 3.46944695e-18 0 6 0 12 0 12 25"></polygon>
+    </defs>
+    <g id="myU" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Large-Devices:-Desktops-landing-fixes-v2" transform="translate(-153.000000, -4331.000000)">
+            <g id="footer" transform="translate(0.000000, 4302.000000)">
+                <g id="footer-" transform="translate(123.000000, 0.000000)">
+                    <g id="social" transform="translate(30.000000, 28.000000)">
+                        <g id="facebook" transform="translate(0.000000, 1.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Clip-2"></g>
+                            <path d="M2.59341706,4.84201389 L2.59341706,8.28298611 L0,8.28298611 L0,12.4916667 L2.59341706,12.4916667 L2.59341706,25 L7.92095709,25 L7.92095709,12.4930556 L11.4961014,12.4930556 C11.4961014,12.4930556 11.8310815,10.475 11.9942861,8.26805556 L7.94167014,8.26805556 L7.94167014,5.38993056 C7.94167014,4.96006944 8.52199274,4.38229167 9.09695851,4.38229167 L12,4.38229167 L12,0 L8.05202071,0 C2.46235343,0 2.59341706,4.21284722 2.59341706,4.84201389 L2.59341706,4.84201389 Z" id="Fill-1" fill="#c3ccdd" mask="url(#mask-2)"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

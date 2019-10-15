@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="7px" height="7px" viewBox="0 0 7 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>divider</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="myU" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="Large-Devices:-Desktops-header" transform="translate(-257.000000, -37.000000)" fill="#A9B7D1">
+            <g id="header">
+                <g transform="translate(33.000000, 7.000000)" id="sections">
+                    <g transform="translate(97.000000, 25.000000)">
+                        <path d="M130.5,12 C132.432997,12 134,10.4329966 134,8.5 C134,6.56700338 132.432997,5 130.5,5 C128.567003,5 127,6.56700338 127,8.5 C127,10.4329966 128.567003,12 130.5,12 Z" id="divider"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

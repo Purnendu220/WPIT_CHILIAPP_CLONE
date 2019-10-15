@@ -1,0 +1,65 @@
+<!--HEADER START-->
+<header>
+    <div class="container">
+        <nav class="navbar navbar-default m_0">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <div class="navbar-header c_p" (click)="routeUser('newsfeed',userId)" >
+                <a class="navbar-brand">
+                    <figure><img src="assets/images/logo_myu.png" alt="MyU" title="MyU" width="56" height="56"></figure>
+                </a>
+            </div>
+
+
+            <div class="collapse navbar-collapse border_none" id="myNavbar">
+                <div class="col-md-3 col-sm-4 p_t_5 p_r">
+                    <div id="user_search_list" class="form-group has-feedback">
+                        <input dir="{{siteDirection}}" type="text" #searchTypehead id="userSearchTypeAhed" class="form-control p_r exploreSearchbBtn"  placeholder="Search" i18n-placeholder>
+                        <span class="form-control-feedback"><i class="material-icons c_88909d f_">&#xE8B6;</i></span>
+                    </div>
+                  <app-user-search  [userSearchList]="userSearchList"></app-user-search>
+                  <app-loader *ngIf="HeaderLoader"></app-loader>
+
+                </div>
+
+                <ul class="right_panel nav navbar-nav navbar-right">
+
+                    <li (click)="routeUser('newsfeed',userId)" class="activeBtn"><a title="Home"><i class="material-icons c_p">&#xE88A;</i></a></li>
+                    <li (click)="routeExplore('own_school')"  class="activeBtn1"><a title="Explore"><i class="fas fa-search c_p f_s_22"></i></a></li>
+
+                    <li>
+                        <a title="Notification" id="notifications" class="c_p"><i class="material-icons p_r ">&#xE7F4;</i> </a>
+                        <!-- <a title="Notification" id="notifications" class="c_p"><i class="material-icons p_r ">&#xE7F4;</i> <span class='text'>34</span></a> -->
+
+                        <app-notification [activeTab]="'you'"></app-notification>
+
+                        <!--Notification Details End-->
+                    </li>
+
+                    <li class="c_p" (click)="showinProgressAlert()" ><a title="Message"><i class="material-icons p_r c_p f_s_24">&#xE0CA;</i> </a></li>
+                    <!-- <li><a title="Messiage"><i class="material-icons p_r c_p">&#xE0CA;</i> <span>8</span></a></li> -->
+
+                    <li class="c_p dropdown">
+                        <a class="p_r_0 dropdown-toggle" data-toggle="dropdown" title="User Pic"><img [src]="userProfile | defaultImage: 'userProfile'" class="img-circle" alt="User Profile Pic" title="User Profile Pic" width="39" height="39"></a>
+
+                    <ul class="dropdown-menu signOut">
+                      <span></span>
+                      <li><a (click)="routeUser('user',userId)"  ><i class="material-icons">&#xE7FD;</i> {{profileName}} </a> </li>
+                      <li><a (click)="routeUser('edit-user')" ><i class="material-icons">&#xE254;</i> <div i18n="@@ediProfile">Edit Profile</div> </a> </li>
+                      <li><a (click)="routeUser('user-setting')" ><i class="material-icons">&#xE8B8;</i> <div i18n="@@setting">Setting</div> </a> </li>
+                      <!--<li><a (click)="routeUser('user-setting','blockList')" ><i class="material-icons">&#xE8F5;</i> <div i18n="@@BlockedUser">Blocked Users</div> </a> </li>-->
+                      <li><a (click)="routeUser('edit-user','changePassword')" ><i class="material-icons">&#xE897;</i> <div i18n="@@changePassword">Change Password</div> </a> </li>
+                      <li (click)="logOutUser()"><a href="javascript:void();"><i class="material-icons">&#xE8AC;</i> <div i18n="@@logOut">Log Out</div> </a> </li>
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+</header>
+<div style="margin-top: 69px;"></div>
+<!--HEADER END-->

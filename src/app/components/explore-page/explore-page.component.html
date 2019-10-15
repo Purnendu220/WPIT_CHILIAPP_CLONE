@@ -1,0 +1,105 @@
+<section class="container p_y_30">
+  <div class="row edit_profile">
+
+    <div class="col-md-3">
+      <ul class="nav nav-tabs nav-stacked">
+        <li [ngClass]="{'active': activeTab=='ownSchool'}">
+          <a href="#piys" data-toggle="tab" (click)="tabClick('own_school')" i18n="@@popularInYourSchool">POPULAR IN YOUR SCHOOL</a>
+        </li>
+        <li [ngClass]="{'active': activeTab=='otherSchool'}">
+          <a href="#pios" data-toggle="tab" (click)="tabClick('other_school')" i18n="@@popularInOtherSchool">POPULAR IN OTHER SCHOOLS</a>
+        </li>
+        <li [ngClass]="{'active': activeTab=='exploreNews'}">
+          <a href="#pp" data-toggle="tab" (click)="tabClick('news')" i18n="@@popularPosts">POPULAR POSTS</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-9 profile_c">
+      <div class="tab-content minHeight_640">
+        <div class="tab-pane fade" [ngClass]="{'in active': activeTab=='ownSchool'}" id="piys">
+          <div *ngIf="activeTab=='ownSchool'">
+            <div class="d_flex flex_wrap_wrap" data-infinite-scroll [infiniteScrollDistance]="scrollDistance" [infiniteScrollUpDistance]="scrollUpDistance"
+              [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()" (scrolledUp)="onUp()">
+
+              <div class="exploreSchool" *ngFor="let userData of popularUsers; let i = index">
+                <div class="c_p" (click)="routeUser('user',userData.id)">
+                  <span class="myClose">
+                    <i class="material-icons c_fff f_s_20 c_p" data-dismiss="alert" (click)="removeExploreUser($event, i)">&#xE5CD;</i>
+                  </span>
+                  <div class="parentPic">
+                  <figure *ngIf="userData?.coverImage">
+                    <img [src]="userData.coverImage | defaultImage:'coverImage'"> </figure>
+                  </div>
+                  <div class="p_10 p_l_20 p_r">
+                    <figure class="childPic b_r_full">
+                      <img class="img-circle" [src]="userData.profileImageThumbnail | defaultImage:'userProfile'" alt="Profile Pic" title="Profile Pic">
+                    </figure>
+                    <p class="m_y_10 text-right">
+                      <button type="button" class="btn btn-info bg_93e0f4 border_none p_x_30 c_00a7c8 p_t_5 f_s_12" style="height:26px;" *ngIf="userData.isfollow==false"
+                        (click)="followToggle(userData, null,null,$event)" i18n="@@follow">Follow</button>
+                      <button type="button" class="btn btn-info bg_none f_s_12 c_c8cfd4 border_2_gray f_s_12 p_x_30 p_t_3" style="height:26px;" *ngIf="userData.isfollow==true"
+                        (click)="followToggle(userData, null,null,$event)" i18n="@@following">Following</button>
+                    </p>
+                    <p class="c_262626 f_w_b m_b_5">{{userData.name}}</p>
+                    <p class="c_788692 f_s_14 m_b_5">@{{userData.username}}</p>
+                    <p class="c_788692 f_w_b f_s_12">{{(userData.userTypeId==1)? "Teacher": (userData.userTypeId==2)?"Student":"Club/Department"}}</p>
+                    <p class="f_s_14 c_262626">{{userData.bio}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" [ngClass]="{'in active': activeTab=='otherSchool'}" id="pios">
+          <div *ngIf="activeTab=='otherSchool'">
+            <div class="d_flex flex_wrap_wrap" data-infinite-scroll [infiniteScrollDistance]="scrollDistance" [infiniteScrollUpDistance]="scrollUpDistance"
+              [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()" (scrolledUp)="onUp()">
+              <!--ONE START-->
+              <div class="exploreSchool" *ngFor="let userData of popularUsers; let i=index">
+                <div class="c_p" (click)="routeUser('user',userData.id)">
+                  <span class="myClose">
+                    <i class="material-icons c_fff f_s_20 c_p" data-dismiss="alert" (click)="removeExploreUser($event, i)">&#xE5CD;</i>
+                  </span>
+                  <figure class="parentPic">
+                    <img [src]="userData?.coverImage | defaultImage:'coverImage'"> </figure>
+                  <div class="p_10 p_l_20 p_r">
+                    <figure class="childPic b_r_full">
+                      <img class="img-circle" [src]="userData.profileImageThumbnail | defaultImage:'userProfile'" >
+                    </figure>
+                    <p class="m_y_10 text-right">
+                      <button type="button" class="btn btn-info bg_93e0f4 border_none p_x_30 c_00a7c8 p_t_5 f_s_12" style="height:26px;" *ngIf="userData.isfollow==false"
+                        (click)="followToggle(userData, null,null,$event)" i18n="@@follow">Follow</button>
+                      <button type="button" class="btn btn-info bg_none f_s_12 c_c8cfd4 border_2_gray f_s_12 p_x_30 p_t_3" style="height:26px;" *ngIf="userData.isfollow==true"
+                        (click)="followToggle(userData, null,null,$event)" i18n="@@following">Following</button>
+                    </p>
+                    <p class="c_262626 f_w_b m_b_5">{{userData.name}}</p>
+                    <p class="c_788692 f_s_14 m_b_5">@{{userData.username}}</p>
+                    <p class="c_788692 f_w_b f_s_12">{{(userData.userTypeId==1)? "Teacher": (userData.userTypeId==2)?"Student":"Club/Department"}}</p>
+                    <p class="f_s_14 c_262626 ba">{{userData.bio}}</p>
+                  </div>
+                </div>
+              </div>
+              <!--ONE END-->
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" [ngClass]="{'in active': activeTab=='exploreNews'}" id="pp">
+          <div class="row" *ngIf="activeTab=='exploreNews'">
+            <div class="col-md-8">
+              <app-news-list [userId]="activeUserId" [type]="'exploreNews'"></app-news-list>
+            </div>
+            <div class="col-md-4">
+              <app-explorer-user-list [userId]="activeUserId"></app-explorer-user-list>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</section>

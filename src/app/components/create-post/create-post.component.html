@@ -1,0 +1,441 @@
+<div class="chatMain" id="holder">
+  <div class="form-group m_b_0 p_r">
+    <img src="{{userData?.profileImage?.thumbnailPath|defaultImage: 'userProfile'}}"
+      class="img-circle chat_persion" alt="User Profile Pic" title="User Profile Pic" width="30" height="30">
+    <textarea dir="{{siteDirection}}"   id="phrase" rows="3" class="form-control exploreSearchbBtn" placeholder="Write Something" [(ngModel)]="newsText" (keyup)="tAGGING($event)" i18n-placeholder></textarea>
+  </div>
+
+  <!--SEARCH COLLAPSE START-->
+  <div class="exploreMention my_setting">
+      <ul class="list-group">
+      <!--ONE START-->
+      <li  class="list-group-item" *ngFor="let user of userMentionList;let i = index">
+      <div class="media d_flex align_item_center c_p" (click)="userSelectedForMention(user)">
+      <a  class="pull-left c_p"><img class="img-circle" [src]="user?.profileImageThumbnail|defaultImage: 'userProfile'" alt="image" title="image" width="40" height="40"></a>
+      <div class="media-body f_s_14">
+      <p class="m_b_5 f_w_b">{{user.name}}</p>
+      <p class="f_s_12 c_88909d m_b_0">@{{user.username}}
+        <span> {{user.userTypeId | usertypeIdToUserType}}</span>
+      </p>
+      </div>
+      </div>
+      </li>
+      <!--ONE END-->
+      </ul>
+
+
+      </div>
+      <!--SEARCH COLLAPSE END-->
+
+        <!--SEARCH COLLAPSE START-->
+  <div class="exploreTag my_setting">
+      <ul class="list-group">
+      <!--ONE START-->
+      <li  class="list-group-item" *ngFor="let usertag of hashTagDataList;let i = index">
+      <div class="media d_flex align_item_center c_p" (click)="userSelectedForTag(usertag)">
+      <div class="media-body f_s_14">
+      <p class="m_b_5 f_w_b"><span>#</span><span>{{usertag.name}}</span></p>
+
+      </div>
+      </div>
+      </li>
+      <!--ONE END-->
+      </ul>
+
+
+      </div>
+      <!--SEARCH COLLAPSE END-->
+  <!--ALL MEDIA FILE START-->
+  <div class="row allSelectFile">
+
+    <!--FOR IMAGES START-->
+    <ul class="list-inline choseIMg p_t_0">
+      <li *ngFor="let images of imageFileList;let i = index">
+        <img [src]="images.fileUrl" alt="" title="">
+        <a  (click)="removeFileFromImageList(i)" >
+          <span>
+            <i class="material-icons">&#xE5CD;</i>
+          </span>
+        </a>
+      </li>
+      <li *ngFor="let images of capturedMedialist;let i = index">
+          <img [src]="sanitize(images.fileUrl)" alt="" title="">
+          <a  (click)="removeFileFromCapturedImageList(i)" >
+            <span>
+              <i class="material-icons">&#xE5CD;</i>
+            </span>
+          </a>
+        </li>
+
+      <li *ngIf="(imageFileList.length>0 || capturedMedialist.length>0)&& imageFileList.length+capturedMedialist.length<imageLimit">
+        <input dir="{{siteDirection}}" type="file" class="customFile" #fileInput1 (change)="fileChangeEvent($event)" accept="image/*" multiple>
+        <img src="assets/images/add_images.jpg" alt="Browse Image" title="Browse Image" class="border_none">
+      </li>
+
+
+    </ul>
+    <!--FOR IMAGES END-->
+    <div class="dragAfile">
+      <p class="" *ngIf="showOnDragEvent">Drag & Drop <br>doc,xls,ppt,pdf,images and video</p>
+    </div>
+
+
+    <!--FOR AUDIO START-->
+    <ul class="audioFile">
+      <li class="f_w_b" *ngFor="let audio of audioFileList;let i = index">
+        <i class="material-icons c_1f9f88 f_s_34 m_r_15">&#xE039;</i> {{fromSecondsToMinutes(audio.length)}}
+        <span class="pull-right c_p" (click)="removeFileFromAudioList(i)">
+          <i class="material-icons c_abb7cd">&#xE5CD;</i>
+        </span>
+      </li>
+    </ul>
+        <!--FOR AUDIO END-->
+
+        <!--FOR CAPTURED IMAGE START-->
+
+    <ul class="list-inline choseIMg p_t_0">
+        <li *ngFor="let video of capturedVideoList;let i = index">
+            <video  controls preload="auto" width="100" height="100" >
+                <source [src]='sanitize(video.fileUrl)' type = 'video/webm'>
+
+              </video>
+         <a class="c_p"  (click)="removeFileFromVideoList(i)" >
+            <span>
+              <i class="material-icons">&#xE5CD;</i>
+            </span>
+          </a>
+        </li>
+        <li *ngFor="let video of videoFileList;let i = index">
+
+         <video *ngIf="video.fileBlob.name.indexOf('.mp4')>-1 || video.fileBlob.name.indexOf('.webm')>-1"  controls preload="auto" width="100" height="100" >
+            <source [src]='sanitize(video.fileUrl)'>
+
+          </video>
+          <img *ngIf="video.fileBlob.name.indexOf('.mp4') == -1 && video.fileBlob.name.indexOf('.webm') == -1" src="assets/images/npa.jpg" width="100" height="100" >
+
+          <a  (click)="removeFileFromVideoList(i)" >
+            <span>
+              <i class="material-icons">&#xE5CD;</i>
+            </span>
+          </a>
+        </li>
+    </ul>
+        <!--FOR CAPTURED IMAGE START-->
+
+
+    <!--FOR FILE START-->
+    <div class="attachmentsPopup">
+      <div *ngFor="let file of otherFileList;let i = index" class="media p_t_10" style="border: 0; border-top: 1px solid #cdcdef;">
+        <a  class="pull-left m_r_15">
+          <img  [src]="file.name | filetypeImage " alt="{{file.name}}" title="File Icon">
+        </a>
+        <div class="media-body d_block">
+          <span (click)="removeFileFromList(i)" class="pull-right p_t_10 c_p">
+            <i class="material-icons c_abb7cd c_p">&#xE5CD;</i>
+          </span>
+          <h4>{{file.name}}</h4>
+          <span>{{file.size | fileSize}}
+            <i class="ovel">•</i> {{file.lastModified | date :'MMM d, y h:mm a' }}</span>
+
+        </div>
+      </div>
+      <div *ngFor="let media of recentUploadedMediaSelected;let i = index" class="media p_t_10" style="border: 0; border-top: 1px solid #cdcdef;">
+          <a  class="pull-left m_r_15">
+            <img  src="assets/images/pdf.jpg" alt="{{media.mediaName}}" title="File Icon">
+
+          </a>
+          <div class="media-body d_block">
+            <span (click)="removeSelectedMediaFile()" class="pull-right p_t_10">
+              <i class="material-icons c_abb7cd c_p">&#xE5CD;</i>
+            </span>
+            <h4>{{media.originalMediaName}}</h4>
+            <span>{{media.mediaSize}}
+              <i class="ovel">•</i> {{media.createdAt | date :'MMM d, y h:mm a' }}</span>
+
+          </div>
+        </div>
+    </div>
+    <!--FOR FILE START-->
+  </div>
+  <!--ALL MEDIA FILE END-->
+
+  <div class="wholeChat row">
+    <div class="col-xs-6 p_0">
+      <ul class="list-inline">
+        <li class="c_p" id="recordAudio" data-toggle="collapse" data-target="#audioRecs">
+          <a>
+            <i class="material-icons c_p">&#xE02A;</i>
+            <!-- <i class="material-icons c_p theam_text">&#xE02A;</i> -->
+          </a>
+        </li>
+        <li [ngClass]="{'c_p': activeCaptureButton, 'disabled': !activeCaptureButton }" >
+            <a *ngIf="activeCaptureButton" data-backdrop="false"  data-toggle="modal" data-target="#TakeaPhoto" (click)="showHide = true">
+              <img style="vertical-align: inherit;" src="assets/images/camra.png" alt="" title="">
+            </a>
+            <a  *ngIf="!activeCaptureButton" data-toggle="tooltip" title="Close audio record before using capture." >
+              <img style="vertical-align: inherit;" src="assets/images/camra.png" alt="" title="">
+              </a>
+          </li>
+        <li class="c_p">
+          <a  data-toggle="modal" data-target="#attachments">
+            <i class="material-icons c_p rotate_attachment">&#xE226;</i>
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+    <div class="col-xs-6 p_0 text-right">
+       <!-- <img src="assets/images/Imported_Layers.png" class="p_r_20"> -->
+          <button [disabled]="diablePostButton" type="button" class="btn btn-info btn-lg theam_bg border_r_n" (click)="getBoardList()">
+            <i class="material-icons">&#xE163;</i>
+          </button>
+        <!-- </i> -->
+
+      </div>
+
+
+
+<div class="clearfix"></div>
+<div class="collapse m_t_2" id="audioRecs">
+
+    <div *ngIf="notSupportedError!='ie'" class="thumbnail row m_b_0 p_10 border_r_n"> <span class="pull-right" id="close_audioRecs"><i class="material-icons c_abb7cd c_p enxs"></i></span>
+      <div class="clearfix"></div>
+      <!--<p class="f_s_30 text-center c_037aff">{{recordTime}}</p>
+      <div class="clearfix"></div>
+          <p class="text-center d_flex jusfify_content_center">
+              <button type="button" [disabled]="state == 1" id="start" class="btn btn-default d_flex align_item_center c_037aff" style="height:auto; width:80px;"><i class="material-icons"></i> Start</button>
+              <span class="p_x_10"></span>
+              <button type="button" [disabled]="state != 1" id="stop" class="btn btn-default d_flex align_item_center c_037aff" style="height:auto; width:80px;"><i class="material-icons"></i> Stop</button>
+            </p>-->
+
+      <p class="text-center d_flex jusfify_content_center">
+        <audio id="rec_auio"  controls></audio>
+        </p>
+      <p class="text-center d_flex jusfify_content_center">
+        <button   type="button" [disabled]="state == 1" id="start" class="btn btn-default d_flex align_item_center btn-sm c_037aff p_l_20" style="height:auto; width:70px;">{{recordTime}} </button>
+        <span class="p_x_10"></span>
+        <button type="button" [disabled]="state != 1" id="stop" class="btn btn-default d_flex align_item_center btn-sm c_d0011b p_l_20" style="height:auto; width:70px;"> Stop</button>
+        <span class="p_x_10"></span>
+        <button type="button" id="addAudio" [disabled]="state != 2" class="btn btn-default d_flex align_item_center btn-sm c_037aff p_l_20" style="height:auto; width:70px;"> Add</button>
+      </p>
+    </div>
+    <div *ngIf="notSupportedError=='ie'" class="thumbnail row m_b_0 p_10 border_r_n"> <span class="pull-right" id="close_audioRecs"><i class="material-icons c_abb7cd c_p enxs"></i></span>
+      {{notSupportedErrorMessage}}
+    </div>
+</div>
+
+
+
+
+
+  </div>
+
+</div>
+
+<!--Attachment Start-->
+<div class="modal fade" id="attachments">
+  <div class="modal-dialog attachmentsPopup">
+    <div class="modal-content bg_white border_r_n m_d_w_555" style="top: 0;">
+      <div class="modal-header c_262626 f_s_20 text-center f_w_b" style="box-shadow:0 0 3px 0 #d4d4d4;" i18n="@@AddAttachement">Add Attachment
+        <span class="close" data-dismiss="modal">
+          <i class="material-icons f_s_20">&#xE5CD;</i>
+        </span>
+      </div>
+      <div class="modal-body p_0">
+
+
+        <div class="row">
+          <div class="allSelectFile m_y_10 d_flex jusfify_content_space_around">
+            <div class="choseIMg imageVideoFileChoose">
+              <input dir="{{siteDirection}}" style="height: 120px;" type="file" class="customFile" #fileInputImage (change)="fileChangeEvent($event)" accept="image/*" multiple>
+              <i class="fas fa-image fa-7x"></i>
+              <p class="p_t_10 text-center c_72a8f3 f_s_18" i18n="@@chooseImage">Choose image</p>
+            </div>
+
+            <div class="choseIMg imageVideoFileChoose">
+              <input dir="{{siteDirection}}" style="height: 120px;" type="file" class="customFile" #fileInputVideo (change)="fileChangeEvent($event)" accept="application/mp4,.mp4,video/vnd.sealedmedia.softseal-mov,.mov,video/3gpp,.3gp">
+              <i class="fas fa-video fa-7x"></i>
+              <p class="p_t_10 text-center c_72a8f3 f_s_18" i18n="@@chooseVideo">Choose video</p>
+            </div>
+
+            <div class="choseIMg imageVideoFileChoose">
+              <input dir="{{siteDirection}}" style="height: 120px;" type="file" class="customFile" #fileInputFile (change)="fileChangeEvent($event)" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf,application/vnd.openxmlformats-officedocument.presentationml.presentation,
+              application/vnd.ms-powerpoint,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.xlsx,.xls,.ppt,.pptx,.doc,.docx">
+              <i class="fas fa-file-alt fa-7x"></i>
+              <p class="p_t_10 text-center c_72a8f3 f_s_18" i18n="@@AttachADocument">Attach a document</p>
+            </div>
+          </div>
+
+
+
+          <!-- <a  class="multipalFileChoose">
+            <i class="fab fa-google-drive"></i> From Google Drive</a>
+          <a  class="multipalFileChoose" id="fromDropBox">
+            <i class="fab fa-dropbox" ></i> From Dropbox</a> -->
+          <div class="multipalFileChoose border_none" (click)="closeOpenedModal('#attachments')" >
+            <img src="assets/images/loader.png"  alt="" title="" width="26"><a data-toggle="modal" class="c_p tdn c_000" data-target="#existingfiles"> <span i18n="@@existingFileFromMyu">Existing files from myU</span></a> </div>
+          <div class="bg_f1f2f6 recentUploadFile c_abb7cd p_y_20 p_x_25 m_b_15" i18n="@@recentlyUploaded">Recently uploaded document</div>
+
+          <div *ngFor="let media of recentlyUploadedMediaList;let i = index">
+            <div class="media" *ngIf="i<3">
+           <a  class="pull-left m_r_15">
+              <img  src="{{media.originalMediaName | filetypeImage }}" alt=" File Icon" title=" File Icon">
+
+            </a>
+            <div class="media-body">
+              <h4>{{media.originalMediaName}}</h4>
+              <span>{{media.mediaSize}}
+                <i class="ovel">&bull;</i>{{media.createdAt | date :'MMM d, y h:mm a'}} </span>
+            </div>
+            <label class="customRadio f_s_18 c_262626 c_p"><input dir="{{siteDirection}}" style="height: auto;" type="radio" name="existingfile" (click)="selectRecentMediaFile(media)"> <span class="checkmark border_2"></span> </label>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<!--Existing File From Myu Start -->
+<div class="modal fade" id="existingfiles">
+    <div class="modal-dialog attachmentsPopup">
+
+        <div class="modal-content m_d_w_555 bg_white border_r_n" style="top: 0;">
+          <div class="modal-header c_262626 f_s_20 text-center f_w_b" i18n="@@PleaseChooseFile">Please choose the file from your boards
+
+            <span class="close" data-dismiss="modal">
+              <i class="material-icons f_s_20">&#xE5CD;</i>
+            </span>
+          </div>
+          <div class="modal-body p_0">
+            <div class="form-group has-feedback">
+              <input dir="{{siteDirection}}" type="text" class="form-control" placeholder="Search" (keyup)="searchMedia($event)" i18n-placeholder>
+              <span class="form-control-feedback">
+                <i class="material-icons f_s_21">&#xE8B6;</i>
+              </span>
+            </div>
+
+            <div class="row" style="height: 460px; overflow-y: auto; overflow-x: hidden;">
+
+              <div *ngFor="let boardmedia of boardmediaList;let i = index">
+              <div class="art" >
+                <i class="material-icons p_x_5 c_abb7cd">&#xE85D;</i> {{boardmedia.board.name}}
+                <span class="p_x_5">({{ boardmedia.media.length }})</span>
+              </div>
+              <div class="media" *ngFor="let media of boardmedia.media;let j = index">
+                <a  class="pull-left m_r_15">
+                  <img src="assets/images/pdf.jpg" alt="File Icon" title="File Icon">
+                </a>
+                <div class="media-body">
+                  <h4>{{media.mediaName}}</h4>
+                  <span>{{media.mediaSize}}
+                    <i class="ovel">&bull;</i> {{ media.createdAt | date :'medium' }}</span>
+                </div>
+                <label class="customRadio f_s_18 c_262626"><input dir="{{siteDirection}}" style="height: auto;" type="radio" name="existingfile" (click)="selectRecentMediaFile(media)"> <span class="checkmark border_2"></span> </label>
+
+              </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+  </div>
+  </div>
+  </div>
+  <!--Attachment End-->
+
+<!--Take a Photo Start-->
+  <div class="modal fade takeaPhoto" id="TakeaPhoto">
+    <div class="modal-dialog">
+    <div class="modal-content bg_white border_r_n" style="top:0;">
+    <div id="close_capture" class="modal-header c_262626 f_s_20 text-center f_w_b" style="box-shadow:0 1px 3px 0 #d4d4d4;">
+      <span i18n="@@takePhoto">Take a photo</span>
+      <span class="pull-right" data-dismiss="modal" (click)="showHide=false">
+      <i class="material-icons c_abb7cd c_p">&#xE5CD;</i></span>
+    </div>
+    <div class="modal-body row">
+    <div class="col-sm-4 m_t_2 p_0 bg_f6f7fb">
+    <ul class="nav nav-tabs nav-stacked border_none">
+    <li class="active" id="rec_cam"><a href="#cam" data-toggle="tab" (click)="showHide=true" i18n="@@camera">Camera</a></li>
+    <li id="rec_video"><a href="#rec" data-toggle="tab" (click)="showHide=false" i18n="@@video">Video</a></li>
+    <li id="rec_file" class="border_none" ><a href="#comp" data-toggle="tab" (click)="showHide=false" i18n="@@computer">Computer</a></li>
+    </ul>
+    </div>
+    <div class="col-sm-8 p_l_0">
+    <div class="tab-content">
+    <div class="tab-pane fade in active" id="cam">
+      <div class="fig">
+    <figure *ngIf="notSupportedError != 'ie'">
+        <ack-webcam *ngIf="!captureImage && showHide"
+        [(ref)]   = "webcam"
+        [options] = "options"
+        (success) = "onCamSuccess($event)"
+        (catch)   = "onCamError($event)"
+       >
+      </ack-webcam>
+      <img *ngIf="captureImage" [src]="captureImage"
+      alt="captureImage" title="Image">
+    </figure>
+    <div *ngIf="notSupportedError == 'ie'">{{notSupportedErrorMessage}}</div>
+
+      </div>
+     <p *ngIf="notSupportedError != 'ie'" class="p_t_15 d_flex jusfify_content_space_between">
+        <span (click)="getCaptureImage()" class="c_p" title="Capture">
+          <i class="material-icons c_abb7cd">&#xE412;</i>
+          <!-- <i class="material-icons theam_text">&#xE412;</i> -->
+        </span>
+        <span (click)="retakePicture()" class="c_p" title="Retake"><i class="material-icons c_abb7cd">&#xE8BA;</i></span>
+        <button [disabled]="captureImage.length==0" type="button" class="btn btn_done"  (click)="createCaptureMediaList(captureImage)" i18n="@@done">Done</button>
+      </p>
+
+    </div>
+
+    <div class="tab-pane fade p_r" id="rec">
+
+      <div *ngIf="notSupportedError == 'none'" style="position: absolute; right: 10px; top: 5px; z-index: 1;" class="c_fff">{{recordTime}}</div>
+        <div id="rec_video_div">
+          <div *ngIf="notSupportedError == 'none'">
+          <video #video></video>
+
+          <div class="row">
+            <div class="p_t_15 p_b_10 d_flex jusfify_content_space_between">
+              <button [disabled]="state == 1" id="start_video_rec" class="btn btn_done" > Record </button>
+              <button [disabled]="state != 1" id="stop_video_rec" class="btn btn_done"> Stop</button>
+              <button type="button" [disabled]="state != 2" id="add_video_to_post" class="btn btn_done"  i18n="@@done">Done</button>
+            </div>
+          </div>
+          <div *ngIf="state == 0" class="videoDefault"></div>
+
+        </div>
+
+        <div *ngIf="notSupportedError!= 'none'">{{notSupportedErrorMessage}}</div>
+      </div>
+
+
+    </div>
+
+    <div class="tab-pane fade allSelectFile" id="comp">
+      <div class="comp choseIMg text-center p_t_25">
+        <input dir="{{siteDirection}}" type="file" class="customFile" (change)="fileChangeEvent($event)" (click)="closeOpenedModal('#TakeaPhoto')" accept="image/*" multiple >
+        <img src="assets/images/add_images.jpg" alt="Browse Image" title="Browse Image" class="border_none">
+        <br>
+        <div i18n="@@AddAttachement">Add Attachement</div>
+      </div>
+      <p class="p_t_15 d_flex jusfify_content_space_between"></p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </div>
+<!--Take a Photo End-->

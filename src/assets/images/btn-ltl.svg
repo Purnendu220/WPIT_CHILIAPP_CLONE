@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="160px" height="41px" viewBox="0 0 160 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>btn-ltl</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="btn-ltl">
+            <g id="btn">
+                <rect id="bg-btn" fill="#00BEB6" x="0" y="0" width="160" height="41" rx="6"></rect>
+                <text id="TO-GET-MYU" font-family="ProximaNova-Semibold, Proxima Nova" font-size="14" font-weight="500" letter-spacing="0.800000012" fill="#FFFFFF">
+                    <tspan x="34.7279999" y="25">TO GET MYU</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,54 @@
+<div style="height:450px;overflow-y:auto;" class="modal-body p_0" class="search-results" data-infinite-scroll [infiniteScrollDistance]="scrollDistance"
+    [infiniteScrollUpDistance]="scrollUpDistance" [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()" (scrolledUp)="onUp()"
+    [scrollWindow]="false" *ngIf="listFor == 'boardMember'">
+    <ul class="list-group my_setting" style="margin-bottom: 0;">
+        <li class="list-group-item f_s_18 m_r_15" *ngFor="let item of listData">
+            <div class="media d_flex align_item_center">
+                <a href="javascript:void(0);">
+                    <img class="img-circle m_r_15"  (click)="routeUser('user',item.user.id)" [src]="item.user.profileImageThumbnail | defaultImage:'userProfile'"
+                        alt="Image Removed" width="60" height="60">
+                </a>
+                <div class="media-body" (click)="routeUser('user',item.user.id)" >{{item.user.name}}</div>
+
+            </div>
+        </li>
+    </ul>
+    <div class="bg_e8edf3 d_flex jusfify_content_center align_item_center" style="height: 450px;" *ngIf="responseRecieved && listData?.length == 0">
+        <p class="text-center c_788692 f_s_18 m_x_15"><br><br>{{profileMessage}}<br><br> <img class="center-block" src="assets/images/stub_newsFeed.png" alt="" title=""></p>
+    </div>
+</div>
+
+<div class="max_width_555 my_setting" id="addtoblacklistss" *ngIf="listFor != 'boardMember'">
+    <div class="border_r_n bg_white" style="top:0;">
+        <div class="modal-header text-center p_y_15 f_s_20 c_262626 f_w_b">{{listTitile}}
+            <span class="pull-right c_p" data-dismiss="modal" (click)="activeModal.close('Cross clikc')">
+                <i class="material-icons c_abb7cd">&#xE5CD;</i>
+            </span>
+        </div>
+        <div style="height:500px;overflow-y:auto;" class="modal-body p_0" class="search-results" data-infinite-scroll [infiniteScrollDistance]="scrollDistance"
+            [infiniteScrollUpDistance]="scrollUpDistance" [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()" (scrolledUp)="onUp()"
+            [scrollWindow]="false">
+            <ul class="list-group">
+                <li class="list-group-item f_s_18 m_r_15" *ngFor="let item of listData">
+                    <div class="media d_flex align_item_center">
+                        <a href="javascript:void(0);">
+                            <img class="img-circle m_r_15"  (click)="routeUser('user',item.user.id)" [src]="item.user.profileImageThumbnail | defaultImage:'userProfile'"
+                                alt="Image Removed" width="60" height="60">
+                        </a>
+                        <div class="media-body c_p" (click)="routeUser('user',item.user.id)"  *ngIf="listFor!='joinedBoard'">{{item.user.name}}</div>
+                        <div class="media-body c_p" (click)="routeUser('user',item.user.id)"  *ngIf="listFor=='joinedBoard'">{{item.board.name}}</div>
+
+                        <span *ngIf="listFor!='joinedBoard' && listFor!='newsViewsUserList' && listFor!='newsLikesUserList'">
+                            <button type="button"  class="btn btn-info bg_none f_s_12 c_c8cfd4 border_2_gray" *ngIf="selfUserId != item.user.id && item.user.isfollow==true" (click)="folloConfirmation(item)" i18n="@@following">Following</button>
+                            <button type="button" class="btn btn-info bg_93e0f4 border_none f_s_12 c_00a7c8" *ngIf="selfUserId != item.user.id && item.user.isfollow==false" (click)="folloConfirmation(item)" i18n="@@follow">Follow</button>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div *ngIf="responseRecieved && listData?.length == 0">
+        <p class="text-center p_t_30 c_262626">You have nothing to view.</p>
+        </div>
+
+</div>

@@ -1,0 +1,64 @@
+<div id="history">
+  <div class="modal-content bg_white max_width_555 border_r_n" style="top:0;">
+    <div class="modal-hedader text-center f_w_b p_t_15 p_b_10 d_flex jusfify_content_space_between">
+      <i class="material-icons f_s_20 p_l_20" >
+        <!-- <a (click)="navigateToCreatePost()" title="Create Posts" *ngIf="activeUserId==userId" class="c_037aff tdn c_p">&#xE22B;</a> -->
+      </i>
+      <span >{{boardNmae}}</span>
+      <span class="pull-right c_p" data-dismiss="modal" (click)="activeModal.close('Close Modal')">
+        <i class="material-icons c_abb7cd p_r_20">&#xE5CD;</i>
+      </span>
+    </div>
+    <div class="modal-body p_x historys" style="padding-bottom: 0;">
+      <ul class="nav nav-tabs nav-justified">
+        <li class="active">
+          <a href="#posts" data-toggle="tab" (click)="onTabChange('post')" i18n="@@post">Posts</a>
+        </li>
+        <li>
+          <a href="#members" data-toggle="tab" (click)="onTabChange('member')" i18n="@@member">Member</a>
+        </li>
+        <li>
+          <a href="#files" data-toggle="tab" (click)="onTabChange('files')" i18n="@@file">Files</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+
+        <div class="tab-pane fade profile_c in active" id="posts">
+          <app-news-list [userId]="userId" [type]="type" [boardId]="boardId" *ngIf="activeTab=='post'"></app-news-list>
+        </div>
+
+        <div class="tab-pane fade" id="members">
+          <app-user-list [listFor]="'boardMember'" [userId]="userId" [boardId]="boardId" *ngIf="activeTab=='member'"></app-user-list>
+        </div>
+
+        <div class="tab-pane fade  Historyfile" id="files">
+          <ul class="list-inline p_l_20" style="margin-bottom: 0;" *ngIf="activeTab=='files'">
+            <li class="c_p" *ngFor="let mediaType of boardMediaTypes" [ngClass]="{'active': mediaType.name == activeMediaType}">
+              <a (click)="getFileList(mediaType.name)">{{mediaType.name}}</a>
+            </li>
+          </ul>
+          <ul class="list-group attachmentsPopup search-results" style="margin-bottom: 0;" data-infinite-scroll [infiniteScrollDistance]="scrollDistance" [infiniteScrollUpDistance]="scrollUpDistance" [infiniteScrollThrottle]="throttle"
+            (scrolled)="onScrollDown()" (scrolledUp)="onScrollUp()" [scrollWindow]="false">
+            <li class="list-group-item bg_none border_none p_y_0" *ngFor="let boardmedia of boardMedia">
+              <div class="media c_p" style="max-width:100%;">
+                <a href="{{boardmedia?.mediaPath}}" target="_blank" class="pull-left m_r_15">
+                  <img src="assets/images/{{boardmedia?.mediaType | lowercase}}.jpg" alt="Zip File Icon" title="Zip File Icon">
+                </a>
+                <div class="media-body">
+                  <h4>{{boardmedia.originalMediaName}}</h4>
+                  <span>{{boardmedia.mediaSize}}
+                    <i class="ovel">•</i> {{boardmedia.createdAt}}</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="bg_e8edf3 d_flex jusfify_content_center align_item_center" style="min-height: 450px; margin-top:-35px;" *ngIf="boardMedia?.length == 0">
+            <p class="text-center c_788692 f_s_18 m_x_15">No files <br><br> <img class="center-block" src="assets/images/stub_file.png" alt="" title=""></p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

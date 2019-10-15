@@ -1,0 +1,209 @@
+<div class="modal-content bg_white border_r_n p_t_0 profile_c" style="top:0;" id="commentss">
+  <div class="modal-heading text-center p_y_15 c_262626 f_s_20 f_w_b" style="box-shadow: 0 1px 3px 0 #d4d4d4;">
+    <span i18n="@@addComment">Add comment</span>
+    <span class="pull-right p_r_7" (click)="activeModal.close('Close click')" style="margin-top: -10px;"><i
+      class="material-icons c_p c_abb7cd f_s_21" data-dismiss="modal">&#xE5CD;</i></span></div>
+  <div class="modal-body p_0">
+
+
+    <!--ONE START-->
+    <div class="row newsFeedComments" style="flex-wrap: wrap;">
+
+      <!--SLIDER START-->
+      <div class="newsFeediv" *ngIf="newsAction.media">
+        <div class="carousel slide" id="newsFeedSlider">
+          <!-- Indicators -->
+          <ol *ngIf="newsMediaType != 'Video'" class="carousel-indicators">
+            <li data-target="#newsFeedSlider" (click)="addActiveClass(i)" data-slide-to="i"
+                [ngClass]="{'active': activeCarouselDefault == i}"
+                *ngFor="let media of newsAction.media ;let i=index"></li>
+
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+
+            <div [ngClass]="{'active': activeCarouselDefault == j}" class="item"
+                 *ngFor="let media of newsAction.media ;let j = index">
+              <img *ngIf="media.mediaType =='Image'" src="{{media.mediaPath}}"
+                   alt="Create a post img" class="center-block" title="Post Images">
+              <video *ngIf="media.mediaType =='Video'" controls="" style="width:100%"
+                     src="{{media.mediaPath}}"></video>
+              <audio *ngIf="media.mediaType =='Audio'" _ngcontent-c7="" controls="" style="width:100%"
+                     src="{{media.mediaPath}}"></audio>
+              <div class="attachmentsPopup" *ngIf=" objectMediaTypesList.indexOf(media.mediaType) > -1">
+                <div class="media flex_none border_none">
+                  <a target="_blank" href="{{media.mediaPath}}" class="pull-left m_r_15"><img
+                    src="assets/images/{{media.mediaType|lowercase}}.jpg" alt="File Icon"
+                    title="File Icon" style="width: 68px; height: 44px;"></a>
+                  <div class="media-body">
+                    <h4>{{media.originalMediaName}}</h4>
+                    <span>{{media.mediaType}} {{media.mediaSize}} <i class="ovel">•</i> {{media.createdAt|dateFormatPipe}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--SLIDER END-->
+
+
+      <div class="newsFeediv">
+        <div style="height:399px; overflow-y:auto; overflow-x: hidden;">
+          <div class="row p_0 p_y_10 b_b_1_solid_d8d8d8 p_r_20">
+            <p class="f_s_12 c_9baac7 d_flex align_item_center jusfify_content_flex_end m_b_0 p_x_20">
+              {{newsAction.createdAt | timestampToday}} <span class="p_x_2"></span> <i class="material-icons f_s_12">&#xE192;</i>
+            </p>
+            <div class="media">
+              <a (click)="route('user',newsAction.user?.id)" class="pull-left img_c m_x_15 c_p"><img class="img-circle"
+                                                              src="{{newsAction.user?.profileImageThumbnail | defaultImage:'userProfile'}}"
+                                                              alt="Profile Pic" title="Profile Pic" height="60"
+                                                              width="60"></a>
+              <div class="media-body">
+                <h3 class="f_s_20 c_000 m_t_5 l_h_30">{{newsAction.user.name}} <br>
+                  <div *ngIf="newsAction.board"><span class="c_a1aec8 f_s_16">in</span> <span class="c_768692 f_s_16">{{newsAction.board.name}}</span>
+                  </div>
+                  <div *ngIf="!newsAction.board"><span class="c_a1aec8 f_s_16">in</span> <span class="c_768692 f_s_16" i18n="@@Public">Followers</span>
+                  </div>
+                </h3>
+              </div>
+              <p class="c_393939 p_x_20 text_fromating_css" [innerHTML]="newsAction.newsText | hashTagOrMentionedUser: 'news_comment'" (click)="routeUser($event,newsAction)"></p>
+              <ul class="lcv_details border_none b_t_1_solid_d8d8d8">
+                <li *ngIf="newsAction.likeCount > 0"><a href="javascript:void(0)" (click)="openLikesUserListPopup(newsAction.virtualNewsId)"><i class="material-icons f_s_18"></i>
+                  <span> <strong>{{newsAction.likeCount}}</strong> </span> likes</a></li>
+                <li *ngIf="newsAction.commentCount > 0"><a href="javascript:void(0)"><img src="assets/images/comments.png" alt="" title="">
+                  <span> <strong>{{newsAction.commentCount}}</strong> </span> comments</a></li>
+                <li (click)="openViewsUserListPopup(newsAction.virtualNewsId)"  *ngIf="newsAction.viewCount > 0 && loggedInUserData.id == newsAction.user.id"><a href="javascript:void(0)"><i class="material-icons f_s_18"></i>
+                  <span><strong> {{newsAction.viewCount}}</strong> </span> view</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="text-center f_s_14 p_t_5 b_b_1_solid_d8d8d8 p_b_5" *ngIf="isLoadPreviousComment == true">
+            <a (click)="loadPreviousComment()" href="javascript:void(0)" class="c_037aff tdn">
+              <span i18n="@@loadPreviousComments">Load Previous Comments</span> <i class="far fa-comment f_s_14"></i>
+            </a>
+          </p>
+          <div class="row p_0 p_t_25 p_r_20" *ngFor="let comment of commentList">
+            <div class="media">
+              <div class="m_b_0 text-right dropdown" *ngIf="loggedInUserData.id==newsAction.user.id || loggedInUserData.id == comment.user.id"><i class="material-icons c_037aff c_p dropdown-toggle"
+                                                        data-toggle="dropdown" title="Delete Comment">&#xE5D3;</i>
+                <ul class="dropdown-menu dropdown-menu-right customDropdownMenu">
+                  <li><a href="javascript:void(0);" (click)="deleteNewsComment(comment.id)" i18n="@@delete">Delete</a></li>
+                </ul>
+              </div>
+              <a (click)="route('user',comment.user?.id)"  class="pull-left img_c m_x_15 c_p"><img class="img-circle"
+                                                              src="{{comment.user?.profileImageThumbnail | defaultImage:'userProfile'}}"
+                                                              alt="Profile Pic" title="Profile Pic"
+                                                              style="width:40px; height:40px;"></a>
+              <div class="media-body b_b_1_solid_d8d8d8">
+                <h3 class="f_s_18 c_000 m_t_5 l_h_30">{{comment.user.name}} <span
+                  class="pull-right d_flex f_s_12 c_9baac7 jusfify_content_flex_end align_item_center"> <span
+                  class="p_x_2"></span> {{comment.createdAt | timestampToday}} <i class="material-icons f_s_12 p_x_2">&#xE192;</i></span>
+                </h3>
+
+                <p class="c_393939 text_fromating_css" [innerHTML]="comment.newsCommentText | hashTagOrMentionedUser:'comment'" (click)="routeUser($event,comment)"> </p>
+                <figure class="details_img p_b_10" *ngIf="comment.image">
+                    <a data-fancybox href="{{comment?.image.mediaPath}}">
+
+                  <img class="img-responsive" src="{{comment.image.mediaPath}}"></a></figure>
+                <p class="text-right p_t_10" *ngIf="loggedInUserData.id != comment.user.id"><a (click)="replyToUser(comment.user)" href="javascript:void(0)" class="c_abb7cd f_s_14" i18n="@@replay">Reply</a></p>
+              </div>
+
+            </div>
+          </div>
+
+	     <div id='forScroll'></div>
+        </div>
+
+
+
+
+        <!--CHAT COMMENT START-->
+        <form [formGroup]="commentForm">
+          <div class="chatMain b_t_1_solid_d8d8d8 m_b_0 p_r">
+            <div class="form-group m_b_0 p_r"><img
+              src="{{loggedInUserData.profileImage?.thumbnailPath | defaultImage:'userProfile'}}"
+              class="img-circle chat_persion" alt="User Profile Pic" title="User Profile Pic" width="30"
+              height="30"><textarea dir="{{siteDirection}}"   class="form-control" rows="3" name="newsCommentText" id="newsCommentText" (keyup)="tAGGING($event)"
+                                    formControlName="newsCommentText" placeholder="Write Something" i18n-placeholder></textarea></div>
+
+  <!--SEARCH COLLAPSE START-->
+  <div class="exploreMentionComent my_setting">
+    <ul class="list-group">
+    <!--ONE START-->
+    <li  class="list-group-item" *ngFor="let user of userMentionList;let i = index">
+    <div class="media d_flex align_item_center c_p" (click)="userSelectedForMention(user)">
+    <a  class="pull-left c_p"><img class="img-circle" [src]="user.profileImageThumbnail|defaultImage: 'userProfile'" alt="image" title="image" width="40" height="40"></a>
+    <div class="media-body f_s_14">
+    <p class="m_b_5 f_w_b">{{user.name}}</p>
+    <p class="f_s_12 c_88909d m_b_0">@{{user.username}}
+    <span> {{user.userTypeId | usertypeIdToUserType}}</span>
+
+
+    </p>
+    </div>
+    </div>
+    </li>
+    <!--ONE END-->
+    </ul>
+
+
+    </div>
+    <!--SEARCH COLLAPSE END-->
+
+      <!--SEARCH COLLAPSE START-->
+<div class="exploreTagComent my_setting">
+    <ul class="list-group">
+    <!--ONE START-->
+    <li  class="list-group-item" *ngFor="let usertag of hashTagDataList;let i = index">
+    <div class="media d_flex align_item_center c_p" (click)="userSelectedForTag(usertag)">
+    <div class="media-body f_s_14">
+    <p class="m_b_5 f_w_b"><span>#</span>{{usertag.name}}</p>
+
+    </div>
+    </div>
+    </li>
+    <!--ONE END-->
+    </ul>
+
+
+    </div>
+    <!--SEARCH COLLAPSE END-->
+            <div class="wholeChat row">
+              <div class="col-sm-6 col-xs-8 p_0 allSelectFile">
+                <div class="row">
+                  <div class="choseIMg col-sm-3 col-xs-4 c_p p_t_5">
+                    <a  class="c_p">
+                      <input dir="{{siteDirection}}" id="myinput" #fileInputImage type="file" class="customFile" (change)="fileChangeEvent($event)"  accept="image/*"><img class="m_t_5" src="assets/images/camra.png" alt="" title="">
+                    </a>
+                  </div>
+
+
+
+                <div class="col-sm-9 col-xs-8" *ngIf="imageFileList && imageFileList.length>0" >
+                  <span *ngFor="let images of imageFileList;let i = index">
+                    <img class="img-circle" width="40" height="40" [src]="images.fileUrl" alt="" title="">
+                    <a class="c_p"  (click)="removeNewsCommentMedia()" ><i class="material-icons">&#xE5CD;</i></a>
+                  </span>
+                </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-xs-4 p_0 text-right">
+                <button type="button" (click)="postNewsComment(newsAction.virtualNewsId)"
+                        class="btn btn-info btn-lg theam_bg border_r_n"><i class="material-icons">&#xE163;</i></button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <!--CHAT COMMENT END-->
+
+      </div>
+
+    </div>
+    <!--ONE END-->
+
+
+  </div>
+</div>

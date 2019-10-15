@@ -1,0 +1,2409 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="haventNotification" datatype="html">
+        <source> You have no new notifications</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/notification/notification.component.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/notification/notification.component.ts</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/notification/notification.component.ts</context>
+          <context context-type="linenumber">143</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="following" datatype="html">
+        <source>Following</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/notification/notification.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-list/user-list.component.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/viewprofile/viewprofile.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/viewprofile/viewprofile.component.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">246</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/explorer-user-list/explorer-user-list.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/explorer-user-list/explorer-user-list.component.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/explore-page/explore-page.component.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/explore-page/explore-page.component.ts</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="you" datatype="html">
+        <source>You</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/notification/notification.component.ts</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="joinBoardRequest" datatype="html">
+        <source>
+                                <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Board join requests<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>
+                            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/notification/notification.component.ts</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="approveIgnoreRequest" datatype="html">
+        <source>Approve or ignore requests</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/notification/notification.component.ts</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="new" datatype="html">
+        <source>NEW</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/notification/notification.component.ts</context>
+          <context context-type="linenumber">112</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
+        <source>Search</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/header/header.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/create-post.component.ts</context>
+          <context context-type="linenumber">318</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ediProfile" datatype="html">
+        <source>Edit Profile</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/header/header.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="setting" datatype="html">
+        <source>Setting</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/header/header.component.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="changePassword" datatype="html">
+        <source>Change Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/header/header.component.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/edit-profile/edit-profile.component.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/edit-profile/edit-profile.component.ts</context>
+          <context context-type="linenumber">192</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/edit-profile/edit-profile.component.ts</context>
+          <context context-type="linenumber">193</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="logOut" datatype="html">
+        <source>Log Out</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/header/header.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="faqs" datatype="html">
+        <source>Faqs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/footer/footer.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/static-pages/static-pages.component.ts</context>
+          <context context-type="linenumber">470</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">367</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">740</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="tos" datatype="html">
+        <source>Terms of Services</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/footer/footer.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/static-pages/static-pages.component.ts</context>
+          <context context-type="linenumber">471</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">368</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">741</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="pp" datatype="html">
+        <source>Privacy Policy</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/footer/footer.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/static-pages/static-pages.component.ts</context>
+          <context context-type="linenumber">472</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">353</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">369</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">742</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="myuCopyright" datatype="html">
+        <source>MyU © Copyright 2019 | All Rights Reserved </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/footer/footer.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/static-pages/static-pages.component.ts</context>
+          <context context-type="linenumber">478</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">375</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">748</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="norecordfound" datatype="html">
+        <source> Nothing here.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-search/user-search.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="iAM" datatype="html">
+        <source>I am a ...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="chooseAccount" datatype="html">
+        <source>Select your account type.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="student" datatype="html">
+        <source>Student</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">140</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">159</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">164</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">511</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">530</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">535</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="teacherProfessor" datatype="html">
+        <source>Teacher or Professor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="clubDepartment" datatype="html">
+        <source>Department or Club</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">143</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">169</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">174</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">514</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">540</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">545</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="parent" datatype="html">
+        <source>Parent</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">142</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">194</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">200</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">513</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">565</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">571</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="haveAccount" datatype="html">
+        <source>Already have an account?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">141</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="login" datatype="html">
+        <source>Login!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">141</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/static-pages/static-pages.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">413</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="next" datatype="html">
+        <source>Next</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">290</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">660</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="selectSchool" datatype="html">
+        <source>Find your school</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">162</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">112</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8cfea10d321883c2ae529658740774139dc83fe3" datatype="html">
+        <source>Search Your School Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="universityNameError" datatype="html">
+        <source>
+               Please Enter School Name.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="addInformation" datatype="html">
+        <source>Add your information.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="484b0e541230d60ddb5fbd771a34a5c8d90e7a57" datatype="html">
+        <source>Full Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="signupNameError" datatype="html">
+        <source>
+            We need your first and last name.
+          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="08c74dc9762957593b91f6eb5d65efdfc975bf48" datatype="html">
+        <source>Username</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/edit-profile/edit-profile.component.ts</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="signuoUsernameError" datatype="html">
+        <source>
+            Please enter a Username
+          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="usernamePatternerror" datatype="html">
+        <source>
+          You may only use letters, numbers, and underscores.
+      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passwordError" datatype="html">
+        <source>
+          Enter Password
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passwordCharchtersError" datatype="html">
+        <source>
+          Password must be at least 6 characters
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">123</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0fb3f45d31ab19cb40b042ebcb2ae26ff5f04d79" datatype="html">
+        <source>Official email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="signupEmailError" datatype="html">
+        <source>
+          Please enter your Email
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">130</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="emailPatternerror" datatype="html">
+        <source>
+          Something seems to be wrong with your email address.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">133</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">694</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="verificationLink" datatype="html">
+        <source>A verification link will be sent to you!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register" datatype="html">
+        <source>Register</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">140</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="byRegister" datatype="html">
+        <source>By registering you are agree to our <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/><x id="START_TAG_INS" ctype="x-ins" equiv-text="&lt;ins&gt;"/>terms of service<x id="CLOSE_TAG_INS" ctype="x-ins" equiv-text="&lt;/ins&gt;"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
+           and  <x id="START_TAG_INS" ctype="x-ins" equiv-text="&lt;ins&gt;"/><x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>privacy policy.<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> <x id="CLOSE_TAG_INS" ctype="x-ins" equiv-text="&lt;/ins&gt;"/>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">142</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registerSuccessful" datatype="html">
+        <source>Registration complete!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">168</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CongratsMessage" datatype="html">
+        <source>You&apos;re Done!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">169</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CongratsMessage1" datatype="html">
+        <source>An email was sent to you with  a link. Please click on the link to have your account verified.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">171</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="start" datatype="html">
+        <source>Start</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/signup/signup.component.ts</context>
+          <context context-type="linenumber">174</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="stayOrganized" datatype="html">
+        <source>Stay organized</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="createYourProfile" datatype="html">
+        <source>Create your profile and add boards to connect with your school community.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="createPost" datatype="html">
+        <source>Share important updates</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="chooseToShareWithAll" datatype="html">
+        <source>Choose to share with all your followers or members of a specific boards.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="exploreCommunity" datatype="html">
+        <source>Stay up to date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="stayUpToDtae" datatype="html">
+        <source>Stay up to date with who and what is popular within your school, and beyond.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="getInstantFeed" datatype="html">
+        <source>Get instant feedback</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="getInstantFeedback" datatype="html">
+        <source>Get instant feedback from your school community through private messaging.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dbcc07e038ece288398f77c3e3080ebd4fe24181" datatype="html">
+        <source>Username or Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="loginEmailError" datatype="html">
+        <source>
+              Please enter your registered Username or EmailId!
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">124</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forgotPassword" datatype="html">
+        <source>Forgot Password?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">117</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="noAccountYet" datatype="html">
+        <source>No account yet?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ba808ceacf3b47eeb4429514b32a9267eff8fa49" datatype="html">
+        <source>Username or Email Id</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="send" datatype="html">
+        <source>Send</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">136</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">518</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">336</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">709</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="NoNeedResetPass" datatype="html">
+        <source>No need reset password?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">139</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="goBack" datatype="html">
+        <source>Back</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/login-signup/login/login.component.ts</context>
+          <context context-type="linenumber">141</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="aboutApp" datatype="html">
+        <source>ABOUT APP<x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>(current)<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/static-pages/static-pages.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">401</context>
+        </context-group>
+      </trans-unit>
+
+
+
+   <trans-unit id="forSch" datatype="html">
+        <source>FOR SCHOOLS<x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>(current)<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/static-pages/static-pages.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">401</context>
+        </context-group>
+      </trans-unit>
+
+
+         <trans-unit id="forTech" datatype="html">
+        <source>FOR TEACHERS<x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>(current)<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/static-pages/static-pages.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">401</context>
+        </context-group>
+      </trans-unit>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <trans-unit id="testimonials" datatype="html">
+        <source>TESTIMONIALS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/static-pages/static-pages.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">402</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactUs" datatype="html">
+        <source>CONTACT US</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/static-pages/static-pages.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">310</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">403</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">680</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="aboutUs" datatype="html">
+        <source>ABOUT US</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/static-pages/static-pages.component.ts</context>
+          <context context-type="linenumber">469</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">295</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">366</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">739</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="addBoard" datatype="html">
+        <source> Add board </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board-list/board-list.component.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="boardName" datatype="html">
+        <source>Name your board the way you want others to see it.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1a44c82594d8bd4f8afc4ce9ed2a709fe5cfb5d0" datatype="html">
+        <source>Board name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="privateBoardApprove" datatype="html">
+        <source>When your board is private, only people you approve can join.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="privateBoard" datatype="html">
+        <source>Private board</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="saveBoard" datatype="html">
+        <source>Add</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="editBoard" datatype="html">
+        <source>Edit board</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="moveAchive" datatype="html">
+        <source>Move to archive</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="moveProfile" datatype="html">
+        <source>Move to Profile</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="deleteBoard" datatype="html">
+        <source>Delete Board</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">116</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="deleteBoardChoice" datatype="html">
+        <source>Are you sure you want to delete this board?
+        <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> This action can`t be undone.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="boardCancel" datatype="html">
+        <source>Cancel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board/board.component.ts</context>
+          <context context-type="linenumber">129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="post" datatype="html">
+        <source>Posts</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board-detail/board-detail.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/select-board-list/select-board-list.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/viewprofile/viewprofile.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="member" datatype="html">
+        <source>Member</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board-detail/board-detail.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="file" datatype="html">
+        <source>Files</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board-detail/board-detail.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="edit" datatype="html">
+        <source>Edit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board-list/board-list.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="joinBoard" datatype="html">
+        <source>Join</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board-list/board-list.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="requestBoard" datatype="html">
+        <source>Requested</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board-list/board-list.component.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="joinedBoard" datatype="html">
+        <source>Joined</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/board-list/board-list.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="follow" datatype="html">
+        <source>Follow</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-list/user-list.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/viewprofile/viewprofile.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/explorer-user-list/explorer-user-list.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/explorer-user-list/explorer-user-list.component.ts</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/explore-page/explore-page.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/explore-page/explore-page.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="addComment" datatype="html">
+        <source>Add comment</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-comment/news-comment.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Public" datatype="html">
+        <source>Followers</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-comment/news-comment.component.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="loadPreviousComments" datatype="html">
+        <source>Load Previous Comments</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-comment/news-comment.component.ts</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="delete" datatype="html">
+        <source>Delete</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-comment/news-comment.component.ts</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-list/news-list.component.ts</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="replay" datatype="html">
+        <source>Reply</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-comment/news-comment.component.ts</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="002bf09aeca22fe222ee1453c8b4d161327710f2" datatype="html">
+        <source>Write Something</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-comment/news-comment.component.ts</context>
+          <context context-type="linenumber">129</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/create-post.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="report" datatype="html">
+        <source>Report</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-report/news-report.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-list/news-list.component.ts</context>
+          <context context-type="linenumber">117</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="itsSpam" datatype="html">
+        <source>It&apos;s spam </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-report/news-report.component.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="itsInappropriate" datatype="html">
+        <source>It&apos;s inappropriate</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-report/news-report.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="itsDisrespectful" datatype="html">
+        <source>It&apos;s disrespectful or harmful</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-report/news-report.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="otherReason" datatype="html">
+        <source>Other reason</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-report/news-report.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="399b69ce0883e988a65bad7765a7285df79b6185" datatype="html">
+        <source>Other Reason</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-report/news-report.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="submit" datatype="html">
+        <source>Submit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-report/news-report.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CreateYourFirstPost" datatype="html">
+        <source>Create your first post.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-list/news-list.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nothingHereYet" datatype="html">
+        <source>Nothing Here Yet..</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-list/news-list.component.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="newsFeedEmpty" datatype="html">
+        <source>Your news feed is empty.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-list/news-list.component.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="like" datatype="html">
+        <source>likes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-list/news-list.component.ts</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">225</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="comment" datatype="html">
+        <source>comments</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-list/news-list.component.ts</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">232</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="view" datatype="html">
+        <source>view</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/news-list/news-list.component.ts</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AddAttachement" datatype="html">
+        <source>Add Attachment
+        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>
+        <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/create-post.component.ts</context>
+          <context context-type="linenumber">240</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/create-post.component.ts</context>
+          <context context-type="linenumber">431</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="chooseImage" datatype="html">
+        <source>Choose image</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/create-post.component.ts</context>
+          <context context-type="linenumber">253</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="chooseVideo" datatype="html">
+        <source>Choose video</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/create-post.component.ts</context>
+          <context context-type="linenumber">259</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AttachADocument" datatype="html">
+        <source>Attach a document</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/create-post.component.ts</context>
+          <context context-type="linenumber">266</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="existingFileFromMyu" datatype="html">
+        <source>Existing files from myU</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/create-post.component.ts</context>
+          <context context-type="linenumber">277</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="recentlyUploaded" datatype="html">
+        <source>Recently uploaded document</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/create-post.component.ts</context>
+          <context context-type="linenumber">278</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PleaseChooseFile" datatype="html">
+        <source>Please choose the file from your boards
+
+            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>
+              <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>
+            <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/create-post.component.ts</context>
+          <context context-type="linenumber">310</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="takePhoto" datatype="html">
+        <source>Take a photo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/create-post.component.ts</context>
+          <context context-type="linenumber">361</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="camera" datatype="html">
+        <source>Camera</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/create-post.component.ts</context>
+          <context context-type="linenumber">368</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="video" datatype="html">
+        <source>Video</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/create-post.component.ts</context>
+          <context context-type="linenumber">369</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="computer" datatype="html">
+        <source>Computer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/create-post.component.ts</context>
+          <context context-type="linenumber">370</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="done" datatype="html">
+        <source>Done</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/create-post.component.ts</context>
+          <context context-type="linenumber">397</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/create-post/create-post.component.ts</context>
+          <context context-type="linenumber">413</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="followers" datatype="html">
+        <source>followers</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/viewprofile/viewprofile.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="joinedBoards" datatype="html">
+        <source>joined boards</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/viewprofile/viewprofile.component.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sendMessage" datatype="html">
+        <source>Send Message</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/viewprofile/viewprofile.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="block" datatype="html">
+        <source>Block</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/viewprofile/viewprofile.component.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unBlock" datatype="html">
+        <source>UnBlock</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/viewprofile/viewprofile.component.ts</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">194</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="classOf" datatype="html">
+        <source>Class of</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/viewprofile/viewprofile.component.ts</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/newsfeed/newsfeed.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="personalInfo" datatype="html">
+        <source>Personal Info</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/edit-profile/edit-profile.component.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="changeCover" datatype="html">
+        <source>Change your cover photo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/edit-profile/edit-profile.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
+        <source>Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/edit-profile/edit-profile.component.ts</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">318</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">688</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="19991529f3b2827b8665b273580c9d52194df9e8" datatype="html">
+        <source>Bio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/edit-profile/edit-profile.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/edit-profile/edit-profile.component.ts</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">322</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">692</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1ee03147ce5be8ebfd07fe999d93eb6c7625a478" datatype="html">
+        <source>Please enter your phone number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/edit-profile/edit-profile.component.ts</context>
+          <context context-type="linenumber">118</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="male" datatype="html">
+        <source>Male</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/edit-profile/edit-profile.component.ts</context>
+          <context context-type="linenumber">127</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="female" datatype="html">
+        <source>Female</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/edit-profile/edit-profile.component.ts</context>
+          <context context-type="linenumber">128</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="notSpecified" datatype="html">
+        <source>Not Specified</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/edit-profile/edit-profile.component.ts</context>
+          <context context-type="linenumber">129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1ae3dcf96b494406b6fd6fbd2f15f7259553bf4d" datatype="html">
+        <source>Current Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/edit-profile/edit-profile.component.ts</context>
+          <context context-type="linenumber">162</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c7014c6360e94b236286b869c3fe0ea9911c0387" datatype="html">
+        <source>New Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/edit-profile/edit-profile.component.ts</context>
+          <context context-type="linenumber">172</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c1b7e6d75ff4285c7636c67e5ef259629b81725b" datatype="html">
+        <source>Confirm Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user-profile/edit-profile/edit-profile.component.ts</context>
+          <context context-type="linenumber">184</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="viewAchive" datatype="html">
+        <source>View Archived</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="BlockedUser" datatype="html">
+        <source>Blocked Users</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="notification" datatype="html">
+        <source>Notifications</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">208</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="language" datatype="html">
+        <source>Language</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">466</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="archiveBoard" datatype="html">
+        <source>Archived boards</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="activityType" datatype="html">
+        <source>Activity type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">213</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="newPost" datatype="html">
+        <source>New Post</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">218</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="message" datatype="html">
+        <source>Messages</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">239</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="otherNotification" datatype="html">
+        <source>Other notifications</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">260</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="receivePrivateMessage" datatype="html">
+        <source>Receive Private Messages</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">265</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="appearOnExplorePage" datatype="html">
+        <source>Appear on Explore Page</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">272</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="whatIsMyu" datatype="html">
+        <source>What is MyU?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">301</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">461</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="myuIntro3" datatype="html">
+        <source>See how myU can helps you.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">307</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">154</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">525</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="currentLanguage" datatype="html">
+        <source>Current language</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">471</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="feedback" datatype="html">
+        <source>Feedback</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">507</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4b0ca852bafa5037c4e64c7b18f9cd1e14b799de" datatype="html">
+        <source>Subject</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">513</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">327</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">700</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ccac601bf473fa28c9ac46794f1cd40542f74347" datatype="html">
+        <source>Message</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/settings/settings.component.ts</context>
+          <context context-type="linenumber">516</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="inYourSchool" datatype="html">
+        <source>Also in your school:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/explorer-user-list/explorer-user-list.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="viewMore" datatype="html">
+        <source>View More</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/explorer-user-list/explorer-user-list.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/explorer-user-list/explorer-user-list.component.ts</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fromOtherSchool" datatype="html">
+        <source>From other schools:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/explorer-user-list/explorer-user-list.component.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="popularInYourSchool" datatype="html">
+        <source>POPULAR IN YOUR SCHOOL</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/explore-page/explore-page.component.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="popularInOtherSchool" datatype="html">
+        <source>POPULAR IN OTHER SCHOOLS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/explore-page/explore-page.component.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="popularPosts" datatype="html">
+        <source>POPULAR POSTS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/explore-page/explore-page.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="communicate" datatype="html">
+        <source>COMMUNICATE EASILY WITH YOUR SCHOOL COMMUNITY</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">432</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sendNotes" datatype="html">
+        <source>Send your notes instantly to any school member for free</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">433</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="myuIntro" datatype="html">
+        <source>myU app saves teachers’ time, effort and the day to day hustle and bustle of communicating with students by powering
+            them with a free simple tool for them and their students to connect and share on the go</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">463</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="myuintro2" datatype="html">
+        <source>The end to unreachable messages and E-mails</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">482</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="instancy" datatype="html">
+        <source>Instancy </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="noMoreChasing" datatype="html">
+        <source>No more chasing during school hours via e-mail or calls</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">116</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CommunicateInstantly" datatype="html">
+        <source>
+              <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Communicate Instantly :<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Send real-time simple messages to your school group or a single person</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">117</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AttachPhotos" datatype="html">
+        <source>Attach photos and voice notes to your messages</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Reach" datatype="html">
+        <source>Reach </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ReachEveryoneAtOnce" datatype="html">
+        <source>
+              <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Reach everyone at once :<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Send announcements and notifications to any mobile at any time in Arabic and
+              English
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">123</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Privacy" datatype="html">
+        <source>Privacy </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ChooseYourPrivacy" datatype="html">
+        <source>Choose your privacy preference</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">130</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ConnectWithEveryone" datatype="html">
+        <source>Connect with everyone in your school community without the need to share your phone number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ManageThePrivacy" datatype="html">
+        <source>Manage the privacy of your boards, posts or notifications</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="educator" datatype="html">
+        <source>Educator</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">141</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">181</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">187</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">512</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">552</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">558</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="studentFact" datatype="html">
+        <source>Stay up to date with your school community and never miss an important announcement again</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">160</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">531</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="clubDepartmentFact" datatype="html">
+        <source>Expand your reach within your school, connect with students faster promoting your news, events and activities</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">170</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">541</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="educatorFact" datatype="html">
+        <source>Send your announcements on the go, create discussions. no time for a text? share your instructions in a voice
+                  note or get visual and share a photo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">182</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">553</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="parentFact" datatype="html">
+        <source>Keep track with your child’s performance with the least effort, receive news and updates from the school management
+                  and teachers</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">195</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">566</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="institution" datatype="html">
+        <source>INSTITUTION</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">205</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">210</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">576</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">581</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="institutionFact" datatype="html">
+        <source>Take over your school’s control panel, see analytics and manage your own database</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">206</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">577</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="userTestimonials" datatype="html">
+        <source>Users Testimonials</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">230</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">600</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="testimonialQuote" datatype="html">
+        <source>“This app will definitely be the main teacher-student Interaction platform outside of the classroom
+                            at KU and all other educational institutions”</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">249</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">619</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="testimonialUsername" datatype="html">
+        <source>Mrs. Hala Alsammar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">251</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">621</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="testimonialDepartment" datatype="html">
+        <source>Instructor at the English Language Unit in Kuwait University</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">252</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">622</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="testimonialQuote2" datatype="html">
+        <source>“myU is great. Communication with my class is much more efficient now”</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">268</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">638</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="testimonialUsername2" datatype="html">
+        <source>Dr. Fahad Alzumai</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">269</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">639</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="testimonialDepartment2" datatype="html">
+        <source>Professor of Business Law at Gulf University for Science &amp; Technology</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">270</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">640</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="previous" datatype="html">
+        <source>Previous</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">285</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">655</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="thankYou" datatype="html">
+        <source>Thank you!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">313</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">683</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e6fe1d47fed39f15272cde41635b229955dacd00" datatype="html">
+        <source>Write a Message</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">332</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/common/home/home.component.ts</context>
+          <context context-type="linenumber">705</context>
+        </context-group>
+      </trans-unit>
+
+
+      <trans-unit id="forschool_1" datatype="html">
+        <source>MyU FOR SCHOOLS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_2" datatype="html">
+        <source>Engage your school community in an easy safe and fun communication experience!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>      
+      <trans-unit id="forschool_3" datatype="html">
+        <source>EXPLORE OPTIONS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_4" datatype="html">
+        <source>Used in 4000+ Schools</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_5" datatype="html">
+        <source>Engage your communy safely!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_6" datatype="html">
+        <source>Keep your students engaged and their parents satisfied. Ensure that your communication is safe, and
+under the school supervision. Enrich your school experience, while maintaining the privacy of everyone’s
+personal information. Use the admin panel to view stats, share push notifications and more...!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+
+
+ <trans-unit id="fortteacher_6" datatype="html">
+        <source>Keep your students engaged, increase your class productivity, enrich the teaching experience and suppliment
+        it with videos and articles from the web. Send parents picture of their children and
+        answer their questions on important matters instantly. All that and more, when you use MyU! </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+
+
+      <trans-unit id="forschool_7" datatype="html">
+        <source>Free</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_8" datatype="html">
+        <source>Web/mobile app</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_9" datatype="html">
+        <source>Unlimited accounts</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_10" datatype="html">
+        <source>Unlimited private messages</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_11" datatype="html">
+        <source>Unlimited attendance sessions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_12" datatype="html">
+        <source>Upto 8 active classes per teacher</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_13" datatype="html">
+        <source>Upto 4 images on each post</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_14" datatype="html">
+        <source>Upto 3 minutes video </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_15" datatype="html">
+        <source>100 MB document storage space</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_16" datatype="html">
+        <source>sign up for free</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="signup_for_teachers" datatype="html">
+        <source>SIGN UP</source>
+         <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="sign_up_for_free" datatype="html">
+        <source>sign up for free</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="forschool_17" datatype="html">
+        <source>basic</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="forschool_18" datatype="html">
+        <source>From $1,499/year</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_19" datatype="html">
+        <source>Analytics dashboard</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_20" datatype="html">
+        <source>User database dashboard</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_21" datatype="html">
+        <source>Monitoring of communication</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_22" datatype="html">
+        <source>Bulk push notifications</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_23" datatype="html">
+        <source>prime</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_24" datatype="html">
+        <source>From $2,499/month</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_25" datatype="html">
+        <source>Upto 12 active classes per teacher</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_26" datatype="html">
+        <source>Upto 8 images on each post</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_27" datatype="html">
+        <source>Upto 10 minutes video</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_28" datatype="html">
+        <source>100 GB document storage space</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_29" datatype="html">
+        <source>Feature customisation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_31" datatype="html">
+        <source>Priority technical support</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_30" datatype="html">
+        <source>request a quote</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_32" datatype="html">
+        <source>As a school principal, MyU helps as an effective channel to communicate with different segments. I connect with students to answer their questions, and with parents to address their requests. This helps save parents' time and bridge the gap between them and the school. From a technical view point, it was hard for me as a principal to visit the large number of classes happening every day in the school. But, MyU enabled me to part of these classes digitally, and understand the teaching methods teachers are using and the nature of communication within them.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_33" datatype="html">
+        <source>Nawal Aldakheel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_34" datatype="html">
+        <source>Principal, Mama Anisa School, Kuwait</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_35" datatype="html">
+        <source>Are you a school chain or a district?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_36" datatype="html">
+        <source>learn more</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forschool_37" datatype="html">
+        <source>request a quote</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/school-component/school.component.ts</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="forteachers_1" datatype="html">
+        <source>CONNECT EASILY WITH STUDENTS AND PARENTS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_2" datatype="html">
+        <source>Without sharing your phone number or personal information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="forteachers_3" datatype="html">
+        <source>Plans for teachers</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_4" datatype="html">
+        <source>No phone number sharing</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_5" datatype="html">
+        <source>Unlimited posts</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_6" datatype="html">
+        <source>Exportable attendance report</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_7" datatype="html">
+        <source>No student limit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_8" datatype="html">
+        <source>Upto 8 active classes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_9" datatype="html">
+        <source>Unlimited archived classes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_10" datatype="html">
+        <source>$99.99/year</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_11" datatype="html">
+        <source>Upto 12 active classes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_12" datatype="html">
+        <source>Higher rank on lists</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_13" datatype="html">
+        <source>SIGNUP</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_14" datatype="html">
+        <source>How it works?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_15" datatype="html">
+        <source>Empowering schools and families</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_16" datatype="html">
+        <source>Watch this short report about MyU</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_17" datatype="html">
+        <source>Download from here:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_18" datatype="html">
+        <source>Are you a school administrator?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_19" datatype="html">
+        <source>Learn about MyU for Schools</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forteachers_20" datatype="html">
+        <source>MyU for schools</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/teacher-component/teacher.component.ts</context>
+        </context-group>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

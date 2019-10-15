@@ -1,0 +1,57 @@
+<section class="container p_y_30">
+  <div class="row">
+    <div class="col-lg-3 p_r text-center autoSideBarLeft">
+      <div class="theiaStickySidebar">
+      <div class="newsFeed overflow_h">
+        <figure class="NewsFeedProfile">
+          <p class="big_img p_r">
+            <img src="{{userData.backgroundImage?.thumbnailPath |defaultImage: 'userProfile' }}" alt="" title="">
+            <span>{{ userData.name}}</span>
+          </p>
+          <p class="closeCricle c_788692">
+            <img class="img-circle" src="{{userData.profileImage?.thumbnailPath |defaultImage: 'userProfile'}}" alt="Profile Pic" title="Profile Pic">
+          </p>
+          <span class="ProName">@{{userData.username}}
+            <br>
+            <i>{{userData.userTypeId | usertypeIdToUserType}}</i>
+          </span>
+        </figure>
+        <p class="hidden-sm hidden-xs">&nbsp;</p>
+        <p class="fadeLine"></p>
+        <p class="text-left f_s_14 p_x_15 c_262626">{{userData.bio}}</p>
+        <p class="text-center c_037aff f_s_14 m_t_15 p_x_15"><span>{{userData.university?.name}}<br></span><span *ngIf="userData.department!= undefined"> {{userData.department?.name}}</span>
+          <span *ngIf="userData.department!= undefined && userData.graduationYear!= undefined && userData.graduationYear>0" ></span>
+          <span *ngIf="userData.graduationYear!= undefined && userData.graduationYear>0"><br>
+            <span i18n="@@classOf">Class of</span>
+             {{userData.graduationYear}}</span></p>
+        <p>&nbsp;</p>
+      </div>
+
+      <app-board-list [otherUserProfileFlag]="otherUserProfileFlag" *ngIf="userData!=undefined && userData.userTypeId!=5" [userData]="userData"></app-board-list>
+      </div>
+
+    </div>
+
+    <div class="col-lg-6 profile_c">
+
+
+
+
+
+      <appcreatepost *ngIf="userData!=undefined && userData.userTypeId!=5 && userData.userTypeId!=4" [userData]="userData"></appcreatepost>
+      <!--</div>-->
+      <!--Attachment End-->
+
+      <!--Take a Photo Start-->
+      <!---->
+
+      <app-news-list #newsList [userId]="userId" [type]="type"></app-news-list>
+
+
+    </div>
+
+    <div class="col-lg-3 autoSideBarRight">
+      <app-explorer-user-list class="theiaStickySidebar"></app-explorer-user-list>
+    </div>
+  </div>
+</section>

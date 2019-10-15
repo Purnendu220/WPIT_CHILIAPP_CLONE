@@ -1,0 +1,148 @@
+<!--LOGIN START-->
+<div class="modal-body" id="login">
+    <i class="close" (click)="activeModal.close('Close click')">
+    <i class="material-icons c_fff">&#xE5CD;</i>
+    </i>
+    <div class="row">
+        <section *ngIf="!forgotPassword" class="login_register">
+            <div class="slider bg_white">
+                <!--SLIDER START-->
+                <div id="loginSlider" class="carousel slide login m_b_0">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#loginSlider" data-slide-to="0" class="active"></li>
+                        <li data-target="#loginSlider" data-slide-to="1"></li>
+                        <li data-target="#loginSlider" data-slide-to="2"></li>
+                        <li data-target="#loginSlider" data-slide-to="3"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <h3 class="text-center" i18n="@@stayOrganized">CHILI CREDIT</h3>
+                            <figure class="p_y_10">
+                                <img class="img-responsive center-block" src="../../../../assets/images/login_slider11.jpg" alt="Create a post img" title="Post Images">
+                            </figure>
+                            <div class="carousel-caption">
+                                <p i18n="@@getInstantFeedback">Some thing about the banner.And Other things to describe as key to service.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h3 class="text-center" i18n="@@createPost">NON STOP TALKING</h3>
+                            <figure class="p_y_10">
+                                <img class="img-responsive center-block" src="../../../../assets/images/login_slider22.jpg" alt="Create a post img" title="Post Images">
+                            </figure>
+                            <div class="carousel-caption">
+                                <p i18n="@@getInstantFeedback">Some thing about the banner.And Other things to describe as key to service.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h3 class="text-center" i18n="@@exploreCommunity">INTERNET MOBILE</h3>
+                            <figure class="p_y_10">
+                                <img class="img-responsive center-block" src="../../../../assets/images/login_slider33.jpg" alt="Create a post img" title="Post Images">
+                            </figure>
+                            <div class="carousel-caption">
+                                <p i18n="@@getInstantFeedback">Some thing about the banner.And Other things to describe as key to service.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h3 class="text-center" i18n="@@getInstantFeed">PACK GENES</h3>
+                            <figure class="p_y_10">
+                                <img class="img-responsive center-block" src="../../../../assets/images/login_slider44.jpg" alt="Create a post img" title="Post Images">
+                            </figure>
+                            <div class="carousel-caption">
+                                <p i18n="@@getInstantFeedback">Some thing about the banner.And Other things to describe as key to service.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--SLIDER END-->
+            </div>
+            <div class="account bg_white">
+                <form [formGroup]="loginform">
+                    <h3 class="f_s_22 c_262626 m_b_20 m_t_30" i18n="@@haveAccount">Already have an account?</h3>
+                    <p class="c_ff516b f_s_14">{{errorMessage}}</p>
+                    <!-- <p class="text-success f_s_14">{{errorMessage}}</p> -->
+                    <div class="form-group">
+                        <input dir="{{siteDirection}}" id="email" type="text" name="email" class="form-control" placeholder="Username or Email" formControlName="email" i18n-placeholder/>
+                        <div *ngIf="loginform.controls['email'].touched && loginform.controls['email'].hasError('required')" class="c_ff516b f_s_14" i18n="@@loginEmailError">
+                            Please enter your registered Username or EmailId!
+                        </div>
+                        <!--<div *ngIf="loginform.controls['email'].hasError('pattern')" class="alert alert-danger">
+                      Email Pattern Not Valid!
+                    </div> -->
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input dir="{{siteDirection}}" id="password" type="{{passtype}}" name="password" class="form-control" placeholder="Password" formControlName="password" i18n-placeholder>
+                        <div *ngIf="loginform.controls['password'].touched && loginform.controls['password'].hasError('required')" class="c_ff516b f_s_14" i18n="@@passwordError">
+                            Enter Password
+                        </div>
+                        <span class="form-control-feedback" *ngIf="loginform.value.password.length>0"><i *ngIf="passtype=='text'" class="material-icons c_c8cfd4 c_p md-light" (click)="showHidePassword()">&#xE417;</i>
+                <i *ngIf="passtype=='password'" class="material-icons c_p" (click)="showHidePassword()">visibility_off</i></span>
+                    </div>
+                    <!--<div class="form-group">
+            <label class="customCheckbox" i18n="@@rememberMe">Remember Me
+              <input dir="{{siteDirection}}" type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </div> -->
+                    <div class="form-group m_t_30 text-center f_s_14">
+                        <a class="c_262626 c_p " (click)="forgotPassword=true" i18n="@@forgotPassword">Forgot Password?</a>
+                    </div>
+
+                    <button (click)="processLogin()" class="btn btn-theam btn-lg btn-block" [disabled]="!loginform.valid" i18n="@@login">Log In</button>
+                    <figure class="p_y_20">
+                        <img src="assets/images/login_or.jpg" class="img-responsive center-block" alt="" title="">
+                    </figure>
+                    <p class="text-center c_595c68">
+                        <span i18n="@@noAccountYet">No account yet?</span>
+                        <span>
+              <a class="theam_text c_p tdn" (click)="openRegister()" i18n="@@register">Register!</a>
+            </span>
+                    </p>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!--FORGOT PASSWORD START-->
+    <section *ngIf="forgotPassword" class="login_register">
+        <div class="slider bg_white">
+            <h3 class="text-center invisible" i18n="@@selectSchool">Find your school</h3>
+            <figure class="p_y_10"><img class="img-responsive center-block" src="assets/images/forgot_pass.png" alt="Create a post img" title="Post Images"></figure>
+            <p class="p_x_80 text-center c_393939 p_b_15 invisible">What do motivational thoughts do? They help you take action. This isn't about positive.</p>
+        </div>
+        <div class="account bg_white">
+            <h3 class="f_s_22 c_262626 m_b_30 line_height_1p5" i18n="@@forgotPassword">Forgot password?</h3>
+            <form [formGroup]="forgotPassForm">
+                <p class="3e4653 f_s_14 m_b_25" i18n="@@verificationLink">A verification link will be sent to email!</p>
+                <div class="form-group">
+                    <p class="c_ff516b f_s_14 p_b_20">{{errorMessageForgotPassword}}</p>
+                    <input dir="{{siteDirection}}" name="forgot_email" type="text" class="form-control" placeholder="Username or Email Id" formControlName="email" i18n-placeholder/>
+                    <div *ngIf="forgotPassForm.controls['email'].touched && forgotPassForm.controls['email'].hasError('required')" class="c_ff516b f_s_14" i18n="@@loginEmailError">
+                        Enter your registered Username or Email!
+                    </div>
+                    <p class="3e4653 f_s_14 m_b_25">{{forgotPasswordSuccess}}</p>
+
+                </div>
+
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <div class="">
+                    <button type="button" class="btn btn-default theam_bg btn-lg btn-block c_fff m_b_10" (click)="forgotPass()" i18n="@@send">Send</button>
+                </div>
+                <p class="text-center c_595c68 m_t_30">
+                    <span i18n="@@NoNeedResetPass">No need reset password?</span>
+                    <span>
+            <a class="theam_text c_p" (click)="blurFoucus()" i18n="@@goBack">Back!</a>
+          </span>
+                </p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+            </form>
+        </div>
+    </section>
+    <!--FORGOT PASSWORD END-->
+</div>
+<!--LOGIN END-->

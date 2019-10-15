@@ -1,0 +1,27 @@
+<div class="modal-content bg_white m_d_w_555" style="top: 0;">
+  <form [formGroup]="reportForm" (ngSubmit)="reportSubmit()">
+  <div class="modal-header text-center p_y_15 f_s_20 c_262626 f_w_b"><div i18n="@@report">Report</div> <span class="pull-right c_p" data-dismiss="modal" (click)="activeModal.close('Close click')"><i class="material-icons c_abb7cd"></i></span></div>
+  <div class="modal-body p_0">
+<ul class="list-group">
+
+  <li class="list-group-item f_s_18">
+      <label class="customRadio f_s_18 c_262626"> <span i18n="@@itsSpam">It's spam </span> <input dir="{{siteDirection}}" type="radio" (click)="otherClick(1)" name="masterPokeId" required  formControlName="masterPokeId"  value="1" required> <span class="checkmark border_2"></span> </label>
+    </li>
+  <li class="list-group-item f_s_18">
+    <label class="customRadio f_s_18 c_262626"> <span i18n="@@itsInappropriate">It's inappropriate</span> <input dir="{{siteDirection}}"  (click)="otherClick(2)" type="radio" name="masterPokeId"  required formControlName="masterPokeId"  value="2" required> <span class="checkmark border_2"></span> </label>
+  </li>
+  <li class="list-group-item f_s_18">
+    <label class="customRadio f_s_18 c_262626"> <span i18n="@@itsDisrespectful">It's disrespectful or harmful</span> <input dir="{{siteDirection}}" (click)="otherClick(3)" type="radio" value="3" name="masterPokeId"  required formControlName="masterPokeId" > <span class="checkmark border_2"></span> </label>
+  </li>
+  <li class="list-group-item f_s_18">
+    <label class="customRadio f_s_18 c_262626"> <span i18n="@@otherReason">Other reason</span> <input dir="{{siteDirection}}" type="radio" (click)="otherClick(4)" name="masterPokeId"  formControlName="masterPokeId"  required value="4" > <span class="checkmark border_2"></span> </label>
+  </li>
+
+</ul>
+  </div>
+  <div class="modal-footer" *ngIf="isTextBoxOpen == true">
+    <textarea dir="{{siteDirection}}"   name="otherPoke"  formControlName="otherPoke" class="form-control" cols="5" placeholder="Other Reason" i18n-placeholder></textarea>
+  </div>
+  <p class="text-center m_y_10 p_b_20"> <button type="submit" class="btn btn-theam" i18n="@@submit">Submit</button></p>
+  </form>
+</div>

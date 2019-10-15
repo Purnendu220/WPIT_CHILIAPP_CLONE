@@ -1,0 +1,27 @@
+<div class="modal-content m_d_w_555" style="top: 0;">
+<div class="modal-body"  id="select-board">
+
+  <div class="thumbnail">
+    <div class="overflow_auto_300">
+<p class="p_a" style="right:10px; top:-10px;" (click)="activeModal.close('Close click')" ><i class="material-icons c_fff c_p">&#xE5CD;</i></p>
+<ul class="list-group p_10">
+    <li class="list-group-item d_flex jusfify_content_space_between" >
+        <span>{{defaultPublicBoard.boardName}}</span> <span><label class="customCheckbox"><input dir="{{siteDirection}}" type="checkbox" (change)="makePostPublic($event,defaultPublicBoard)">
+          <span class="checkmark"></span> </label></span>
+      </li>
+  <li class="list-group-item d_flex jusfify_content_space_between" *ngFor="let boardData of userBoardListData;let i = index">
+    <span>{{boardData.name}}</span> <span><label class="customCheckbox"><input dir="{{siteDirection}}" type="checkbox" (change)="selectBoard($event,boardData,i)">
+      <span class="checkmark"></span> </label></span>
+  </li>
+
+
+
+</ul>
+
+  </div>
+    <p class="text-center">
+      <button [disabled]="disableButton" [ngClass]="{'bg_c9cfd4': selectedBoardList.length==0 && defaultPublicBoard.isPublicSelected == false , 'theam_bg border_none c_fff': selectedBoardList.length>0 || defaultPublicBoard.isPublicSelected == true }" type="submit" class="btn m_y_10 border_2_gray p_x_80" style="height: 36px;" (click)="postNews()" i18n="@@post">Post</button>
+    </p>
+  </div>
+</div>
+</div>

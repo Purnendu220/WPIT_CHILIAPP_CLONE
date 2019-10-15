@@ -1,0 +1,610 @@
+<body style="font-size: 14px;">
+    <div style="background: #fff;">
+
+        <div *ngIf="language=='en'">
+            <div class="navbar_wrapper bg_color navbar_fixed_top">
+                <div class="container">
+                    <nav class="navbar" id="myScrollspy">
+
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+                            <a class="navbar-brand" href="#">
+                                <img class="" src="assets/images/logo_myu.png" alt="myU">
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse edits" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li style="width: auto;" (click)="routeUser('aboutmyu')"><a class="fontfamlilyHelvitaca c_p"><span i18n="@@aboutApp" >ABOUT CHILI</span></a></li>
+                                <li style="width: auto;" (click)="routeUser('forteacher')"><a class="fontfamlilyHelvitaca c_p"><span i18n="@@forTech">RECHARGE</span></a></li>
+                                <li style="width: auto;" (click)="routeUser('forschool')"><a class="fontfamlilyHelvitaca c_p"><span i18n="@@forSch">PRODUCTS</span></a></li>
+                                <li style="width: auto;" (click)="routeUser('forschool')"><a class="fontfamlilyHelvitaca c_p"><span i18n="@@forSch">SUPPORT</span></a></li>
+
+                                <li style="width: auto;" (click)="routeUser('forschool')"><a class="fontfamlilyHelvitaca c_p"><span i18n="@@forSch">INTERNATIONAL CALLING</span></a></li>
+
+                                <!--<li>
+                <a href="#testimonial" i18n="@@testimonials">TESTIMONIALS</a>
+              </li>-->
+                                <!--<li>
+                <a href="#contactus" i18n="@@contactUs">CONTACT US</a>
+              </li>-->
+                            </ul>
+
+                            <!--<span class="lang_link"> <a href="http://qa-cms.myu.co/myu/ar/">العربية</a></span>-->
+
+                            <ul class="nav navbar-nav navbar-right">
+
+                                <li style="margin-top: 10px;"><a class="c_p loginBtn" style="font-size: 13px!important; width: 150px;" (click)="openLogin()" i18n="@@login">Login</a></li>
+
+                                <!-- <li><a href="/" style="font-size:18px !important;">العربية</a></li> -->
+                            </ul>
+
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img class="first-slide" src="../../../../assets/images/contact_us.jpg" alt="slide">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1 i18n="@@communicate" hidden>COMMUNICATE EASILY WITH YOUR SCHOOL COMMUNITY</h1>
+                                <p i18n="@@sendNotes" class="fs_20" hidden>Send your reminders instantly to any school member for free</p>
+                                <p class="store_buttons">
+                                    <a href="https://itunes.apple.com/app/myu-app/id740372863?mt=8" target="_blank" role="button" hidden>
+                                        <img src="../../../../assets/images/app_store.png">
+                                    </a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.myu.android" target="_blank" role="button" hidden>
+                                        <img src="../../../../assets/images/play_store.png">
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="aboutapp"></div>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <hr class="divider_line" />
+
+
+
+            <div class="seehow_section">
+                <div class="container">
+                    <div class="row">
+                        <h1>
+                            <img src="../../../../assets/images/see_how_myU_can_halp_you.svg"> &nbsp;
+                            <span i18n="@@myuIntro3"><strong>See how Coolest Chili can help you</strong></span>
+                        </h1>
+                        <div class="col-sm-4 col-md-4">
+                            <div class="student_block">
+                                <div class="stud_hover_box">
+                                    <h1 i18n="@@student"><strong>Recharge</strong></h1>
+                                    <p i18n="@@studentFact">Recharge your phone on the go.And stay connected to world.</p>
+                                </div>
+                                <div class="student_box">
+                                    <img src="../../../../assets/images/mobile_rech.png">
+                                    <p i18n="@@student"><strong>Recharge</strong></p>
+                                </div>
+                            </div>
+                            <div class="clubordept_block">
+                                <div class="clubordept_hover_box">
+                                    <h1 i18n="@@clubDepartment"><strong>INTERNET</strong></h1>
+                                    <p i18n="@@clubDepartmentFact">Now get Internet on your mobile phone with CHILI. Surf, mail, chat or browse your favorite websites on the move with Mobile Internet.</p>
+                                </div>
+                                <div class="clubordept_box">
+                                    <img src="../../../../assets/images/internet.png">
+                                    <p i18n="@@clubDepartment"><strong>INTERNET</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                            <div class="educatordept_block">
+                                <div class="educatordept_hover_box">
+                                    <h1 i18n="@@educator"><strong>PRODUCTS</strong></h1>
+                                    <p i18n="@@educatorFact">Wi-Fi Internet <br> CDMA PHONES MOBILE PHONES</p>
+                                </div>
+                                <div class="educatordept_box">
+                                    <img src="../../../../assets/images/product.png">
+                                    <p i18n="@@educator">PRODUCTS</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                            <div class="parent_block">
+                                <div class="parent_hover_box">
+                                    <h1 i18n="@@parent">INTERNATIONAL CALLING</h1>
+                                    <p i18n="@@parentFact">Enjoy Superior voice quality with CHILI. Now call anyone, anywhere in the world and experience best voice communication at most competitive tariff.</p>
+                                </div>
+                                <div class="parent_box">
+                                    <img src="../../../../assets/images/int_call.png">
+                                    <p i18n="@@parent">INTERNATIONAL CALLING</p>
+                                </div>
+                            </div>
+                            <div class="institution_block">
+                                <div class="institution_hover_box">
+                                    <h1 i18n="@@institution">BROADBAND SERVICE</h1>
+                                    <p i18n="@@institutionFact">MTML provides dedicated-high speed enterprise grade broadband connectivity to meet the exploding demand of data services from corporates. </p>
+                                </div>
+                                <div class="institution_box">
+                                    <img src="../../../../assets/images/broad.png">
+                                    <p i18n="@@institution">BROADBAND SERVICE</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <hr class="divider_line" />
+
+            <div class="contactus_section">
+                <div class="contact_fly_left">
+                    <img src="../../../../assets/images/fly_comtact_us.svg">
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="contact_block">
+                            <div class="contact_circle_left">
+                                <img src="../../../../assets/images/circle_2.svg">
+                            </div>
+                            <div class="contact_block_inner">
+                                <h1>
+                                    <img src="../../../../assets/images/icon_section_contact_us.svg"> &nbsp; &nbsp;
+                                    <span i18n="@@contactUs"><strong>Contact us</strong></span>
+                                </h1>
+                                <div *ngIf="showContactUsSuccess" class="thanks_message" style="display:block;">
+                                    <h3 i18n="@@thankYou">Thank you!</h3>
+                                    <p>Your message has been successfully sent. We will contact you very soon!</p>
+                                </div>
+                                <form id="contactUsForm" [formGroup]="contactUs" (ngSubmit)="submitForm()">
+                                    <div class="form-group">
+                                        <input dir="{{siteDirection}}" type="text" class="form-control text_box" placeholder="Name" id="name" formControlName="userName" i18n-placeholder/>
+                                        <app-validation-message-component [control]="contactUs.controls['userName']"></app-validation-message-component>
+                                    </div>
+                                    <div class="form-group">
+                                        <input dir="{{siteDirection}}" type="email" class="form-control text_box" placeholder="Email" id="userEmail" formControlName="userEmail" i18n-placeholder/>
+                                        <app-validation-message-component [control]="contactUs.controls['userEmail']"></app-validation-message-component>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input dir="{{siteDirection}}" type="text" class="form-control text_box" placeholder="Subject" id="userSubject" formControlName="userSubject" i18n-placeholder/>
+                                        <app-validation-message-component [control]="contactUs.controls['userSubject']"></app-validation-message-component>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea dir="{{siteDirection}}" class="form-control text_box" rows="" placeholder="Write a Message" id="userMessage" formControlName="userMessage" i18n-placeholder></textarea>
+                                        <app-validation-message-component [control]="contactUs.controls['userMessage']"></app-validation-message-component>
+
+                                    </div>
+                                    <button type="submit" id="contact" class="btn btn-default btnsend" i18n="@@send">SEND</button>
+                                </form>
+                            </div>
+                            <div class="contact_circle_right">
+                                <img src="../../../../assets/images/circle_6.svg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="myu_footer">
+                <div class="container">
+                    <div class="footer_top">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <a href="https://twitter.com/MyU_app" target="_blank" class="margin_l30">
+                                    <img src="../../../../assets/images/twitter-logo-silhouette.svg" alt="Twitter">
+                                </a>
+                                <a href="https://www.facebook.com/myuappsocial" target="_blank" class="margin_l30">
+                                    <img src="../../../../assets/images/facebook.svg" alt="Facebook">
+                                </a>
+                                <a href="https://www.instagram.com/myu_app/" target="_blank" class="margin_l30">
+                                    <img src="../../../../assets/images/insta.svg" alt="Instagram">
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCUMNBJ4b1FotxjLHEbAUnLA" target="_blank" class="margin_l30">
+                                    <img src="../../../../assets/images/youtube.svg" alt="Youtube">
+                                </a>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <div class="footer_links">
+
+                                    <a class="c_p" (click)="routeUser('faqs')" i18n="@@faqs">FAQS</a> <span class="spaceforline">|</span>
+                                    <a class="c_p" (click)="routeUser('UserLicenseAgreement')" i18n="@@UserLicenseAgreement">User License Agreement</a><span class="spaceforline">|</span>
+                                    <a class="c_p" (click)="routeUser('temsofservice')" i18n="@@tos">TERMS OF SERVICE</a> <span class="spaceforline">|</span>
+                                    <a class="c_p" (click)="routeUser('privacypolicy')" i18n="@@pp">PRIVACY POLICY</a>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copy_text" i18n="@@myuCopyright" style="color: #666; font-weight: 400;">Coolest Chili &copy; Copyright 2019 | All Rights Reserved</div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Arabic start -->
+        <div *ngIf="language=='ar'">
+            <div class="navbar_wrapper bg_color navbar_fixed_top">
+                <div class="container">
+                    <nav class="navbar" id="myScrollspy">
+
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+                            <a class="navbar-brand" href="#">
+                                <img class="" src="assets/images/logo_myu.png" alt="myU">
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li style="width: auto;" (click)="routeUser('aboutmyu')"><a class="fontfamlilyHelvitaca c_p"><span i18n="@@aboutApp" >ABOUT MYU</span></a></li>
+                                <li style="width: auto;" (click)="routeUser('forteacher')"><a class="fontfamlilyHelvitaca c_p"><span i18n="@@forTech">FOR TEACHERS</span></a></li>
+                                <li style="width: auto;" (click)="routeUser('forschool')"><a class="fontfamlilyHelvitaca c_p"><span i18n="@@forSch">FOR SCHOOLS</span></a></li>
+
+                                <!--<li style="width: auto;"><a href="#testimonial" class="fontfamlilyHelvitaca" i18n="@@testimonials">TESTIMONIALS</a></li>-->
+                                <!--<li style="width: auto;"><a href="#contactus" class="fontfamlilyHelvitaca" i18n="@@contactUs">CONTACT US</a></li>-->
+                            </ul>
+
+                            <!--<span class="lang_link"> <a href="http://qa-cms.myu.co/myu/ar/">العربية</a></span>-->
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li style="width: auto; margin-top: 10px;"><a class="c_p loginBtn" style="font-size: 13px!important;" (click)="openLogin()" i18n="@@login">Login</a></li>
+                                <!-- <li><a href="/" style="font-size:18px !important;">العربية</a></li> -->
+                            </ul>
+
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img class="first-slide" src="../../../../assets/images/main-pic-for-landing.png" alt="slide">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1 i18n="@@communicate">COMMUNICATE EASILY WITH YOUR SCHOOL COMMUNITY</h1>
+                                <p i18n="@@sendNotes" class="fs_20">Send your reminders instantly to any school member for free</p>
+                                <p class="store_buttons">
+                                    <a href="https://itunes.apple.com/app/myu-app/id740372863?mt=8" target="_blank" role="button">
+                                        <img src="../../../../assets/images/app_store.png">
+                                    </a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.myu.android" target="_blank" role="button">
+                                        <img src="../../../../assets/images/play_store.png">
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="aboutapp"></div>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="whatis_myu">
+                <div class="circle_line_myU_text">
+                    <img src="../../../../assets/images/circle_1.svg">
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <h1>
+                            <img src="../../../../assets/images/section-icon.svg"> &nbsp;
+                            <span i18n="@@whatIsMyu">What is myU?</span>
+                        </h1>
+                        <p class="myU_text" i18n="@@myuIntro">MyU is a mobile app that allows educators and students to connect easily, sending note and reminders, or creating discussions, all in social network-like experience that is safe, private, and fun.
+                        </p>
+                        <div class="text-right">
+                            <img src="../../../../assets/images/what_is_myU_arabic.png" style="width:88%;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="circle_line_myU_text_bottom">
+                    <img src="../../../../assets/images/circle_2.svg">
+                </div>
+            </div>
+            <hr class="divider_line" />
+
+
+            <div class="end_email_section">
+                <div class="container">
+                    <div class="row">
+                        <h1>
+                            <img src="../../../../assets/images/section_icon_messages.svg"> &nbsp;
+                            <span i18n="@@myuintro2"><strong>The end to unreachable messages and E-mails</strong></span>
+                        </h1>
+                        <!--<p class="end_email_text">No more chasing during school hours via e-mail or calls.</p>-->
+                        <div class="email_description">
+                            <h5 class="line_space" i18n="@@noMoreChasing">No more chasing during school hours via e-mail or calls</h5>
+                            <br><br>
+                            <!--  <h4 i18n="@@instancy">Instancy </h4>
+            <p i18n="@@CommunicateInstantly">
+            <strong>Communicate Instantly :</strong> Send real-time simple messages to your school group or a single person</p>
+            <p i18n="@@AttachPhotos">Attach photos and voice notes to your messages</p>
+            <br>
+
+            <h4 i18n="@@Reach">Reach </h4>
+            <p i18n="@@ReachEveryoneAtOnce">
+              <strong>Reach everyone at once :</strong>Send announcements and notifications to any mobile at any time
+            </p>
+            <br>
+
+            <h4 i18n="@@Privacy">Privacy </h4>
+            <h5 class="line_space" i18n="@@ChooseYourPrivacy">Choose your privacy preference</h5>
+            <p i18n="@@ConnectWithEveryone">Connect with everyone in your school community without the need to share your phone number</p>
+            <p i18n="@@ManageThePrivacy">Create virtual classes, control their privacy, and share important updates on the go!</p>
+            <br>
+            <br>
+-->
+                        </div>
+
+                        <div class="text-center end_email_image">
+                            <img src="../../../../assets/images/the_end_to_unreachable_messages.svg" />
+                            <!--<span class="text_student" i18n="@@student">Student</span>
+            <span class="text_educator" i18n="@@educator">Educator</span>
+            <span class="text_parent" i18n="@@parent">Parent</span>
+            <span class="text_clubnddept" i18n="@@clubDepartment">Club &amp; Departments</span>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="divider_line" />
+            <div class="seehow_section">
+                <div class="container">
+                    <div class="row">
+                        <h1>
+                            <img src="../../../../assets/images/see_how_myU_can_halp_you.svg"> &nbsp;
+                            <span i18n="@@myuIntro3"><strong>See how myU can help you</strong></span>
+                        </h1>
+                        <div class="col-sm-4 col-md-4">
+                            <div class="student_block">
+                                <div class="stud_hover_box">
+                                    <h1 i18n="@@student">STUDENT</h1>
+                                    <p i18n="@@studentFact">Stay up to date with your school community and never miss an important announcement again</p>
+                                </div>
+                                <div class="student_box">
+                                    <img src="../../../../assets/images/student_illustration.svg">
+                                    <p i18n="@@student">STUDENT</p>
+                                </div>
+                            </div>
+                            <div class="clubordept_block">
+                                <div class="clubordept_hover_box">
+                                    <h1 i18n="@@clubDepartment">CLUB OR DEPARTAMENT</h1>
+                                    <p i18n="@@clubDepartmentFact">Expand your reach within your school, connect with students faster promoting your news, events and activities</p>
+                                </div>
+                                <div class="clubordept_box">
+                                    <img src="../../../../assets/images/club_dep_illustration.svg">
+                                    <p i18n="@@clubDepartment">CLUB OR DEPARTAMENT</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                            <div class="educatordept_block">
+                                <div class="educatordept_hover_box">
+                                    <h1 i18n="@@educator">EDUCATOR</h1>
+                                    <p i18n="@@educatorFact">Send your announcements on the go, create discussions. no time for a text? share your instructions in a voice note or get visual and share a photo</p>
+                                </div>
+                                <div class="educatordept_box">
+                                    <img src="../../../../assets/images/professor_illustration.svg">
+                                    <p i18n="@@educator">EDUCATOR</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                            <div class="parent_block">
+                                <div class="parent_hover_box">
+                                    <h1 i18n="@@parent">PARENT</h1>
+                                    <p i18n="@@parentFact">Keep track with your child’s performance with the least effort, receive news and updates from the school management and teachers</p>
+                                </div>
+                                <div class="parent_box">
+                                    <img src="../../../../assets/images/parent_illustration.svg">
+                                    <p i18n="@@parent">PARENT</p>
+                                </div>
+                            </div>
+                            <div class="institution_block">
+                                <div class="institution_hover_box">
+                                    <h1 i18n="@@institution">INSTITUTION</h1>
+                                    <p i18n="@@institutionFact">Take over your school’s control panel, see analytics and manage your own database</p>
+                                </div>
+                                <div class="institution_box">
+                                    <img src="../../../../assets/images/instituts_illustration.svg">
+                                    <p i18n="@@institution">INSTITUTION</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="testimonial"></div>
+            <br><br><br>
+
+            <hr class="divider_line" />
+            <div class="testimonial_section">
+                <div class="testimonial_fly_right">
+                    <img src="../../../../assets/images/fly_testimonials.svg">
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <h1>
+                            <img src="../../../../assets/images/section_icon_user_testimonials.svg"> &nbsp;
+                            <span i18n="@@userTestimonials"><strong>Users Testimonials</strong></span>
+                        </h1>
+                        <div id="carousel_testimonials" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel_testimonials" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel_testimonials" data-slide-to="1"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <div class="row">
+                                        <div class="testimonial_box">
+                                            <div class="adjust1">
+                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                    <img class="media-object img-rounded img-responsive" src="../../../../assets/images/professor_testimonials.svg" style="max-width:95%;"> </div>
+                                                <div class="col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="caption">
+                                                        <p class="testimonial_username" i18n="@@testimonialUsername">Mrs. Hala Alsammar</p>
+                                                        <p class="testimonial_department" i18n="@@testimonialDepartment">Instructor at the English Language Unit in Kuwait University</p>
+                                                        <p class="testimonial_quote" i18n="@@testimonialQuote">“This app will definitely be the main teacher-student Interaction platform outside of the classroom at KU and all other educational institutions”</p>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="testimonial_box">
+                                            <div class="adjust1">
+                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                    <img class="media-object img-rounded img-responsive" src="../../../../assets/images/dr_stub.svg" style="max-width:95%;"> </div>
+                                                <div class="col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="caption">
+                                                        <p class="testimonial_username" i18n="@@testimonialUsername2">Dr. Fahad Alzumai</p>
+                                                        <p class="testimonial_department" i18n="@@testimonialDepartment2">Professor of Business Law at Gulf University for Science & Technology</p>
+                                                        <p class="testimonial_quote" i18n="@@testimonialQuote2">“myU is great. Communication with my class is much more efficient now”</p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Controls -->
+
+                            <a class="left carousel-control" href="#carousel_testimonials" role="button" data-slide="prev">
+                                <span aria-hidden="true">
+              </span>
+                                <span class="sr-only" i18n="@@previous">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel_testimonials" role="button" data-slide="next">
+                                <span aria-hidden="true">
+              </span>
+                                <span class="sr-only" i18n="@@next">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="divider_line" id="contactus" />
+            <div class="contactus_section">
+                <div class="contact_fly_left">
+                    <img src="../../../../assets/images/fly_comtact_us.svg">
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="contact_block">
+                            <div class="contact_circle_left">
+                                <img src="../../../../assets/images/circle_2.svg">
+                            </div>
+                            <div class="contact_block_inner">
+                                <h1>
+                                    <img src="../../../../assets/images/icon_section_contact_us.svg"> &nbsp; &nbsp;
+                                    <span i18n="@@contactUs"><strong>Contact us</strong></span>
+                                </h1>
+                                <div *ngIf="showContactUsSuccess" class="thanks_message" style="display:block;">
+                                    <h3 i18n="@@thankYou">Thank you!</h3>
+                                    <p>Your message has been successfully sent. We will contact you very soon!</p>
+                                </div>
+                                <form id="contactUsForm" [formGroup]="contactUs" (ngSubmit)="submitForm()">
+                                    <div class="form-group">
+                                        <input dir="{{siteDirection}}" type="text" class="form-control text_box" placeholder="Name" id="userName" formControlName="userName" i18n-placeholder/>
+                                        <app-validation-message-component [control]="contactUs.controls['userName']"></app-validation-message-component>
+                                    </div>
+                                    <div class="form-group">
+                                        <input dir="{{siteDirection}}" type="email" class="form-control text_box" placeholder="Email" id="userEmail" formControlName="userEmail" i18n-placeholder/>
+                                        <app-validation-message-component [control]="contactUs.controls['userEmail']"></app-validation-message-component>
+                                        <div *ngIf="!contactUs.controls['userEmail'].hasError('required') && contactUs.controls['userEmail'].hasError('email')" class="c_ff516b f_s_14" i18n="@@emailPatternerror">
+                                            Something seems to be wrong with your email address.
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input dir="{{siteDirection}}" type="text" class="form-control text_box" placeholder="Subject" id="userSubject" formControlName="userSubject" i18n-placeholder/>
+                                        <app-validation-message-component [control]="contactUs.controls['userSubject']"></app-validation-message-component>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea dir="{{siteDirection}}" class="form-control text_box" rows="" placeholder="Write a Message" id="userMessage" formControlName="userMessage" i18n-placeholder></textarea>
+                                        <app-validation-message-component [control]="contactUs.controls['userMessage']"></app-validation-message-component>
+
+                                    </div>
+                                    <button type="submit" id="contact" class="btn btn-default btnsend" i18n="@@send">SEND</button>
+                                </form>
+                            </div>
+                            <div class="contact_circle_right">
+                                <img src="../../../../assets/images/circle_6.svg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="myu_footer">
+                <div class="container">
+                    <div class="footer_top">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <a href="https://twitter.com/MyU_app" target="_blank" class="margin_l30">
+                                    <img src="../../../../assets/images/twitter-logo-silhouette.svg" alt="Twitter">
+                                </a>
+                                <a href="https://www.facebook.com/myuappsocial" target="_blank" class="margin_l30">
+                                    <img src="../../../../assets/images/facebook.svg" alt="Facebook">
+                                </a>
+                                <a href="https://www.instagram.com/myu_app/" target="_blank" class="margin_l30">
+                                    <img src="../../../../assets/images/insta.svg" alt="Instagram">
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCUMNBJ4b1FotxjLHEbAUnLA" target="_blank" class="margin_l30">
+                                    <img src="../../../../assets/images/youtube.svg" alt="Youtube">
+                                </a>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <div class="footer_links">
+                                    <!--<a class="c_p" (click)="routeUser('aboutus')" i18n="@@aboutUs">ABOUT US</a> |-->
+                                    <a class="c_p" (click)="routeUser('faqs')" i18n="@@faqs">FAQS</a> <span class="spaceforline">|</span>
+                                    <a class="c_p" (click)="routeUser('temsofservice')" i18n="@@tos">TERMS OF SERVICE</a> <span class="spaceforline">|</span>
+                                    <a class="c_p" (click)="routeUser('privacypolicy')" i18n="@@pp">PRIVACY POLICY</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copy_text" style="color: #666; font-weight:400;">Coolest Chili &copy; Copyright 2019 | All Rights Reserved</div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>

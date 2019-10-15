@@ -1,0 +1,209 @@
+<!--REGISTER START-->
+<div class="modal-body" [ngSwitch]="stepSwitchCase">
+    <section class="bg_white register p_y_20 " id="login" *ngSwitchCase="1">
+        <i class="close" (click)="activeModal.close('Close click')" style="top: -10px;"><i class="material-icons c_fff">&#xE5CD;</i></i>
+        <h3 class="c_262626 f_s_22 p_x_40" i18n="@@iAM">I am a ...</h3>
+        <p class="c_3e4653 m_t_30 p_x_40" i18n="@@chooseAccount">Select your account type.</p>
+        <ul class="allUser nav nav-tabs p_y_20">
+            <li (click)="userType=2">
+                <a data-toggle="tab">
+                    <figure><img class="img-responsive center-block" src="assets/images/stu.jpg" alt="" title="">
+                        <figcaption i18n="@@student">Student</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li (click)="userType=1">
+                <a data-toggle="tab">
+                    <figure><img class="img-responsive center-block" src="assets/images/tech.jpg" alt="" title="">
+                        <figcaption i18n="@@teacherProfessor">Teacher or Professor</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li (click)="userType=3">
+                <a data-toggle="tab">
+                    <figure><img class="img-responsive center-block" src="assets/images/depart.jpg" alt="" title="">
+                        <figcaption i18n="@@clubDepartment">Department or Club</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li (click)="userType=5">
+                <a data-toggle="tab">
+                    <figure><img class="img-responsive center-block" src="assets/images/par.jpg" alt="" title="">
+                        <figcaption i18n="@@parent">Parent</figcaption>
+                    </figure>
+                </a>
+            </li>
+        </ul>
+        <div class="nextBtn p_x_40">
+            <p class="text-center c_595c68"> <span i18n="@@haveAccount">Already have an account?</span> <span><a (click)="openLogin()" class="theam_text c_p" i18n="@@login">Login!</a></span></p>
+            <button type="button" class="btnSignUp btn-default" [ngClass]="{'btn': userType==0 , 'theam_bg c_fff border_none': !userType==0 }" [disabled]="userType==0" (click)="moveToStep2()" i18n="@@next">Next</button>
+
+            <!-- <button type="button" class="btnSignUp btn btn-default" (click)="moveToStep2()" i18n="@@next" *ngIf="!userType">Next</button>
+    <button type="button" class="btnSignUp btn-default theam_bg c_fff" (click)="moveToStep2()" i18n="@@next" *ngIf="userType">Next</button> -->
+
+        </div>
+        <p>&nbsp;</p>
+        <ul class="stepForm list-inline">
+            <span></span>
+            <li class="active"></li>
+            <li class=""></li>
+            <li class=""></li>
+            <li class=""></li>
+        </ul>
+    </section>
+    <!--REGISTER END-->
+
+    <!--lOGIN STEP ONE START-->
+    <form role="form" [formGroup]="signupForm">
+
+        <section class="login_register step1 " *ngSwitchCase="2">
+            <p class="p_a c_p" (click)="activeModal.close('Close click')" style="top:0; right:14px;"><i class="material-icons c_fff">&#xE5CD;</i></p>
+            <div class="slider bg_white">
+                <h3 class="text-center p_t_10" i18n="@@selectSchool">Find your school</h3>
+                <figure class="p_y_10"><img class="img-responsive center-block" src="assets/images/step1.jpg" alt="Create a post img" title="Post Images"></figure>
+                <p class="p_x_80 text-center c_393939 p_b_15">What do motivational thoughts do? They help you take action. This isn't about positive.</p>
+            </div>
+
+            <div class="account bg_white">
+                <h3 class="f_s_22 c_262626 m_b_30 p_t_10" i18n="@@selectSchool">Find Your School.</h3>
+
+                <div class="form-group has-feedback">
+                    <ng2-completer formControlName="universityName" [fillHighlighted]="false" [datasource]="universityDataService" [openOnFocus]="false" [minSearchLength]="1" (selected)="selectUniversity($event)" (blur)="selectUniversity($event)" class="form-control appearance_none"
+                        [selectOnClick]="true" [clearUnselected]="true" placeholder="Search Your School Name" i18n-placeholder></ng2-completer>
+                    <div *ngIf="signupForm.controls['universityName'].touched && signupForm.controls['universityName'].hasError('required')" class="c_ff516b f_s_14" i18n="@@universityNameError">
+                        Please Enter School Name.
+                    </div>
+                    <span class="form-control-feedback"><i class="material-icons c_abb7cd c_p md-light">&#xE8B6;</i></span>
+                </div>
+
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <div class="d_flex jusfify_content_center flex_wrap_wrap">
+                    <button type="button" class="btnSignUp btn-default" [ngClass]="{'btn': !this.universityid , 'theam_bg c_fff border_none': this.universityid }" [disabled]="!this.universityid" (click)="moveToStep3()" i18n="@@next">Next</button>
+                    <p class="text-center c_595c68 p_y_20 c_p"> <span i18n="@@haveAccount">Already have an account?</span> <span><a (click)="openLogin()" class="theam_text" i18n="@@login">Login!</a></span></p>
+                </div>
+
+                <ul class="stepForm list-inline">
+                    <span></span>
+                    <li></li>
+                    <li class="active"></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                </ul>
+
+            </div>
+        </section>
+        <!--lOGIN STEP ONE END-->
+
+        <!--lOGIN STEP TWO START-->
+        <section class="login_register step2 " *ngSwitchCase="3">
+            <p class="p_a c_p" (click)="activeModal.close('Close click')" style="top:0; right:14px;"><i class="material-icons c_fff">&#xE5CD;</i></p>
+            <div class="slider bg_white">
+                <h3 class="text-center invisible" i18n="@@selectSchool">Find your school</h3>
+                <figure class="p_y_10"><img class="img-responsive center-block" src="assets/images/step_22.jpg" alt="Create a post img" title="Post Images"></figure>
+                <p class="p_x_80 text-center c_393939 p_b_15 invisible">What do motivational thoughts do? They help you take action. This isn't about positive.</p>
+            </div>
+
+            <div class="account bg_white">
+                <h3 class="f_s_22 c_262626 m_b_30" i18n="@@addInformation">Your information</h3>
+                <p *ngIf="errorInsignup" class="c_ff516b f_s_14">{{errorMessage}}</p>
+                <div class="form-group">
+                    <input dir="{{siteDirection}}" id="name" type="text" name="name" class="form-control" placeholder="Full Name" formControlName="name" i18n-placeholder>
+                    <div *ngIf="signupForm.controls['name'].touched && signupForm.controls['name'].hasError('required')" class="c_ff516b f_s_14" i18n="@@signupNameError">
+                        We need your first and last name.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input dir="{{siteDirection}}" id="username" type="text" name="username" class="form-control" placeholder="Username" formControlName="userName" i18n-placeholder>
+                    <div *ngIf="signupForm.controls['userName'].touched && signupForm.controls['userName'].hasError('required')" class="c_ff516b f_s_14" i18n="@@signuoUsernameError">
+                        Please enter a Username
+                    </div>
+                    <div *ngIf="signupForm.controls['userName'].touched && signupForm.controls['userName'].hasError('pattern')" class="c_ff516b f_s_14" i18n="@@usernamePatternerror">
+                        You may only use letters, numbers, and underscores.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input dir="{{siteDirection}}" id="msisdn" type="text" name="msisdn" class="form-control" placeholder="Your Mobile" formControlName="userName" i18n-placeholder>
+                    <div *ngIf="signupForm.controls['userName'].touched && signupForm.controls['userName'].hasError('required')" class="c_ff516b f_s_14" i18n="@@signuoUsernameError">
+                        Please enter your mobile number.
+                    </div>
+
+                </div>
+                <div class="form-group has-feedback">
+                    <input dir="{{siteDirection}}" id="password" type="{{passtype}}" name="password" class="form-control" placeholder="Password" formControlName="password" i18n-placeholder>
+                    <div *ngIf="signupForm.controls['password'].touched && signupForm.controls['password'].hasError('required')" class="c_ff516b f_s_14" i18n="@@passwordError">
+                        Enter Password
+                    </div>
+                    <div *ngIf="signupForm.controls['password'].hasError('minlength')" class="c_ff516b f_s_14" i18n="@@passwordCharchtersError">
+                        Password must be at least 6 characters
+                    </div>
+                    <span class="form-control-feedback" *ngIf="signupForm?.value.password?.length>0"><i *ngIf="passtype=='text'" class="material-icons c_c8cfd4 c_p md-light" (click)="showHidePassword()">&#xE417;</i>
+          <i *ngIf="passtype=='password'" class="material-icons c_p" (click)="showHidePassword()">visibility_off</i></span> </div>
+                <div class="form-group">
+                    <input dir="{{siteDirection}}" id="email" type="text" name="email" class="form-control" placeholder="Official email" formControlName="email" i18n-placeholder>
+                    <div *ngIf="signupForm.controls['email'].touched && signupForm.controls['email'].hasError('required')" class="c_ff516b f_s_14" i18n="@@signupEmailError">
+                        Please enter your Email
+                    </div>
+                    <div *ngIf="!signupForm.controls['email'].hasError('required') && signupForm.controls['email'].hasError('email')" class="c_ff516b f_s_14" i18n="@@emailPatternerror">
+                        Something seems to be wrong with your email address.
+                    </div>
+                </div>
+                <p class="c_595c68 f_s_14" i18n="@@verificationLink">A verification link will be sent to you!</p>
+                <p>&nbsp;</p>
+                <div class="d_flex jusfify_content_center flex_wrap_wrap">
+                    <button type="button" class="btnSignUp btn-default" [ngClass]="{'btn': !signupForm.valid , 'theam_bg c_fff border_none': signupForm.valid }" (click)="moveToStep4()" [disabled]="!signupForm.valid" i18n="@@register">Register</button>
+                    <p class="text-center c_595c68 p_y_20 c_p"> <span i18n="@@haveAccount">Already have an account?</span> <span><a (click)="openLogin()" class="theam_text" i18n="@@login">Login!</a></span></p>
+                    <p class="text-center f_s_12 p_x_40 c_595c68 p_b_15" i18n="@@byRegister">By registering you are agree to our <a class="c_p c_595c68"><ins>terms of service</ins></a> and <ins><a class="c_p c_595c68">privacy policy.</a> </ins>
+                    </p>
+                </div>
+
+                <ul class="stepForm list-inline m_b_15">
+                    <span></span>
+                    <li></li>
+                    <li></li>
+                    <li class="active"> </li>
+                    <li class=""></li>
+                </ul>
+
+            </div>
+        </section>
+        <!--lOGIN STEP TWO END-->
+
+        <!--lOGIN STEP THREE START-->
+        <section class="login_register step3 " *ngSwitchCase="4">
+            <div class="slider bg_white">
+                <h3 class="text-center invisible" i18n="@@selectSchool">Find your school</h3>
+                <figure class="p_y_10"><img class="img-responsive center-block" src="assets/images/registration_done.png" alt="Create a post img" title="Post Images"></figure>
+                <p class="p_x_80 text-center c_393939 p_b_15 invisible">What do motivational thoughts do? They help you take action. This isn't about positive.</p>
+            </div>
+
+            <div class="account bg_white">
+                <h3 class="f_s_22 c_262626 m_b_30 line_height_1p5" i18n="@@registerSuccessful">Registration complete!</h3>
+                <h4 class="c_3e4653 text-center p_t_30" i18n="@@CongratsMessage">You're Done!</h4>
+                <p>&nbsp;</p>
+                <p class="c_3e4653 text-center" i18n="@@CongratsMessage1">An email was sent to you with a link. Please click on the link to have your account verified.</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <div class="">
+                    <button type="button" class="btn btn-default theam_bg btn-lg btn-block c_fff m_b_10" (click)="signupProcessLogin()" i18n="@@start">Start</button>
+                </div>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <ul class="stepForm list-inline m_b_15">
+                    <span></span>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li class="active"></li>
+                </ul>
+
+            </div>
+        </section>
+    </form>
+</div>
+<!--lOGIN STEP THREE END-->

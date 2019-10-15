@@ -1,0 +1,67 @@
+<div class="alsoinYourSchool alert" *ngIf="ownUniversityUser && ownUniversityUser.length > 0">
+  <h5 class="f_s_16 p_x_20 c_262626 m_b_0" i18n="@@inYourSchool">Also in your school:</h5>
+  <div class="panel c_p m_b_0" (click)="routeUser('user',ownUniUser.id)" *ngFor="let ownUniUser of ownUniversityUser">
+    <div class="panel-body">
+      <div class="media">
+        <a class="pull-left img_c c_p">
+          <img class="img-circle" src="{{ ownUniUser.profileImageThumbnail | defaultImage:'userProfile' }}" alt="Profile Pic" title="Profile Pic" style="width:40px; height:40px;">
+        </a>
+        <div class="media-body">
+          <h3 class="f_s_14 f_w_b c_000 m_t_15 l_h_30" style="margin:0;">{{ownUniUser.name}}
+            <span class="pull-right">
+              <a class="c_p" click-stop-propagation>
+                <i class="material-icons c_abb7cd f_s_14" data-dismiss="alert" (click)="removeExploreUser('ownUniversityUser',i)"></i>
+              </a>
+            </span>
+          </h3>
+          <p class="f_s_12 c_a1aec8">@{{ownUniUser.username}},
+            <span>{{ownUniUser.userTypeId | usertypeIdToUserType}}</span>
+          </p>
+        </div>
+
+        <button type="button" class="btn btn-default btn-block" *ngIf="ownUniUser?.isfollow==false" i18n="@@follow" (click)="followToggle(ownUniUser,'own', null,null, $event)">Follow</button>
+        <button type="button" class="btn btn-default btn-block" *ngIf="ownUniUser?.isfollow==true" i18n="@@following" (click)="followToggle(ownUniUser,'own', null,null, $event)">Following</button>
+      </div>
+    </div>
+  </div>
+
+  <a (click)="routeExplore('own_school')"  class="tdn">
+    <div class="panel-footer text-center f_s_12 c_00a7c8 c_p" i18n="@@viewMore">View More</div>
+  </a>
+</div>
+
+<div class="alsoinYourSchool" *ngIf="otherUniversityUser && otherUniversityUser.length >0">
+  <h5 class="f_s_16 p_x_20 m_b_0" i18n="@@fromOtherSchool">From other schools:</h5>
+  <div class="panel alert" *ngFor="let otherUniUser of otherUniversityUser; let i = index">
+    <div class="panel-body">
+      <div class="media">
+        <div class="c_p" (click)="routeUser('user',otherUniUser.id)" >
+        <a class="pull-left img_c c_p m_r_15">
+          <img class="img-circle" src="{{otherUniUser.profileImageThumbnail | defaultImage:'userProfile' }}" alt="Profile Pic" title="Profile Pic" style="width:40px; height: 40px;">
+        </a>
+        <div class="media-body">
+          <h3 class="f_s_14 f_w_b c_000 m_t_15 l_h_30" style="margin:0;">{{otherUniUser.name}}
+            <span class="pull-right c_p">
+              <a click-stop-propagation>
+                <i class="material-icons c_abb7cd f_s_14" data-dismiss="alert" (click)="removeExploreUser('otherUniversityUser',i)"></i>
+              </a>
+            </span>
+          </h3>
+          <p class="f_s_12 c_a1aec8">@{{otherUniUser.username}},
+            <span>{{otherUniUser.userTypeId | usertypeIdToUserType}}</span>
+          </p>
+        </div>
+        </div>
+
+        <button type="button" class="btn btn-default btn-block" *ngIf="otherUniUser?.isfollow==false" i18n="@@follow" (click)="followToggle(otherUniUser,'other', null,null, $event)">Follow</button>
+        <button type="button" class="btn btn-default btn-block" *ngIf="otherUniUser?.isfollow==true" i18n="@@following" (click)="followToggle(otherUniUser,'other',null,null, $event)">Following</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <a (click)="routeExplore('other_school')" class="tdn">
+    <div class="panel-footer text-center f_s_12 c_00a7c8 c_p" i18n="@@viewMore">View More</div>
+  </a>
+</div>

@@ -1,0 +1,532 @@
+<section class="container p_y_30">
+  <div class="row edit_profile">
+
+    <div class="col-md-3">
+      <ul class="nav nav-tabs nav-stacked">
+        <li class="active">
+          <a href="#va" (click)="tabClick('view_archive')" data-toggle="tab" i18n="@@viewAchive">View Archived</a>
+        </li>
+        <li>
+          <a href="#bu" (click)="tabClick('blocked_user')" data-toggle="tab" i18n="@@BlockedUser">Blocked Users</a>
+        </li>
+        <li>
+          <a href="#ntf" (click)="tabClick('notification')" data-toggle="tab" i18n="@@notification">Notifications</a>
+        </li>
+        <li>
+          <a href="#au" data-toggle="tab" i18n="@@aboutUs">About us</a>
+        </li>
+        <li>
+          <a href="#pp" data-toggle="tab" i18n="@@pp">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="#lug" data-toggle="tab" i18n="@@language">Language</a>
+        </li>
+        <!-- <li>
+          <a href="#fdk" data-toggle="tab">Feedback</a>
+        </li> -->
+        <!-- <li>
+          <a href="#info" data-toggle="tab" i18n="@@information">Information</a>
+        </li> -->
+      </ul>
+    </div>
+
+    <div class="col-md-9 my_setting">
+
+      <div class="tab-content minHeight_540">
+        <!-- View Archive start -->
+        <div class="tab-pane fade active in" id="va">
+
+          <div class="panel panel-default bg_none border_r_n" *ngIf="activeTab=='view_archive'">
+            <div class="panel-heading p_y_25 f_s_18 p_x_30 bg_white">
+              <strong><span i18n="@@archiveBoard">Archived boards</span></strong><strong *ngIf="boardList?.length>0"> &#x202A;({{ boardList.length.toLocaleString(lacaleId) }})&#x202C;</strong>
+            </div>
+
+            <div class="panel-body p_r bg_white profile_r" style="min-height: 600px;">
+
+              <div class="col-md-4" *ngFor="let board of boardList">
+                <div class="panel panel-info m_h_228">
+                  <div class="panel-body c_p" (click)="openBoardDetail(board)">
+
+                    <p *ngIf="board.isPrivate" class="m_b_0 m_h_22">
+                      <i class="material-icons f_s_16 c_a1aec8">&#xE899;</i>
+                    </p>
+                    <p class="text-center c_393939">{{board.name}}</p>
+                    <p class="counting">
+                      <span>
+                        <i class="material-icons">&#xE85D;</i> {{board.newsPostCount.toLocaleString(lacaleId)}}</span>
+                      <span class="p_x_10"></span>
+                      <span>
+                        <i class="material-icons">&#xE7FF;</i> {{board.joinBoardCount.toLocaleString(lacaleId)}}</span>
+                    </p>
+                  </div>
+                  <div class="panel-footer p_0 text-center bg_edf1f2 border_none">
+                    <a class="btn btn-link f_s_16 f_s_16 c_037aff d_flex jusfify_content_center" (click)="openDialog('editBoard', board)"><span class="p_r_5" i18n="@@edit">Edit</span> &nbsp;
+                      <img src="assets/images/EditBeardSetting.png" alt="" title="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stub_Archived" *ngIf="boardList?.length == 0">
+                <p>&nbsp;</p><p>&nbsp;</p><p class="hidden-xs">&nbsp;</p>
+                <p class="text-center p_t_30 c_262626 f_s_22 c_88909d">Your archived is empty<br><br><br><img src="assets/images/stub_file.png" alt="" title=""> </p>
+                </div>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- View Archive end -->
+
+        <!-- Blocked user start -->
+        <div class="tab-pane fade" id="bu">
+          <div class="panel panel-default bg_none border_r_n">
+            <div class="panel-heading p_y_25 f_s_18 p_x_30 bg_white">
+              <strong i18n="@@BlockedUser">Blocked Users</strong><strong *ngIf="blockedUserCount>0"> &#x202A;({{blockedUserCount.toLocaleString(lacaleId)}}) &#x202A; </strong>
+              <!-- <span class="pull-right">
+                <button type="button" class="btn black_list_btn" data-toggle="modal" data-target="#addtoblacklistss">Add to the black list</button>
+              </span> -->
+            </div>
+
+            <!--MODAL START-->
+            <div class="modal fade" id="addtoblacklistss">
+              <div class="modal-dialog" style="max-width:555px;">
+                <div class="modal-content border_r_n bg_white" style="top:0;">
+                  <div class="modal-header text-center p_y_15 f_s_20 c_262626 f_w_500">Add to the black list
+                    <span class="pull-right c_p" data-dismiss="modal">
+                      <i class="material-icons c_abb7cd">&#xE5CD;</i>
+                    </span>
+                  </div>
+                  <div class="form-group searchblackList ">
+                    <input dir="{{siteDirection}}" type="text" class="form-control p_y_30 m_b_0" placeholder="Search" i18n-placeholder/>
+                  </div>
+                  <div class="modal-body p_0">
+                    <ul class="list-group">
+                      <li class="list-group-item f_s_18 m_r_15">
+                        <div class="media d_flex align_item_center">
+                          <a href="#" class="pull-left">
+                            <img class="img-circle m_r_15" src="http://www.kinyu-z.net/data/wallpapers/73/955575.jpg" alt="image" title="image" width="60"
+                              height="60">
+                          </a>
+                          <div class="media-body">Mina Grant Mina Grant Mina Grant Mina Grant Mina Grant Mina Grant</div>
+                          <button type="button" class="btn btn-info bg_93e0f4 border_none f_s_12 c_00a7c8" style="flex:0 0 126px;">Block</button>
+                        </div>
+                      </li>
+
+                      <li class="list-group-item f_s_18 m_r_15">
+                        <div class="media d_flex align_item_center">
+                          <a href="#" class="pull-left">
+                            <img class="img-circle m_r_15" src="http://www.kinyu-z.net/data/wallpapers/73/955575.jpg" alt="image" title="image" width="60"
+                              height="60">
+                          </a>
+                          <div class="media-body">Mina Grant Mina Grant Mina Grant Mina Grant Mina Grant Mina Grant</div>
+                          <button type="button" class="btn btn-info bg_93e0f4 border_none f_s_12 c_00a7c8" style="flex:0 0 126px;">Block</button>
+                        </div>
+                      </li>
+
+                      <li class="list-group-item f_s_18 m_r_15">
+                        <div class="media d_flex align_item_center">
+                          <a href="#" class="pull-left">
+                            <img class="img-circle m_r_15" src="http://www.kinyu-z.net/data/wallpapers/73/955575.jpg" alt="image" title="image" width="60"
+                              height="60">
+                          </a>
+                          <div class="media-body">Mina Grant Mina Grant Mina Grant Mina Grant Mina Grant Mina Grant</div>
+                          <button type="button" class="btn btn-info bg_93e0f4 border_none f_s_12 c_00a7c8" style="flex:0 0 126px;">Block</button>
+                        </div>
+                      </li>
+
+                      <li class="list-group-item f_s_18 m_r_15">
+                        <div class="media d_flex align_item_center">
+                          <a href="#" class="pull-left">
+                            <img class="img-circle m_r_15" src="http://www.kinyu-z.net/data/wallpapers/73/955575.jpg" alt="image" title="image" width="60"
+                              height="60">
+                          </a>
+                          <div class="media-body">Mina Grant Mina Grant Mina Grant Mina Grant Mina Grant Mina Grant</div>
+                          <button type="button" class="btn btn-info bg_93e0f4 border_none f_s_12 c_00a7c8" style="flex:0 0 126px;">Block</button>
+                        </div>
+                      </li>
+
+                      <li class="list-group-item f_s_18 m_r_15">
+                        <div class="media d_flex align_item_center">
+                          <a href="#" class="pull-left">
+                            <img class="img-circle m_r_15" src="http://www.kinyu-z.net/data/wallpapers/73/955575.jpg" alt="image" title="image" width="60"
+                              height="60">
+                          </a>
+                          <div class="media-body">Mina Grant Mina Grant Mina Grant Mina Grant Mina Grant Mina Grant</div>
+                          <button type="button" class="btn btn-info bg_93e0f4 border_none f_s_12 c_00a7c8" style="flex:0 0 126px;">Block</button>
+                        </div>
+                      </li>
+
+                      <li class="list-group-item f_s_18 m_r_15">
+                        <div class="media d_flex align_item_center">
+                          <a href="#" class="pull-left">
+                            <img class="img-circle m_r_15" src="http://www.kinyu-z.net/data/wallpapers/73/955575.jpg" alt="image" title="image" width="60"
+                              height="60">
+                          </a>
+                          <div class="media-body">Mina Grant Mina Grant Mina Grant Mina Grant Mina Grant Mina Grant</div>
+                          <button type="button" class="btn btn-info bg_93e0f4 border_none f_s_12 c_00a7c8" style="flex:0 0 126px;">Block</button>
+                        </div>
+                      </li>
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--MODAL END-->
+
+            <!-- <div class="form-group m_b_0 searchblackList has-feedback">
+              <input dir="{{siteDirection}}" type="text" class="form-control p_y_30" placeholder="Search by Black List">
+              <span class="form-control-feedback">
+                <i class="material-icons c_abb7cd">&#xE5CD;</i>
+              </span>
+            </div> -->
+            <div class="panel-body p_0 bg_white m_h_228">
+              <ul class="list-group">
+                <li class="list-group-item f_s_18" *ngFor="let user of blockedUserList">
+                  <div class="media d_flex align_item_center">
+                    <a  (click)="routeUser('user',user.id)" >
+                      <img class="img-circle m_r_15 c_p" src="{{user.profileImageThumbnail | defaultImage:'userProfile'}}" alt="image" title="image"
+                        width="60" height="60">
+                    </a>
+                    <div class="media-body c_262626">{{user.name}}</div>
+                    <span class="p_r_30 f_s_16 f_w_500" style="flex:0 0 180px;">
+                      <a (click)="unblock(user.id)" class="c_00a7c8 tdn c_p" i18n="@@unBlock">Unblock</a>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- TAB END-->
+
+        <!-- TAB START-->
+        <div class="tab-pane fade" id="ntf">
+          <div class="panel panel-default bg_none border_r_n">
+            <div class="panel-heading p_y_25 f_s_18 p_x_30 bg_white">
+              <strong i18n="@@notification">Notifications</strong>
+            </div>
+            <div class="panel-body p_0 bg_white profile_r flex_none m_h_228">
+              <!--ACTIVITY START -->
+              <div class="row p_t_10">
+                <div class="col-sm-3 c_88909d f_s_18 p_l_0 m_t_15 p_l_30" i18n="@@activityType">Activity type</div>
+                <div class="col-sm-9 p_r_0">
+                  <ul class="list-group m_b_0">
+                    <li class="list-group-item p_y_25 f_s_18">
+                      <label class="customCheckbox f_s_18 c_262626 p_l_40">
+                        <span i18n="@@newPost">New Post</span>
+                        <input dir="{{siteDirection}}" type="checkbox" [(ngModel)]="activerUser.receiveNewPostNotification" (click)="onNotificationSettingChange('receiveNewPostNotification')">
+                        <span class="checkmark border_2"></span>
+                      </label>
+                    </li>
+                    <li class="list-group-item p_y_25 f_s_18">
+                      <label class="customCheckbox f_s_18 c_262626 p_l_40">
+                        <span i18n="@@like">Like</span>
+                        <input dir="{{siteDirection}}" type="checkbox" [(ngModel)]="activerUser.receiveLikeNotification" (click)="onNotificationSettingChange('receiveLikeNotification')">
+                        <span class="checkmark border_2"></span>
+                      </label>
+                    </li>
+                    <li class="list-group-item p_y_25 f_s_18">
+                      <label class="customCheckbox f_s_18 c_262626 p_l_40">
+                        <span i18n="@@comment">Comments</span>
+                        <input dir="{{siteDirection}}" type="checkbox" [(ngModel)]="activerUser.receiveCommentNotification" (click)="onNotificationSettingChange('receiveCommentNotification')">
+                        <span class="checkmark border_2"></span>
+                      </label>
+                    </li>
+                    <li class="list-group-item p_y_25 f_s_18">
+                      <label class="customCheckbox f_s_18 c_262626 p_l_40">
+                        <span i18n="@@message">Messages</span>
+                        <input dir="{{siteDirection}}" type="checkbox" [(ngModel)]="activerUser.receivePrivateMsgNotification" (click)="onNotificationSettingChange('receivePrivateMsgNotification')">
+                        <span class="checkmark border_2"></span>
+                      </label>
+                    </li>
+                    <li class="list-group-item p_y_25 f_s_18 border_none">
+                      <label class="customCheckbox f_s_18 c_262626 p_l_40">
+                        <span i18n="@@following">Following</span>
+                        <input dir="{{siteDirection}}" type="checkbox" [(ngModel)]="activerUser.receiveFavoriteFollowNotification" (click)="onNotificationSettingChange('receiveFavoriteFollowNotification')">
+                        <span class="checkmark border_2"></span>
+                      </label>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+              <!--ACTIVITY END-->
+
+              <p class="m_0" style="border-bottom:1px solid #e2e2e2;"></p>
+              <!--OTHER NOTIF START-->
+              <div class="row p_t_10">
+                <div class="col-sm-3 c_88909d f_s_18 p_l_0 m_t_15 p_l_30" i18n="@@otherNotification">Other notifications</div>
+                <div class="col-sm-9 p_r_0">
+                  <ul class="list-group">
+                    <li class="list-group-item p_y_25 f_s_18">
+                      <label class="customCheckbox f_s_18 c_262626 p_l_40">
+                        <span i18n="@@receivePrivateMessage">Receive Private Messages</span>
+                        <input dir="{{siteDirection}}" type="checkbox" [(ngModel)]="activerUser.receivePrivateMsg" (click)="onNotificationSettingChange('receivePrivateMsg')">
+                        <span class="checkmark border_2"></span>
+                      </label>
+                    </li>
+                    <li class="list-group-item p_y_25 f_s_18 border_none">
+                      <label class="customCheckbox f_s_18 c_262626 p_l_40">
+                        <span i18n="@@appearOnExplorePage">Appear on Explore Page</span>
+                        <input dir="{{siteDirection}}" type="checkbox" [(ngModel)]="activerUser.allowInPopularList" (click)="onNotificationSettingChange('allowInPopularList')">
+                        <span class="checkmark border_2"></span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!--OTHER NOTIF END-->
+
+
+            </div>
+
+          </div>
+
+        </div>
+        <!-- TAB END-->
+
+        <!-- TAB START-->
+        <div class="tab-pane fade" id="au">
+
+          <div class="panel panel-default bg_none border_r_n">
+            <div class="panel-heading p_y_25 f_s_18 p_x_30 bg_white">
+              <strong i18n="@@aboutUs">About us</strong>
+            </div>
+            <div class="panel-body p_x_30 bg_white profile_r flex_none m_h_228">
+
+              <ul class="list-group m_b_0">
+                <li class="list-group-item p_y_25 f_s_18">
+                  <h4 class="f_w_b c_262626" i18n="@@whatIsMyu">What is MyU?</h4>
+                  <p class="f_s_16 c_788692">myU app saves teachers’ time, effort and the day to day hustle and bustle of communicating with students by powering
+                      them with a free simple tool for them and their students to connect and share on the go.                  </p>
+                </li>
+
+                <li class="list-group-item p_y_25 f_s_18">
+                  <h4 class="f_w_b c_262626" i18n="@@myuIntro3">See how myU can helps you.</h4>
+                  <br>
+                  <div class="f_s_16 c_262626">
+                    <p class="f_w_b c_5a5c68">Student</p>
+                    <P class="c_788692">
+                      Stay up to date with your school community and never miss an important announcement again.
+                    </P>
+                    <br>
+                    <p class="f_w_b c_5a5c68">Club or Department</p>
+                    <p class="c_788692">
+                     Expand your reach within your school, connect with students faster promoting your news, events and activities
+                    </p>
+                    <br>
+                    <p class="f_w_b c_5a5c68">Educactor</p>
+                    <p class="c_788692">
+                     Send your announcements on the go, create discussions. no time for a text? share your instructions in a voice note or get visual and share a photo
+                    </p>
+                    <br>
+                    <p class="f_w_b c_5a5c68">Parent</p>
+                    <p class="c_788692">
+                     Keep track with your child’s performance with the least effort, receive news and updates from the school management and teachers
+                    </p>
+                    <br>
+                    <p class="f_w_b c_5a5c68">Institution</p>
+                    <p class="c_788692">
+                     Take over your school’s control panel, see analytics and manage your own database
+                    </p>
+                  </div>
+                </li>
+
+                <li class="list-group-item p_y_25 f_s_18 border_none">
+                  <img src="assets/images/aboutus.jpg" class="img-responsive center-block" alt="Image" title="Image">
+                </li>
+              </ul>
+
+
+            </div>
+          </div>
+        </div>
+        <!-- TAB END-->
+
+        <!-- TAB START-->
+        <div class="tab-pane fade" id="pp">
+
+          <div class="panel panel-default bg_none border_r_n">
+            <div class="panel-heading p_y_25 f_s_18 p_x_30 bg_white">
+              <strong i18n="@@pp">Privacy policy</strong>
+            </div>
+            <div class="panel-body p_x_30 bg_white flex_none p_y_25">
+              <div class="p_l_30">
+                <p class="c_788692">This privacy policy governs your use of the software application myU ("Application") for mobile
+                    devices that was created by Fikra Design and Management. The Application is a social network for college
+                    students.</p><br>
+
+                  <p class="f_w_b"> What information does the Application obtain and how is it used?</p><br>
+                  <p class="c_788692">User Provided Information. The Application obtains the information you provide when you download and register the
+                    Application. Registration with us is optional. However, please keep in mind that you may not be able to use some
+                    of the features offered by the Application unless you register with us.</p>
+                  <br>
+                  <p class="c_788692">When you register with us and use the Application, you generally provide:</p>
+
+                  <ul class="p_l_40 c_788692">
+                    <li>your name, email address, age, user name, password and other registration information;</li>
+                    <li>transaction-related information, such as when you make purchases, respond to any offers, or download or use
+                      applications from us;
+                    </li>
+                    <li>information you provide us when you contact us for help;</li>
+                    <li>credit card information for purchase and use of the Application, and;</li>
+                    <li>information you enter into our system when using the Application, such as contact information and project
+                      management information.
+                    </li>
+                  </ul>
+                  <p class="c_788692">We may also use the information you provided us to contact your from time to time to provide you with important
+                    information, required notices and marketing promotions.</p>
+
+                  <p class="f_w_b">Automatically Collected Information</p>
+                  <p class="c_788692">In addition, the Application may collect certain information automatically, including, but not limited to, the
+                    type of mobile device you use, your mobile devices unique device ID, the IP address of your mobile device, your
+                    mobile operating system, the type of mobile Internet browsers you use, and information about the way you use the
+                    Application.</p>
+
+                  <p class="f_w_b">Does the Application collect precise real time location information of the device?</p>
+                  <p class="c_788692">This Application does not collect precise information about the location of your mobile device.</p>
+
+                  <p class="f_w_b">Do third parties see and/or have access to information obtained by the Application?</p>
+                  <p class="c_788692">Only aggregated, anonymized data is periodically transmitted to external services to help us improve the
+                    Application and our service. We will share your information with third parties only in the ways that are described
+                    in this privacy statement.</p>
+                  <p class="c_788692">We may disclose User Provided and Automatically Collected Information:</p>
+
+                  <ul class="p_l_40 c_788692">
+                    <li>as required by law, such as to comply with a subpoena, or similar legal process;</li>
+                    <li>when we believe in good faith that disclosure is necessary to protect our rights, protect your safety or the
+                      safety of others, investigate fraud, or respond to a government request;
+                    </li>
+                    <li>with our trusted services providers who work on our behalf, do not have an independent use of the information
+                      we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement.
+                    </li>
+                    <li>with the institution administration, when the database and network ownership is transferred to them</li>
+                    <li>if Fikra Design and Management is involved in a merger, acquisition, or sale of all or a portion of its
+                      assets, you will be notified via email and/or a prominent notice on our Web site of any change in ownership or
+                      uses of this information, as well as any choices you may have regarding this information.
+                    </li>
+                  </ul>
+
+
+                  <p class="f_w_b">What are my opt-out rights?</p>
+                  <p class="c_788692">You can stop all collection of information by the Application easily by uninstalling the Application. You may use
+                    the standard uninstall processes as may be available as part of your mobile device or via the mobile application
+                    marketplace or network. You can also request to opt-out via email, at <a href="mailto:info@myu.co">info@myu.co</a>
+                  </p>
+
+                  <p class="f_w_b">Data Retention Policy, Managing Your Information</p>
+                  <p class="c_788692">We will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. We
+                    will retain Automatically Collected information for up to 1 year and thereafter may store it in aggregate. If
+                    you’d like us to delete User Provided Data that you have provided via the Application, please contact us at
+                    <a href="mailto:info@myu.co">info@myu.co</a> and we will respond in a reasonable time. Please note that some or
+                    all of the User Provided Data may
+                    be required in order for the Application to function properly.</p>
+
+                  <p class="f_w_b">Children</p>
+                  <p class="c_788692">We do not use the Application to knowingly solicit data from or market to children under the age of 13. If a
+                    parent or guardian becomes aware that his or her child has provided us with information without their consent, he
+                    or she should contact us at <a href="mailto:info@myu.co">info@myu.co</a> We will delete such information from our
+                    files within a reasonable
+                    time.</p>
+
+                  <p class="f_w_b">Security</p>
+                  <p class="c_788692">We are concerned about safeguarding the confidentiality of your information. We provide physical, electronic, and
+                    procedural safeguards to protect information we process and maintain. For example, we limit access to this
+                    information to authorized employees and contractors who need to know that information in order to operate, develop
+                    or improve our Application. Please be aware that, although we endeavor provide reasonable security for information
+                    we process and maintain, no security system can prevent all potential security breaches.</p>
+
+                  <p class="f_w_b">Changes</p>
+                  <p class="c_788692">This Privacy Policy may be updated from time to time for any reason. We will notify you of any changes to our
+                    Privacy Policy. You are advised to consult this Privacy Policy regularly for any changes, as continued use is
+                    deemed approval of all changes.</p>
+
+                  <p class="f_w_b">Your Consent</p>
+                  <p class="c_788692">By using the Application, you are consenting to our processing of your information as set forth in this Privacy
+                    Policy now and as amended by us. "Processing" means using cookies on a computer/hand held device or using or
+                    touching information in any way, including, but not limited to, collecting, storing, deleting, using, combining
+                    and disclosing information, all of which activities will take place in the Kuwait. If you reside outside the
+                    Kuwait your information will be transferred, processed and stored there under Kuwait privacy standards.</p>
+
+                  <p class="f_w_b">Contact us</p>
+                  <p class="c_788692">If you have any questions regarding privacy while using the Application, or have questions about our practices,
+                    please contact us via email at <a href="mailto:info@myu.co">info@myu.co</a></p>
+            </div>
+            </div>
+          </div>
+        </div>
+        <!-- TAB END-->
+
+        <!-- TAB START-->
+        <div class="tab-pane fade" id="lug">
+          <div class="panel panel-default bg_none border_r_n">
+            <div class="panel-heading p_y_25 f_s_18 p_x_30 bg_white">
+              <strong i18n="@@language">Language</strong>
+            </div>
+
+            <div class="panel-body p_0 bg_white m_h_228">
+              <div class="row">
+                <div class="col-sm-3 c_88909d f_s_18 p_l_0 m_t_30 p_l_30" i18n="@@currentLanguage">Current language</div>
+                <div class="col-sm-9 p_r_0">
+                  <ul class="list-group">
+                    <li class="list-group-item m_x p_y_25">
+                      <label class="customRadio f_s_18 c_262626">English
+                        <input dir="{{siteDirection}}" type="radio" name="aa" [checked]="userDefaultlanguage=='en'" (change)="handleLanguageChange('en')">
+                        <span class="checkmark border_2"></span>
+                      </label>
+                      <span class="pull-right p_r_30 ">
+                        <img src="assets/images/english.jpg" alt="English" title="English">
+                      </span>
+                    </li>
+                    <li class="list-group-item m_x p_y_25">
+                      <label class="customRadio f_s_18 c_262626">العربية
+                        <input dir="{{siteDirection}}" type="radio" name="aa" [checked]="userDefaultlanguage=='ar'" (change)="handleLanguageChange('ar')">
+                        <span class="checkmark border_2"></span>
+                      </label>
+                      <span class="pull-right p_r_30 ">
+                        <img src="assets/images/kubiat.jpg" alt="Kuwait" title="Kuwait">
+                      </span>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <!-- TAB END-->
+
+        <!-- TAB START-->
+        <div class="tab-pane fade in" id="fdk">
+          <div class="panel panel-default bg_none border_r_n">
+            <div class="panel-heading p_y_25 f_s_18 p_x_30 bg_white">
+              <strong i18n="@@feedback">Feedback</strong>
+            </div>
+
+            <div class="panel-body bg_white m_h_228">
+              <div class="row p_y_10 p_l_20">
+                <div class="form-group m_b_25">
+                  <input dir="{{siteDirection}}" type="text" class="form-control" placeholder="Subject" i18n-placeholder/>
+                </div>
+                <div class="form-group">
+                  <textarea dir="{{siteDirection}}"   class="form-control" rows="1" placeholder="Message" i18n-placeholder></textarea>
+                </div>
+                <button type="button" class="btn btn-default bg_c9cfd4 m_t_15 f_s_12 p_x_45" i18n="@@send">Send</button>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <!-- TAB END-->
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

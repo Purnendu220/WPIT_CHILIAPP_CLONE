@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="7px" height="7px" viewBox="0 0 7 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>active_bullets</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Elements/Page-Control---White" transform="translate(-8.000000, 0.000000)" fill="#C2D1DF">
+            <g id="Group" transform="translate(8.000000, 0.000000)">
+                <circle id="active_bullets" cx="3.5" cy="3.5" r="3.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

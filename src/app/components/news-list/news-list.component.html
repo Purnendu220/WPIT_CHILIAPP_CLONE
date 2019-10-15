@@ -1,0 +1,125 @@
+<div class="search-results" data-infinite-scroll [infiniteScrollDistance]="scrollDistance"
+     [infiniteScrollUpDistance]="scrollUpDistance" [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()"
+     (scrolledUp)="onUp()">
+  <div *ngIf="responseRecieved && ((!newsList) || newsList.length == 0)" class="bg_e8edf3 d_flex jusfify_content_center align_item_center" style="height: 450px;">
+    <span class="c_788692 f_s_18 text-center">
+      <span  *ngIf="type == 'ownPost' && !otherUserProfileFlag" i18n="@@CreateYourFirstPost">Create your first post.</span>
+      <span  *ngIf="type == 'ownPost' && otherUserProfileFlag" i18n="@@nothingHereYet">Nothing Here Yet..</span>
+      <span  *ngIf="type != 'ownPost'" i18n="@@newsFeedEmpty">Your news feed is empty.</span>
+
+    <br><br>
+    <img class="img-responsive center-block" src="assets/images/stub_newsFeed.png" alt="" title="" height="207">
+    </span>
+  </div>
+  <div class="thumbnail p_0 p_t_10 m_b_25" *ngFor="let news of newsList let i = index">
+    <p class="f_s_12 c_9baac7 d_flex align_item_center jusfify_content_flex_end m_b_0 p_x_20">{{ news.createdAt |
+      timestampToday}} <span class="p_x_2"></span> <i class="material-icons f_s_12"></i></p>
+    <div class="media">
+      <div class="postNameCenter">
+      <a class="pull-left img_c m_x_10 c_p" (click)="navigateUser('user',news.user.id)"><img class="img-circle"
+                                                                                  src="{{news.user?.profileImageThumbnail | defaultImage:'userProfile'}}"
+                                                                                  alt="Profile Pic" title="Profile Pic" style="width: 60px; height: 60px;" ></a>
+      <div class="media-body">
+        <h3 class="f_s_20 c_000 m_t_5 l_h_30 m_b_0"><span class="c_p" (click)="navigateUser('user',news.user.id)">{{news.user.name}}</span> <br>
+          <div *ngIf="news.masterPostTypeId==2"  >
+            <span class="c_a1aec8 f_s_16">in</span>
+            <span class="c_768692 f_s_16">{{news.board.name}}</span>
+          </div>
+          <div *ngIf="news.masterPostTypeId==3"  >
+            <span class="c_768692 f_s_16">Promoted</span>
+          </div>
+        </h3>
+      </div>
+     </div>
+
+
+
+      <div class="clearfix"></div>
+      <p class="c_393939 p_x_20 m_b_0 text_fromating_css bw" [innerHTML]="news.newsText | hashTagOrMentionedUser" (click)="routeUser($event,news)" ></p>
+      <div class="clearfix"></div>
+      <div *ngFor="let media of news?.media">
+        <ul class="list-group attachmentsPopup">
+        <li class="list-group-item bg_none border_none p_y_0" (click)="downloadURI(media)"
+             *ngIf=" objectMediaTypesList.indexOf(media.mediaType) > -1">
+          <div class="media" style="max-width:100%;">
+          <a  class="pull-left m_r_15 flex_0_0_auto c_p"><img
+            src="/assets/images/{{media.mediaType | lowercase }}.jpg" alt="Zip File Icon" title="Zip File Icon"></a>
+          <div class="media-body">
+            <h4>{{media.originalMediaName}}</h4>
+            <span>Document {{media.mediaType }} {{media.mediaSize}} </span>
+          </div>
+          </div>
+        </li>
+        </ul>
+        <div class="p_x_5" *ngIf="media.mediaType =='Audio'">
+          <!-- <audio class="{{news.id}}" src="{{ media.mediaPath }}" (click)="pauseAudio(news.id)" controls></audio> -->
+          <app-audio-player id="{{media.id}}" [audioPath]="media.mediaPath" (audioPlaying)='audioPlaying($event)'></app-audio-player>
+
+          <!--<p class="pull-left c_393939 p_x_20"><img src="/assets/images/audio.jpg" class="img-responsive"></p>-->
+
+        </div>
+        <div *ngIf="media.mediaType =='Video'">
+          <!-- <video id='{{media.id}}' src="{{ media.mediaPath }}" (click)="pauseVideo(this.id)" controls ></video> -->
+          <app-video-player id="{{media.id}}" [videoPath]="media.mediaPath" (videoPlaying)='videoPlaying($event)'></app-video-player>
+
+        </div>
+      </div>
+
+
+      <div class="imageGrid c_p" *ngIf="news?.media?.length > 1" >
+        <div *ngFor="let media of news?.media | arrayFilter; let i = index" class="lightBox column">
+
+          <img (click)="openFancyBox(news.id,news?.media,i)" *ngIf="media?.mediaType =='Image'" src="{{media.mediaPath}}" alt="Image" title="Image">
+        </div>
+        <!-- <div class="stub_uf"><i class="far fa-image fa-8x c_fff"></i></div> -->
+
+      </div>
+
+      <figure class="details_img" *ngIf="news?.media?.length == 1">
+          <div *ngFor="let media of news?.media ; let i = index">
+
+      <a data-fancybox href="{{media?.mediaPath}}"> <img class="img-responsive" *ngIf="media?.mediaType =='Image'" src="{{media?.mediaPath}}" alt="Image" title="Image"></a>
+</div>
+        <!-- <div class="stub_uf"><i class="far fa-image fa-8x fa-5x c_fff"></i></div> -->
+      </figure>
+
+
+
+      <!--<figure class="details_img"><img class="img-responsive" src="https://static1.squarespace.com/static/5963fd588419c20b3a6b364d/t/59dfdcbe3e00be03d824c128/1507843288004/pizza-slices-on-black.png?format=2500w" alt="Profile Pic" title="Profile Pic"></figure>-->
+      <ul class="lcv_details m_b_0">
+        <li *ngIf="news.likeCount > 0"><a href="javascript:void(0)"
+                                          (click)="openLikesUserListPopup(news.virtualNewsId)"><i
+          class="material-icons f_s_18">&#xE87D;</i> <span> <strong>{{news.likeCount.toLocaleString(lacaleId)}}</strong> </span> <div i18n="@@like">likes</div></a></li>
+        <li class="hover" *ngIf="news.commentCount > 0"><a href="javascript:void(0)" (click)="newsCommentDialog(news)"> <img src="assets/images/comments.png" alt="" title=""> <span> <strong>{{news.commentCount.toLocaleString(lacaleId)}}</strong> </span> <div i18n="@@comment">comments</div></a></li>
+        <li *ngIf="news.viewCount > 0 && loggedInUserId == news.user.id"><a href="javascript:void(0)"
+                                          (click)="openViewsUserListPopup(news.virtualNewsId)"><i
+          class="material-icons f_s_18">&#xE417;</i> <span><strong> {{news.viewCount.toLocaleString(lacaleId)}}</strong> </span> <div i18n="@@view">view</div></a></li>
+      </ul>
+      <div class="row p_0 p_x_20 p_y_15">
+        <div class="col-xs-6">
+                  <span class="d_flex align_item_center">
+                    <a href="javascript:void(0)" (click)="newsLike(news)" title="Like" class="p_r_10">
+                      <img src="assets/images/beforeLike.png" alt="" title=""  *ngIf="news.isLiked === false">
+                      <img src="assets/images/afterLike.png" alt="" title="" *ngIf="news.isLiked === true">
+                    </a> &nbsp; &nbsp;
+      <a *ngIf="news.isCommented == false" href="javascript:void(0)" title="Comments" (click)="newsCommentDialog(news)"><img src="assets/images/beforeComment.png" alt="" title=""></a>
+    <a *ngIf="news.isCommented == true" href="javascript:void(0)" title="Comments" (click)="newsCommentDialog(news)" title="Comments"><img src="assets/images/afterComment.png" alt="" title=""></a>
+    </span>
+        </div>
+
+        <div class="col-xs-6"><span class="pull-right dropdown-toggle" data-toggle="dropdown"><a
+          href="javascript:void(0)"><i class="material-icons c_788692"></i></a></span>
+          <ul class="dropdown-menu dropdown-menu-right customDropdownMenu">
+            <!--<li><a href="javascript:void(0)">Edit</a></li>-->
+            <li *ngIf="loggedInUserId == news.user.id" (click)="newsDelete(news.virtualNewsId,i)"><a
+              href="javascript:void(0)" i18n="@@delete">Delete</a></li>
+            <li *ngIf="loggedInUserId != news.user.id" (click)="openNewsReportDialog(news.virtualNewsId)"><a
+              href="javascript:void(0)" i18n="@@report">Report</a></li>
+          </ul>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

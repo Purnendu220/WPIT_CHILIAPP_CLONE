@@ -1,0 +1,105 @@
+<!--HEADE START-->
+<div style="border-bottom:1px solid #f3f6fb;" class="navbar_wrapper bg_color navbar_fixed_top">
+    <div class="container">
+        <nav class="navbar" id="myScrollspy">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle edits collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+                <a class="navbar-brand" href="#">
+                    <img class="" src="assets/images/logo_myu.png" alt="myU">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li style="width: auto;" (click)="routeUser('aboutmyu')"><a class="fontfamlilyHelvitaca c_p" style="color : #E53481 !important"><span i18n="@@aboutApp">ABOUT MYU</span></a></li>
+                    <li style="width: auto;" (click)="routeUser('forteacher')"><a class="fontfamlilyHelvitaca c_p"><span i18n="@@forTech">FOR TEACHERS</span></a></li>
+                    <li style="width: auto;" (click)="routeUser('forschool')"><a style="font-weight : bold;" class="fontfamlilyHelvitaca c_p"><span i18n="@@forSch">FOR SCHOOLS</span></a></li>
+                    <!--<li style="width: auto;"><a href="#testimonial" class="fontfamlilyHelvitaca" i18n="@@testimonials">TESTIMONIALS</a></li>-->
+                    <!--<li style="width: auto;" (click)="routeUser('/')"><a class="fontfamlilyHelvitaca" i18n="@@contactUs">CONTACT US</a></li>-->
+                </ul>
+
+                <!--<span class="lang_link"> <a href="http://qa-cms.myu.co/myu/ar/">العربية</a></span>-->
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li style="width: auto;" *ngIf="language=='ar'" (click)="handleLanguageChange('')"><a class="c_p" style="font-size: 16px!important;">English</a></li>
+                    <li style="width: auto;" *ngIf="language=='en'" (click)="handleLanguageChange('ar')"><a class="c_p" style="font-size: 18px!important;">العربية</a></li>
+
+                    <li style="width: auto; margin-top: 10px;">
+                        <a class="c_p loginBtn" style="font-size: 13px!important; font-family: inherit;" (click)="openLogin()" i18n="@@login">Login</a>
+                    </li>
+                    <!-- <li><a href="/" style="font-size:18px !important;">العربية</a></li> -->
+                </ul>
+
+
+            </div>
+        </nav>
+    </div>
+</div>
+<!--HEADE END-->
+
+<!--WORKAREA START-->
+<div style="position: relative; background: #fff;">
+    <br><br><br><br>
+    <div class="circle_line_myU_text">
+        <img src="../../../../assets/images/circle_1.svg">
+    </div>
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center c_000">
+                <img src="../../../../assets/images/section-icon.svg"> &nbsp;
+                <span i18n="@@whatIsMyu">What is myU?</span>
+            </h1><br>
+            <p class="c_000 f_s_18" i18n="@@myuIntro" style="max-width: 700px; margin:auto;">MyU is a mobile app that allows educators and students to connect easily, sending note and reminders, or creating discussions, all in social network-like experience that is safe, private, and fun.</p>
+            <div class="text-right">
+                <img src="../../../../assets/images/what_is_myU.svg" style="width:88%;" />
+            </div>
+        </div>
+    </div>
+    <div class="circle_line_myU_text_bottom">
+        <img src="../../../../assets/images/circle_2.svg">
+    </div>
+    <br><br> <br><br>
+</div>
+<!--WORKAREA END-->
+
+<!--FOOTER START-->
+<footer class="myu_footer" style="margin-top: 0;">
+    <div class="container">
+        <div class="footer_top">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <a href="https://twitter.com/MyU_app" target="_blank" class="margin_l30">
+                        <img src="../../../../assets/images/twitter-logo-silhouette.svg" alt="Twitter">
+                    </a>
+                    <a href="https://www.facebook.com/myuappsocial" target="_blank" class="margin_l30">
+                        <img src="../../../../assets/images/facebook.svg" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/myu_app/" target="_blank" class="margin_l30">
+                        <img src="../../../../assets/images/insta.svg" alt="Instagram">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCUMNBJ4b1FotxjLHEbAUnLA" target="_blank" class="margin_l30">
+                        <img src="../../../../assets/images/youtube.svg" alt="Youtube">
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="footer_links">
+                        <!--<a class="c_p" (click)="routeUser('aboutus')" i18n="@@aboutUs">ABOUT US</a> |-->
+                        <a class="c_p" (click)="routeUser('faqs')" i18n="@@faqs">FAQS</a> <span class="spaceforline">|</span>
+                        <a class="c_p" (click)="routeUser('UserLicenseAgreement')" i18n="@@UserLicenseAgreement">User License Agreement</a><span class="spaceforline">|</span>
+                        <a class="c_p" (click)="routeUser('temsofservice')" i18n="@@tos">TERMS OF SERVICE</a> <span class="spaceforline">|</span>
+                        <a class="c_p" (click)="routeUser('privacypolicy')" i18n="@@pp">PRIVACY POLICY</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="copy_text" i18n="@@myuCopyright" style="color: #666; font-weight:400;">MyU &copy; Copyright 2019 | All Rights Reserved</div>
+    </div>
+</footer>
+<!--FOOTER END-->
